@@ -7,7 +7,7 @@ source("scripts/scripts on spdata experiment/01b_artfcountrynb.R")
 # Data loaded and parameters inisiation-----------------------------------------
 # ncores  <- future::availableCores() - 2
 # future::plan("multisession", workers = ncores)
-gen.dat <- readRDS("data/dataset/gen_dat_v2.rds")
+gen.dat <- readRDS("data/dataset/gen_dat_v3.rds")
 # Number of replications
 M <- 1000
 tau              <- sqrt(0.6)
