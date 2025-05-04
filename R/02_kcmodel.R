@@ -1,7 +1,7 @@
 # Join the sf data: lop_kc (n = 53) with propdata (n = 1182)
 # from dataadjustment.R
 
-source("scripts/01_packs.R")
+source("R/01_packs.R")
 load("data/propdata.RData")
 load("data/lop_kc.RData")
 load("data/lopkc_pop.RData")
@@ -73,6 +73,12 @@ propdata <- propdata %>%
 datasummary <- propdata %>% 
   select(prices, beds, baths, building, land)  %>% 
   tbl_summary()
+
+propdata_sum %>% 
+  propdata %>% 
+  group_by(SubDistrict) %>%
+  summarise(n = n()) %>%
+  arrange(desc(n))
 
 # Join with sf and pop dataset--------------------------------------------------
 ppd <- left_join(lop_kc, propdata,
@@ -178,8 +184,8 @@ ggpairs(ppd, columns = c(19,7:10))#, aes(colour = category))
 
 # CAR Model------------------------------------------------------------
 # lopkc.nb    <- poly2nb(lop_kc, queen = FALSE)
-lopkc.list  <- nb2listw(lopkc.nb, style = "W", zero.policy = TRUE)
-W           <- nb2mat(lopkc.nb, style = "W", zero.policy = TRUE)
+lopkc.list  <- nb2listw(lopkc.nb, style = "B", zero.policy = TRUE)
+W           <- nb2mat(lopkc.nb, style = "B", zero.policy = TRUE)
 new_W            <- W + t(W) 
 new_W[new_W > 0] <- 1
 
@@ -309,10 +315,11 @@ gwr.bandwidth <- gwr.sel(formula = form3,
                          adapt   = TRUE)
 
 # Run the GWR model
-model.gwr <- gwr(formula = form3, 
-                 data    = ppd, 
-                 coords  = gwr.coords,
-                 bandwidth =    0.5)
+model.gwr <- gwr(formula   = form3, 
+                 data      = ppd, 
+                 coords    = gwr.coords,
+                 bandwidth =    0.5,
+                 longlat   = TRUE)
 
 
 saveRDS(model.gwr, file = "data/model_gwr.rds")
