@@ -1,0 +1,31 @@
+---
+title: "Author Response to Reviewer Comments"
+# format:
+#   pdf: default
+#bibliography: references.bib
+engine: knitr
+---
+
+1.  The choice of W (whether binary adjacency or row-standardized) is critical. Have the authors explored alternative spatial weight matrices, and how do they impact model performance?
+
+<!-- 2.  While the CAR model shows lower bias and RMSE in the artificial study, does this advantage persist in real-world scenarios, particularly where data sparsity or boundary effects exist? -->
+
+<!-- 3.  The estimated value of $\rho$ (spatial dependence strength) varies widely (e.g., 0.48 for the multilevel CAR model). Have the authors examined how sensitive the model results are to changes in $\rho$? -->
+
+<!-- 4.  The study discusses the spatial effects $\phi$ as a key advantage of the CAR model, but how can these effects be meaningfully interpreted for house price determinants? Would spatial effect maps or additional diagnostic tools enhance this understanding? -->
+
+<!-- 5.  Among the various spatial regression models, Geographically Weighted Regression (GWR) is particularly prominent in property price research (page 2). Before reaching this conclusion, did you compare GWR to other spatial regression models? -->
+
+<!-- 6.  The scope of properties analysed includes residential houses and commercial real estate (page 16). How do the authors reconcile this with the abstract, which mentions only house price data? -->
+
+<!-- 7.  After data cleaning, the final dataset included 598 entries representing multiple observations per sub-district (page 16). Why does the distribution of these data not appear on the map (Figure 6)? -->
+
+<!-- 8.  The authors have applied point-level data using three different models (GLMM, GWR, and multilevel CAR) (page 17). How was this approach implemented, given that there is no explanation of how each observation was georeferenced? -->
+
+<!-- 9.  Why is Table 5 not referred to in the text? -->
+
+<!-- 10. The authors have argued that point-level models like GWR are limited when precise location data are unavailable (page 18). However, for the Lombok House Price Data, the authors have used point-level models. How do you reconcile this contradiction? -->
+
+<!-- 11. In the Lombok house price analysis, no sensitivity analysis was conducted to test how different definitions of adjacency (W matrix) influence the results. Would the findings remain consistent if a different spatial weights structure was used? -->
+
+<!-- 12. The study primarily evaluates CAR models within the Lombok context, but how well does it generalize to larger, high-density urban areas (e.g., Jakarta)? Would additional testing in a more complex metropolitan setting strengthen the validity of the conclusions? -->

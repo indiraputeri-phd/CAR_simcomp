@@ -1,0 +1,19 @@
+format:
+  html: default
+  pdf:
+    documentclass: report
+    papersize: a4
+    geometry:
+      - top = 30mm
+      - left = 20mm
+    number-sections: true
+    keep-tex: false
+    output-file: response_to_reviewers
+    include-in-header: header.tex  # Optional: if you want to customize LaTeX packages
+    header-includes:
+     - \usepackage{xcolor}
+
+execute:
+  echo: false
+  warning: false
+  message: false

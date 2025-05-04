@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Indira Puteri Kinasih">
+
+<title>Response to Journal’s 2nd Reviewer Comments</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="response_files/libs/clipboard/clipboard.min.js"></script>
+<script src="response_files/libs/quarto-html/quarto.js"></script>
+<script src="response_files/libs/quarto-html/popper.min.js"></script>
+<script src="response_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="response_files/libs/quarto-html/anchor.min.js"></script>
+<link href="response_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="response_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="response_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="response_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="response_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="response_to_reviewers.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Response to Journal’s 2nd Reviewer Comments</h1>
+<p class="subtitle lead">Conditionally Autoregressive Models for House Price Data: Insights From a Comparative Simulation Study</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Indira Puteri Kinasih <a href="mailto:indiraputeri@uinmataram.ac.id" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0009-0009-6959-6723" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<ol type="1">
+<li><p><strong>The choice of <span class="math inline">\(W\)</span> (whether binary adjacency or row-standardized) is critical. Have the authors explored alternative spatial weight matrices, and how do they impact model performance?</strong></p>
+<p>Thank you for this insightful comment regarding the specification of the spatial weight matrix, <span class="math inline">\(W\)</span>. We fully acknowledge that the choice of <span class="math inline">\(W\)</span>—whether binary adjacency, row-standardized, or distance-based—can substantially influence the performance and interpretation of spatial models. In the present study, our primary objective was to evaluate and compare the performance of CAR, SAR, and GWR models using both simulated data and real-world data from Lombok. To maintain consistency across models and to isolate the structural differences in model behavior, we have, at this stage, limited our analysis to a binary adjacency matrix for <span class="math inline">\(W\)</span>. We agree that exploring alternative specifications of <span class="math inline">\(W\)</span> (e.g., row-standardized or distance-decay matrices) is a valuable direction for further research. We plan to extend our analysis in future work to assess how varying spatial weight structures affect the robustness and predictive accuracy of these spatial models.</p></li>
+<li><p><strong>While the CAR model shows lower bias and RMSE in the artificial study, does this advantage persist in real-world scenarios, particularly where data sparsity or boundary effects exist?</strong></p>
+<p>Thank you for your thoughtful question. We acknowledge that in small-area data, bias can indeed become a concern due to limited information at the unit level. However, in the case of the multilevel CAR (mlvCAR) model, each area contains multiple observations, allowing us to model area-specific effects—functionally resembling a random effects structure. This hierarchical structure helps mitigate the impact of sparsity within individual areas.</p>
+<p>Regarding sample size, prior studies suggest that having approximately 15–30 observations per area is generally sufficient for stable estimation in multilevel frameworks. Given our data structure aligns with this recommendation, we believe the mlvCAR model offers a robust approach, especially in real-world scenarios where heterogeneity and partial pooling across areas are important. We thus recommend the use of mlvCAR to address both the potential bias and boundary effects effectively.</p></li>
+<li><p><strong>The estimated value of <span class="math inline">\(\rho\)</span> (spatial dependence strength) varies widely (e.g., 0.48 for the multilevel CAR model). Have the authors examined how sensitive the model results are to changes in <span class="math inline">\(\rho\)</span>?</strong></p>
+<p>In our study, we recognize that the value of <span class="math inline">\(\rho\)</span> plays a crucial role in determining the extent of spatial autocorrelation captured by the model. While we did not conduct a dedicated sensitivity analysis across a range of fixed <span class="math inline">\(\rho\)</span> values, our simulation framework inherently explores variation in <span class="math inline">\(\rho\)</span> through repeated data generation processes, in which <span class="math inline">\(\rho\)</span> is estimated as part of the model fitting. The observed variability in <span class="math inline">\(\rho\)</span> (e.g., 0.48 in the multilevel CAR model) reflects the underlying spatial structure in the data rather than instability in the model.</p>
+<p>That said, we agree that a more systematic sensitivity analysis—such as fitting the model under different fixed values of <span class="math inline">\(\rho\)</span>—could offer further insights into model robustness. We consider this a valuable direction for future work, especially in scenarios with varying levels of spatial autocorrelation or data sparsity.</p></li>
+<li><p><strong>The study discusses the spatial effects <span class="math inline">\(\phi\)</span> as a key advantage of the CAR model, but how can these effects be meaningfully interpreted for house price determinants? Would spatial effect maps or additional diagnostic tools enhance this understanding?</strong></p>
+<p>Thank you for highlighting the importance of interpreting the spatial effects <span class="math inline">\(\phi\)</span> in the CAR model. We agree that while <span class="math inline">\(\phi\)</span> captures unobserved spatial heterogeneity, its interpretability in the context of house price determinants requires careful consideration. Rather than directly reflecting specific covariates, <span class="math inline">\(\phi\)</span> accounts for spatially structured residual variation—such as omitted neighborhood characteristics, local amenities, or spatial spillovers—that are not captured by observed variables.</p>
+<p>To aid interpretation, we acknowledge that visualizing <span class="math inline">\(\phi\)</span> through spatial effect maps could be a powerful diagnostic tool. Such maps can reveal clusters of under- or over-prediction and provide insights into areas where additional covariates or local effects might be relevant. In the revised version of this study, we will include a Lombok sub-district-level map displaying the estimated <span class="math inline">\(\phi\)</span> values to better communicate the spatial structure captured by the model and to guide further interpretation and refinement.</p></li>
+<li><p><strong>Among the various spatial regression models, Geographically Weighted Regression (GWR) is particularly prominent in property price research (page 2). Before reaching this conclusion, did you compare GWR to other spatial regression models?</strong></p>
+<p>Thank you for this thoughtful question. In our manuscript, we highlight Geographically Weighted Regression (GWR) as a prominent method in the literature, particularly due to its frequent application in house price studies. This observation is based on a review of previous works rather than a performance-based comparison. While GWR is indeed widely used for its ability to model spatial heterogeneity at the local level, our study goes further by systematically comparing GWR with CAR and SAR models through simulation and real data applications. This comparative analysis aims to evaluate their relative strengths and limitations more objectively.</p></li>
+<li><p><strong>The scope of properties analysed includes residential houses and commercial real estate (page 16). How do the authors reconcile this with the abstract, which mentions only house price data?</strong></p>
+<p>Thank you for your observation. We acknowledge that the description in the manuscript may not have been sufficiently clear. The original dataset obtained through web-scraping did include a broad range of property types—such as residential houses, villas, boarding houses, and vacant land. However, for the purposes of this study, we restricted our analysis to residential houses only. We will revise the manuscript accordingly to ensure that this scope is clearly stated in both the abstract and the data collection section.</p></li>
+<li><p><strong>After data cleaning, the final dataset included 598 entries representing multiple observations per sub-district (page 16). Why does the distribution of these data not appear on the map (Figure 6)?</strong></p>
+<p>Thank you for the observation. For clarity, we note that the Lombok house price dataset used in this study does not contain precise geographic coordinates for each observation. As a result, it is not possible to accurately display the distribution of the data points on a map. While each observation is linked to a sub-district, the absence of point-level location data limits our ability to visualize them spatially within those areas. Therefore, for a more informative visualization, we are preparing a heatmap of house prices at the sub-district level, which will reflect the spatial variation in prices across Lombok using aggregated data.</p></li>
+<li><p><strong>The authors have applied point-level data using three different models (GLMM, GWR, and multilevel CAR) (page 17). How was this approach implemented, given that there is no explanation of how each observation was georeferenced?</strong></p>
+<p>Thank you for this important observation. We clarify that GLMM and multilevel CAR models do not require explicit geographic coordinates for each individual observation. Instead, they rely on an area-level identifier (ID) that links each observation to a corresponding spatial unit (e.g., sub-district).</p>
+<p>In contrast, GWR requires spatial coordinates for each observation. To meet this requirement, we generated random points around the centroid of each sub-district, using <code>st_sample()</code>, where the number of points corresponds to the number of observations in that area. Each point was placed within a 0.5 km radius from the centroid, ensuring a reasonable spatial spread while maintaining the area-specific context. This approach enabled us to simulate realistic spatial positions for property transactions in the absence of precise geolocation data.</p></li>
+<li><p><strong>Why is Table 5 not referred to in the text?</strong></p>
+<p>Yes. We already include it in the text, in the revise version.</p></li>
+<li><p><strong>The authors have argued that point-level models like GWR are limited when precise location data are unavailable (page 18). However, for the Lombok House Price Data, the authors have used point-level models. How do you reconcile this contradiction?</strong></p>
+<p>Thank you for highlighting this important point. As we noted in our response to Comment 8, the Lombok house price data do not come with precise geographic coordinates. In order to apply the gwr() function, which requires point-level location data, we generated synthetic coordinates by simulating random points around the centroid of each sub-district. While this workaround allowed us to run the GWR model, we acknowledge that it is not an ideal or practical solution for real-world applications. This limitation reinforces our argument that point-level models such as GWR can be challenging to apply meaningfully when precise location data are not available.</p></li>
+<li><p><strong>In the Lombok house price analysis, no sensitivity analysis was conducted to test how different definitions of adjacency (W matrix) influence the results. Would the findings remain consistent if a different spatial weights structure was used?</strong></p>
+<p>Thank you for your thoughtful observation. As mentioned in our response to Comment 1, in this study we used a binary adjacency matrix to define spatial relationships, primarily to maintain consistency across the CAR and SAR models and to focus on comparing their general performance. We acknowledge that the choice of spatial weights matrix (<span class="math inline">\(W\)</span>) can significantly influence model outcomes. While we have not conducted a sensitivity analysis in this current version, we agree that testing alternative specifications—such as row-standardized or distance-based matrices—would be valuable. We consider this an important direction for future work to assess the robustness of our findings under different definitions of spatial connectivity.</p></li>
+<li><p><strong>The study primarily evaluates CAR models within the Lombok context, but how well does it generalize to larger, high-density urban areas (e.g., Jakarta)? Would additional testing in a more complex metropolitan setting strengthen the validity of the conclusions?</strong></p>
+<p>Thank you for this important point. Indeed, numerous studies have already explored property price modeling in large, high-density urban areas such as Jakarta, where spatial data availability and heterogeneity are typically greater. In contrast, there is relatively limited research focused on low-density or semi-rural contexts such as Lombok. Our study aims to address this gap by evaluating the applicability and performance of spatial models, particularly the CAR model, in a setting that has different data characteristics and spatial structures compared to major metropolitan areas.</p>
+<p>We also acknowledge that in richer datasets—common in urban contexts where more granular, high-frequency, and multidimensional data are available—machine learning approaches may offer competitive or even superior predictive performance. However, our focus here is to assess interpretable spatial models in contexts where data limitations remain a challenge.</p></li>
+</ol>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
