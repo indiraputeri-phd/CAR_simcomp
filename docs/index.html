@@ -207,7 +207,7 @@ window.Quarto = {
                 <div>
             <div class="quarto-title-meta-heading">Modified</div>
             <div class="quarto-title-meta-contents">
-              <p class="date-modified">May 4, 2025</p>
+              <p class="date-modified">May 6, 2025</p>
             </div>
           </div>
                 
@@ -262,10 +262,12 @@ window.Quarto = {
   <li><a href="#supplementary-information" id="toc-supplementary-information" class="nav-link" data-scroll-target="#supplementary-information">Supplementary information</a></li>
   <li><a href="#acknowledgments" id="toc-acknowledgments" class="nav-link" data-scroll-target="#acknowledgments">Acknowledgments</a></li>
   <li><a href="#declarations" id="toc-declarations" class="nav-link" data-scroll-target="#declarations">Declarations</a></li>
-  <li><a href="#secA1" id="toc-secA1" class="nav-link" data-scroll-target="#secA1">Simple Feature Data Slice</a></li>
-  <li><a href="#secA2" id="toc-secA2" class="nav-link" data-scroll-target="#secA2">Bias values for Area-level Data</a></li>
-  <li><a href="#secA3" id="toc-secA3" class="nav-link" data-scroll-target="#secA3">Model Comparison for area-level data</a></li>
-  <li><a href="#secA4" id="toc-secA4" class="nav-link" data-scroll-target="#secA4">Example of beta-values in GWR model</a></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a>
+  <ul class="collapse">
+  <li><a href="#bias-values-for-area-level-data" id="toc-bias-values-for-area-level-data" class="nav-link" data-scroll-target="#bias-values-for-area-level-data">Bias values for Area-level Data</a></li>
+  <li><a href="#model-comparison-for-area-level-data" id="toc-model-comparison-for-area-level-data" class="nav-link" data-scroll-target="#model-comparison-for-area-level-data">Model Comparison for area-level data</a></li>
+  <li><a href="#example-of-beta-values-in-gwr-model" id="toc-example-of-beta-values-in-gwr-model" class="nav-link" data-scroll-target="#example-of-beta-values-in-gwr-model">Example of beta-values in GWR model</a></li>
+  </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 <div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="manuscript-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li><li><a href="response/response-preview.html"><i class="bi bi-journal-code"></i>Response to Journal's 2nd Reviewer Comments</a></li></ul></div></nav>
@@ -313,13 +315,13 @@ Figure&nbsp;1: Artificial study region used for simulation analysis, consisting 
 </div>
 </div>
 <a class="quarto-notebook-link" id="nblink-1" href="manuscript-preview.html#cell-fig-artfreg">Source: Article Notebook</a></div>
-<p>Another specific ingredient in spatial modelling is the existence of <span class="math inline">\(W\)</span> matrix, also known as the spatial weights matrix. It encodes the spatial relationships between areas in a study region. The weight matrix visually shows how different regions are connected to each other, indicating their neighbourhood relationships (<span class="citation" data-cites="morris2019bayesian">Morris et al. (<a href="#ref-morris2019bayesian" role="doc-biblioref">2019</a>)</span>). To demonstrate this concept, let’s take a simple example of a map with four regions <span class="math inline">\((R_1, R_2, R_3, R_4)\)</span>, as visualised in <a href="#fig-neighsimple" class="quarto-xref">Figure&nbsp;2</a>.</p>
+<p>Another specific ingredient in spatial modelling is the existence of <span class="math inline">\(W\)</span> matrix, also known as the spatial weights matrix. It encodes the spatial relationships between areas in a study region. The weight matrix visually shows how different regions are connected to each other, indicating their neighbourhood relationships (<span class="citation" data-cites="morris2019bayesian">Morris et al. (<a href="#ref-morris2019bayesian" role="doc-biblioref">2019</a>)</span>). To demonstrate this concept, let’s take a simple example of a map with 5 regions <span class="math inline">\((A, B, C, D, E)\)</span>, as visualised in <a href="#fig-neighsimple" class="quarto-xref">Figure&nbsp;2</a>.</p>
 <div id="cell-fig-neighsimple" class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-neighsimple" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-neighsimple-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figures/maprec.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="figures/maprec.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+<a href="figures/sartf_plot.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="figures/sartf_plot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-neighsimple-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Illustration of neighbourhood structure. The figure depicts a simplified spatial configuration where each numbered area represents a distinct spatial unit, demonstrating how neighbouring relationships can be defined for spatial modelling purposes.
@@ -328,28 +330,30 @@ Figure&nbsp;2: Illustration of neighbourhood structure. The figure depicts a sim
 </div>
 </div>
 <a class="quarto-notebook-link" id="nblink-2" href="manuscript-preview.html#cell-fig-neighsimple">Source: Article Notebook</a></div>
-<p>This straightforward neighbourhood structure creates a single connected component with the following relationships: <span class="math inline">\((R_1 \sim R_2,\ R_2 \sim R_3,\ R_3 \sim R_4)\)</span>. Therefore the weight matrix <span class="math inline">\(\boldsymbol{W}\)</span> is</p>
+<p>From the <a href="#fig-neighsimple" class="quarto-xref">Figure&nbsp;2</a> we can derive an adjacency matrix which represents the neighborhood structure of five spatial units labeled <span class="math inline">\(A\)</span> to <span class="math inline">\(E\)</span>. Each entry 1 indicates a direct adjacency (areas share a common border), while 0 denotes no direct connection. For example, Area <span class="math inline">\(A\)</span> is adjacent to all other areas (<span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, <span class="math inline">\(D\)</span>, and <span class="math inline">\(E\)</span>), whereas Area <span class="math inline">\(B\)</span> is only adjacent to <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span>. This neighbourhood configuration captures a clear spatial interaction pattern among the areas, which forms the basis for constructing a spatial weight matrix, commonly denoted as the <span class="math inline">\(\mathbf{W}\)</span> matrix</p>
 <p><span class="math display">\[
-\begin{array}{ccccc}
-    &amp; R_1 &amp; R_2 &amp; R_3 &amp; R_4 \\
-R_1 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
-R_2 &amp; 1 &amp; 0 &amp; 1 &amp; 0\\
-R_3 &amp; 0 &amp; 1 &amp; 0 &amp; 1\\
-R_4 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\
+\begin{array}{cccccc}
+    &amp; A &amp; B &amp; C &amp; D &amp; E \\
+A &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1\\
+B &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
+C &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0\\
+D &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1\\
+E &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\
 \end{array}
 \]</span></p>
-<p>Later on, in the modelling stage, we will also need to construct a diagonal matrix <span class="math inline">\(\boldsymbol{D}\)</span>. It is an <span class="math inline">\(N \times N\)</span> matrix where each diagonal element <span class="math inline">\(d_{ii}\)</span> denotes the number of neighbours of region <span class="math inline">\(R_i\)</span>, while all non-diagonal elements are zero. This matrix is essential in spatial econometric models because it captures the local neighbourhood structure of each region. In the context of Geographically Weighted Regression (GWR), Spatial Autoregressive (SAR), and Conditional Autoregressive (CAR) models, <span class="math inline">\(\boldsymbol{D}\)</span> plays a pivotal role in defining spatial relationships and dependencies among different regions.</p>
+<p>Later on, in the modelling stage, we will also need to construct a diagonal matrix <span class="math inline">\(\boldsymbol{D}\)</span>. It is an <span class="math inline">\(N \times N\)</span> matrix where each diagonal element <span class="math inline">\(d_{ii}\)</span> denotes the number of neighbours of region. while all non-diagonal elements are zero. This matrix is essential in spatial econometric models because it captures the local neighbourhood structure of each region. In the context of Geographically Weighted Regression (GWR), Spatial Autoregressive (SAR), and Conditional Autoregressive (CAR) models, <span class="math inline">\(\boldsymbol{D}\)</span> plays a pivotal role in defining spatial relationships and dependencies among different regions.</p>
 <p>For instance, in SAR and CAR models, the diagonal matrix <span class="math inline">\(\boldsymbol{D}\)</span> aids in incorporating spatial lag and error components by appropriately weighting the influence of neighbouring regions (<span class="citation" data-cites="wall2004close">Wall (<a href="#ref-wall2004close" role="doc-biblioref">2004</a>)</span>, <span class="citation" data-cites="ver2018spatial">Ver Hoef et al. (<a href="#ref-ver2018spatial" role="doc-biblioref">2018</a>)</span>). In GWR, this matrix assists in locally calibrating the model by reflecting the density and connectivity of regions (<span class="citation" data-cites="brunsdon1996geographically">Brunsdon, Fotheringham, and Charlton (<a href="#ref-brunsdon1996geographically" role="doc-biblioref">1996</a>)</span>, <span class="citation" data-cites="stewart2018localized">Stewart Fotheringham and Park (<a href="#ref-stewart2018localized" role="doc-biblioref">2018</a>)</span>). Here, <span class="math inline">\(\boldsymbol{D}\)</span> is represented as:</p>
 <p><span class="math display">\[
-\begin{array}{ccccc}
-   &amp; R_1 &amp; R_2 &amp; R_3 &amp; R_4 \\
-R_1 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\
-R_2 &amp; 0 &amp; 2 &amp; 0 &amp; 0\\
-R_3 &amp; 0 &amp; 0 &amp; 2 &amp; 0\\
-R_4 &amp; 0 &amp; 0 &amp; 0 &amp; 1\\
+\begin{array}{cccccc}
+   &amp; A &amp; B &amp; C &amp; D &amp; E \\
+A &amp; 4 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
+B &amp; 0 &amp; 2 &amp; 0 &amp; 0 &amp; 0\\
+C &amp; 0 &amp; 0 &amp; 3 &amp; 0 &amp; 0\\
+D &amp; 0 &amp; 0 &amp; 0 &amp; 3 &amp; 0\\
+E &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 2\\
 \end{array}
 \]</span></p>
-<p>This matrix format indicates that region <span class="math inline">\(R_1\)</span> has one neighbour, regions <span class="math inline">\(R_2\)</span> and <span class="math inline">\(R_3\)</span> each have two neighbours, and region <span class="math inline">\(R_4\)</span> has one neighbour. By integrating this matrix into our modelling framework, we ensure that the spatial structure and interactions among regions are accurately represented, thereby enhancing the robustness and precision of our spatial analysis.</p>
+<p>This matrix format indicates that region <span class="math inline">\(A\)</span> has 4 neighbour, regions <span class="math inline">\(C\)</span> and <span class="math inline">\(D\)</span> each have 3 neighbours, and region <span class="math inline">\(B\)</span> and <span class="math inline">\(E\)</span> has 2 neighbour.</p>
 <div id="cell-fig-neighartfreg" class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-neighartfreg" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
@@ -481,37 +485,44 @@ Table&nbsp;2: Slice of generated dataset as covariates for simulations
 </section>
 <section id="robustness-and-power-prediction-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="robustness-and-power-prediction-analysis">Robustness and power prediction analysis</h2>
-<p>The bias values show that the models exhibit varying levels of accuracy across the different parameters and datasets. The coefficients <span class="math inline">\(\beta_k\)</span> for <span class="math inline">\(k = 0, 1, 2, 3, 4\)</span> represent the values associated with the intercept, land size, building size, number of bedrooms, and number of bathrooms, respectively. For <span class="math inline">\(\beta_0\)</span>, the GLM and CAR models display relatively small biases with narrow standard deviations, indicating better consistency, while the SAR model demonstrates larger bias values, suggesting potential issues with accurately estimating the intercept. For higher parameters like <span class="math inline">\(\beta_2\)</span> and <span class="math inline">\(\beta_3\)</span>, SAR generally has larger bias and variability, especially in the <span class="math inline">\(SAR + CAR\)</span> dataset, suggesting that the combined spatial structure poses challenges for SAR’s estimation. It is important to note that the <a href="#fig-biasarealevel" class="quarto-xref">Figure&nbsp;5</a> utilises area-level data. In this context, the CAR model consistently demonstrates the smallest bias compared to the other two models.</p>
-<div id="cell-fig-biasarealevel" class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-biasarealevel" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<p>The bias values are summarised in <a href="#tbl-bias1" class="quarto-xref">Table&nbsp;6</a> and <a href="#tbl-bias2" class="quarto-xref">Table&nbsp;7</a>. It shows that the models exhibit varying levels of accuracy across the different parameters and datasets. <a href="#fig-biasplot" class="quarto-xref">Figure&nbsp;5</a> presents the bias estimates of regression coefficients for different modelling approaches, separated by data type: (a) area-level data and (b) point-level data. Each panel corresponds to a data-generating mechanism (CAR, GWR, or SAR+CAR), and bias values are shown with 95% confidence intervals.</p>
+<div id="fig-biasplot" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-biasarealevel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figures/bias1b_plot.pdf" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5"><embed src="figures/bias1b_plot.pdf" class="img-fluid quarto-figure quarto-figure-center" style="width:75.0%"></a>
+<div aria-describedby="fig-biasplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-biasplot" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-biasplot1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-biasplot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figures/bias1_plot.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="fig-biasplot"><img src="figures/bias1_plot.png" class="img-fluid figure-img" data-ref-parent="fig-biasplot"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-biasarealevel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Bias values by method and dataset type for area-level data. This figure compares the bias estimates of different methods (CAR, GLM, SAR) across datasets generated under CAR, GWR, and SAR+CAR frameworks. Each method’s performance is visualised for four coefficients (<span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span>, <span class="math inline">\(\beta_3\)</span>, <span class="math inline">\(\beta_4\)</span>), highlighting variations in bias and the effectiveness of each model in addressing spatial dependencies.
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-biasplot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Bias values by method and dataset type for area-level data
 </figcaption>
 </figure>
 </div>
 </div>
-<a class="quarto-notebook-link" id="nblink-9" href="manuscript-preview.html#cell-fig-biasarealevel">Source: Article Notebook</a></div>
-<div id="cell-fig-biaspointlevel" class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-biaspointlevel" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-biaspointlevel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figures/bias2_plot.pdf" class="lightbox" data-glightbox="description: .lightbox-desc-6" data-gallery="quarto-lightbox-gallery-6"><embed src="figures/bias2_plot.pdf" class="img-fluid quarto-figure quarto-figure-center" style="width:75.0%"></a>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-biasplot" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-biasplot2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-biasplot2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figures/bias2_plot.png" class="lightbox" data-glightbox="description: .lightbox-desc-6" data-gallery="fig-biasplot"><img src="figures/bias2_plot.png" class="img-fluid figure-img" data-ref-parent="fig-biasplot"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-biaspointlevel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Bias values by method and dataset type for point-level data. This figure compares the bias estimates of different methods (GLMM, GWR, and mlvCAR) across datasets generated under CAR, GWR, and SAR+CAR frameworks. Each method’s performance is visualised for four coefficients (<span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span>, <span class="math inline">\(\beta_3\)</span>, <span class="math inline">\(\beta_4\)</span>), highlighting variations in bias and the effectiveness of each model in addressing spatial dependencies.
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-biasplot2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Bias values by method and dataset type for point-level data
 </figcaption>
 </figure>
 </div>
 </div>
-<a class="quarto-notebook-link" id="nblink-10" href="manuscript-preview.html#cell-fig-biaspointlevel">Source: Article Notebook</a></div>
-<p>As shown in the second plot of <a href="#fig-biaspointlevel" class="quarto-xref">Figure&nbsp;6</a>, this analysis utilises point-level data. Overall, the mlvCAR model demonstrates a consistently lower bias across most parameters and scenarios. In the <span class="math inline">\(SAR + CAR\)</span> scenario, where spatial complexity is most pronounced, mlvCAR achieves notably low bias, particularly for parameters <span class="math inline">\(\beta_1\)</span> through <span class="math inline">\(\beta_4\)</span>, indicating its suitability for handling mixed spatial structures. making it a solid choice for a range of spatial modelling tasks.</p>
-<p>The GWR model, which provides highly localised estimates, displays slightly higher bias for several parameters compared to mlvCAR, especially for <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span>, and <span class="math inline">\(\beta_3\)</span> within the <span class="math inline">\(CAR\)</span> scenario. This suggests GWR’s greater sensitivity to spatial patterns without incorporating neighbourhood-based effects. In contrast, GLMM, which lacks explicit spatial components, shows larger bias variability, particularly in scenarios with pronounced spatial dependencies, highlighting its limitations for purely spatial analyses.</p>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-biasplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Bias estimates comparison of six different methods across datasets generated under CAR, GWR, and SAR+CAR frameworks. Each method’s performance is visualised for <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span>, <span class="math inline">\(\beta_3\)</span>, and <span class="math inline">\(\beta_4\)</span>, highlighting variations in bias and the effectiveness of each model in addressing spatial dependencies.
+</figcaption>
+</figure>
+</div>
+<p>For area-level data (<a href="#fig-biasplot1" class="quarto-xref">Figure&nbsp;5 (a)</a>), CAR model consistently produces the lowest bias across all coefficients and data-generating scenarios. This confirms its ability to recover true parameter values under spatial dependency, even when data is aggregated. The SAR model displays higher variability and often substantial bias, especially in CAR-generated datasets, suggesting model misspecification when the true structure is localised (as in CAR). GLM, which ignores spatial effects, performs reasonably in some settings but often underperforms compared to CAR.</p>
+<p>In the point-level setting (<a href="#fig-biasplot2" class="quarto-xref">Figure&nbsp;5 (b)</a>), the mlvCAR model shows superior performance, achieving minimal bias across all coefficients and data-generating mechanisms. This reflects its strength in modeling spatial dependencies while accounting for multilevel data structure (i.e., multiple observations within areas). GLMM performs moderately well but tends to show slightly higher bias than mlvCAR. In contrast, GWR, despite being designed for point-level spatial variation, yields higher bias, especially under SAR+CAR structures. This suggests GWR’s limitation when spatial heterogeneity is not smooth or when model assumptions are violated.</p>
 <div class="cell">
 <div id="tbl-rmse" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -524,9 +535,9 @@ Table&nbsp;3: RMSE values across different datasets
 </div>
 </div>
 </figure>
-<a class="quarto-notebook-link" id="nblink-12" href="manuscript-preview.html#tbl-rmse">Source: Article Notebook</a></div>
-<a class="quarto-notebook-link" id="nblink-11" href="manuscript-preview.html">Source: Article Notebook</a></div>
-<p><a href="#tbl-rmse" class="quarto-xref">Table&nbsp;3</a> provide insights into model accuracy at different spatial levels. For area-level data, the models GLM, SAR, and CAR are compared, with the CAR model consistently achieving the lowest RMSE. This suggests that CAR is more effective at capturing spatial dependencies at the area level. For point-level data, the models GLMM, GWR, and mlvCAR are evaluated, with mlvCAR showing the lowest RMSE across all datasets. This indicates that mlvCAR is particularly well-suited for handling detailed spatial variations at the point level. Overall, these results highlight the strengths of CAR and mlvCAR in reducing error within their respective spatial contexts, underscoring their potential utility in spatial modeling applications.</p>
+<a class="quarto-notebook-link" id="nblink-10" href="manuscript-preview.html#tbl-rmse">Source: Article Notebook</a></div>
+<a class="quarto-notebook-link" id="nblink-9" href="manuscript-preview.html">Source: Article Notebook</a></div>
+<p>Moreover, <a href="#tbl-rmse" class="quarto-xref">Table&nbsp;3</a> provide insights into model accuracy at different spatial levels. For area-level data, the models GLM, SAR, and CAR are compared, with the CAR model consistently achieving the lowest RMSE. This suggests that CAR is more effective at capturing spatial dependencies at the area level. For point-level data, the models GLMM, GWR, and mlvCAR are evaluated, with mlvCAR showing the lowest RMSE across all datasets. This indicates that mlvCAR is particularly well-suited for handling detailed spatial variations at the point level. Overall, these results highlight the strengths of CAR and mlvCAR in reducing error within their respective spatial contexts, underscoring their potential utility in spatial modeling applications.</p>
 </section>
 </section>
 <section id="applications-in-lombok-house-prices-dataset" class="level1">
@@ -540,13 +551,13 @@ Table&nbsp;3: RMSE values across different datasets
 <a href="figures/nb_lop2.png" class="lightbox" data-glightbox="description: .lightbox-desc-7" data-gallery="quarto-lightbox-gallery-7"><img src="figures/nb_lop2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lombokmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Lombok neighbour structure at the sub-district (Kecamatan) level. This figure illustrates the spatial neighbour structure of sub-districts on Lombok Island. The red lines represent the connections between neighbouring sub-districts based on adjacency relationships, overlaid on a base map.
+Figure&nbsp;6: Lombok neighbour structure at the sub-district (Kecamatan) level. This figure illustrates the spatial neighbour structure of sub-districts on Lombok Island. The red lines represent the connections between neighbouring sub-districts based on adjacency relationships, overlaid on a base map.
 </figcaption>
 </figure>
 </div>
 </div>
-<a class="quarto-notebook-link" id="nblink-13" href="manuscript-preview.html#cell-fig-lombokmap">Source: Article Notebook</a></div>
-<p>Lombok includes five districts (kota/kabupaten), 53 sub-districts (kecamatan), and 608 villages (desa/kelurahan), which represent three successive levels of administrative division. In this study, the sub-district level is used as the spatial unit of analysis, as illustrated in <a href="#fig-lombokmap" class="quarto-xref">Figure&nbsp;7</a>. The key variables of interest include property price, land size, built-up area, number of bedrooms, and number of bathrooms.</p>
+<a class="quarto-notebook-link" id="nblink-11" href="manuscript-preview.html#cell-fig-lombokmap">Source: Article Notebook</a></div>
+<p>Lombok includes five districts (kota/kabupaten), 53 sub-districts (kecamatan), and 608 villages (desa/kelurahan), which represent three successive levels of administrative division. In this study, the sub-district level is used as the spatial unit of analysis, as illustrated in <a href="#fig-lombokmap" class="quarto-xref">Figure&nbsp;6</a>. The key variables of interest include property price, land size, built-up area, number of bedrooms, and number of bathrooms.</p>
 <section id="data-collection" class="level2">
 <h2 class="anchored" data-anchor-id="data-collection">Data Collection</h2>
 <!-- The dataset employed in this study comprises property price data from Lombok, Indonesia. The scope of properties analysed includes residential houses and commercial real estate. In addition to data on property prices, the dataset also encompasses various property characteristics including land area, built-up area, and the count of bedrooms and bathrooms. -->
@@ -564,11 +575,11 @@ Table&nbsp;4: Summary statistics of variables in the property price dataset
 </div>
 </div>
 </figure>
-<a class="quarto-notebook-link" id="nblink-15" href="manuscript-preview.html#tbl-datasumm">Source: Article Notebook</a></div>
-<a class="quarto-notebook-link" id="nblink-14" href="manuscript-preview.html">Source: Article Notebook</a></div>
+<a class="quarto-notebook-link" id="nblink-13" href="manuscript-preview.html#tbl-datasumm">Source: Article Notebook</a></div>
+<a class="quarto-notebook-link" id="nblink-12" href="manuscript-preview.html">Source: Article Notebook</a></div>
 <p>Next, we merged the cleaned dataset with spatial administrative data by matching sub-district and district names. This process resulted in a dataset containing 598 entries. Compared to the previous dataset, which consisted of 576 observations, this indicates that 22 sub-districts did not have any property data available—meaning that property sales in those areas were not recorded on the online property listing platform used as the data source.</p>
 <p>To address missing values, we employed the <code>mice</code> package (<span class="citation" data-cites="van2011mice">Van Buuren and Groothuis-Oudshoorn (<a href="#ref-van2011mice" role="doc-biblioref">2011</a>)</span>) to perform multiple imputation with parameters set to <span class="math inline">\(maxit = 10\)</span>, <span class="math inline">\(m = 10\)</span>, and a fixed random seed to ensure reproducibility. The imputed values were then reintegrated into the main dataset, replacing the original missing entries. This process resulted in a final dataset that was complete and ready for subsequent analysis using the selected spatial models.</p>
-<p>In addition to the point-level dataset (<code>ppd</code>), which contains individual property listings, the imputed dataset was also aggregated to the sub-district level by calculating the mean values of key variables. This aggregation produced an area-level dataset (<code>ppd_kc</code>), allowing the analysis to be conducted at both the individual and administrative levels. These two levels of data granularity provide complementary perspectives for evaluating the performance of spatial models in capturing local property market dynamics.</p>
+<p>In addition to the point-level dataset, which contains individual property listings, the imputed dataset was also aggregated to the sub-district level by calculating the mean values of key variables. This aggregation produced an area-level dataset, allowing the analysis to be conducted at both the individual and administrative levels. These two levels of data granularity provide complementary perspectives for evaluating the performance of spatial models in capturing local property market dynamics.</p>
 </section>
 <section id="model-implementation-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="model-implementation-analysis">Model Implementation &amp; Analysis</h2>
@@ -576,8 +587,8 @@ Table&nbsp;4: Summary statistics of variables in the property price dataset
 <p><span id="eq-lopreg"><span class="math display">\[
 prices \sim land_{std} + building_{std} + beds_{std} + baths_{std}
 \tag{10}\]</span></span></p>
-<p>Standardization of the predictors ensures that the resulting coefficients are on a comparable scale, facilitating meaningful interpretation and comparison across different modeling approaches. The results presented in the following tables provide a comprehensive evaluation of each model’s performance in capturing both the structural and spatial characteristics of the property market in Lombok. This comparison allows us to assess the extent to which spatially explicit models (e.g., GWR, CAR, SAR) offer improvements over conventional methods in explaining price variability across regions. — Let me know if you’d like to include metrics such as R², AIC, or Moran’s I in the paragraph as well.</p>
-<p>We conducted model fitting on the area-level data, with detailed results provided in the Appendix (<a href="#tbl-modelcomp2" class="quarto-xref">Table&nbsp;9</a>). However, this method does not provide optimal parameter estimates because data aggregation can reduce variability and obscure spatial details essential for capturing local effects. To address this, we used point-level data to apply three different models: GLMM, GWR, and multilevel CAR.</p>
+<p>Standardization of the predictors ensures that the resulting coefficients are on a comparable scale, facilitating meaningful interpretation and comparison across different modeling approaches. The results presented in <a href="#tbl-modelcomp" class="quarto-xref">Table&nbsp;5</a> provide a comprehensive evaluation of each model’s performance in capturing both the structural and spatial characteristics of the property market in Lombok.</p>
+<p>We conducted model fitting on the area-level data, with detailed results provided in the Appendix (<a href="#tbl-modelcomp1" class="quarto-xref">Table&nbsp;8</a>). However, this method does not provide optimal parameter estimates because data aggregation can reduce variability and obscure spatial details essential for capturing local effects. To address this, we used point-level data to apply three different models: GLMM, GWR, and multilevel CAR.</p>
 <div class="cell">
 <div id="tbl-modelcomp" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -590,17 +601,59 @@ Table&nbsp;5: Point-level Model Comparison
 </div>
 </div>
 </figure>
-<a class="quarto-notebook-link" id="nblink-17" href="manuscript-preview.html#tbl-modelcomp">Source: Article Notebook</a></div>
-<a class="quarto-notebook-link" id="nblink-16" href="manuscript-preview.html">Source: Article Notebook</a></div>
+<a class="quarto-notebook-link" id="nblink-15" href="manuscript-preview.html#tbl-modelcomp">Source: Article Notebook</a></div>
+<a class="quarto-notebook-link" id="nblink-14" href="manuscript-preview.html">Source: Article Notebook</a></div>
 <p>Here, <a href="#tbl-modelcomp" class="quarto-xref">Table&nbsp;5</a> compares parameter estimates and fit criteria for three models: GLMM, GWR, and multilevel CAR. Significant coefficients are marked with an asterisk (*). Key determinants like land-size and built-up area have positive, significant effects across models, while the number of bedrooms shows only minor, varying effects, indicating model-specific differences in capturing this variable’s influence. Only the multilevel CAR model includes the spatial parameter <span class="math inline">\(\rho\)</span>, with a significant estimate of 0.48, showing the model’s ability to account for spatial dependence. Variance components <span class="math inline">\(\nu^2\)</span> (residual) and <span class="math inline">\(\tau^2\)</span> (spatial) are also detailed, with both variance terms significant. Fit criteria (AIC, WAIC, and Log-likelihood) suggest mlvCAR and GWR may better capture local spatial variation, with mlvCAR balancing spatial structure and precision.</p>
+<div id="fig-pricenphi" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pricenphi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pricenphi" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-pricenphi1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-pricenphi1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figures/phi_map.png" class="lightbox" data-glightbox="description: .lightbox-desc-8" data-gallery="fig-pricenphi"><img src="figures/phi_map.png" class="img-fluid figure-img" data-ref-parent="fig-pricenphi"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-pricenphi1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) phi values
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-pricenphi" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-pricenphi2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-pricenphi2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="figures/logprice_map.png" class="lightbox" data-glightbox="description: .lightbox-desc-9" data-gallery="fig-pricenphi"><img src="figures/logprice_map.png" class="img-fluid figure-img" data-ref-parent="fig-pricenphi"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-pricenphi2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Aggregate price data (log scale)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pricenphi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Heatmap of aggregated price data and phi values in each Lombok sub-district
+</figcaption>
+</figure>
+</div>
+<p><a href="#fig-pricenphi1" class="quarto-xref">Figure&nbsp;7 (a)</a> and <a href="#fig-pricenphi2" class="quarto-xref">Figure&nbsp;7 (b)</a> respectively present spatial heatmaps illustrating the distribution of estimated spatial random effects (<span class="math inline">\(\phi\)</span>) from the CAR model and the average log-transformed house prices per sub-district accross Lombok island.</p>
+<p>Here, the <span class="math inline">\(\phi\)</span> values represent the spatially structured residuals not explained by the observed covariates in the CAR model. Specifically, it captures latent spatial influences such as neighbourhood desirability, access to infrastructure, or even local policy, that affect house prices beyond what structural features like land and building size can account for.</p>
+<p>Because the model uses log-transformed prices, <span class="math inline">\(\phi\)</span> has multiplicative interpretation on the original price scale. For instance, if <span class="math inline">\(\phi = 0.57\)</span> for a given sub-district, then after accounting for covariates, properties in that area are estimated to be approximately <span class="math inline">\(exp(0.57) \approx 1.76\)</span> or 76% more expensive than average. Similarly, a sub-district with <span class="math inline">\(\phi = -0.2\)</span>, this suggests that properties in that area are approximately 18% less expensive than average, since <span class="math inline">\(exp(-0.2) \approx 0.82\)</span>.</p>
 </section>
 </section>
 <section id="results-and-discussion" class="level1">
 <h1>Results and Discussion</h1>
-<p>The findings from simulation consistently indicate that both the CAR and mlvCAR model outperform the other models in capturing spatial dependencies. This is evidenced by lower RMSE values and reduced bias across various dataset scenarios, highlighting the CAR model’s robustness. In datasets with strong spatial structures, such as those generated under <span class="math inline">\(CAR\)</span> and <span class="math inline">\(SAR + CAR\)</span> conditions, the CAR model achieves substantially lower RMSE values compared to GLM and SAR, suggesting its effectiveness in handling localized spatial variations.</p>
+<p>The findings from simulation consistently indicate that both the CAR and mlvCAR model outperform the other models in capturing spatial dependencies. This is evidenced by lower RMSE values and reduced bias across various dataset scenarios, highlighting the CAR model’s robustness. In datasets with strong spatial structures, such as those generated under <span class="math inline">\(CAR\)</span> and <span class="math inline">\(SAR + CAR\)</span> conditions, the CAR model achieves substantially lower RMSE values compared to GLM and SAR, suggesting its effectiveness in handling localised spatial variations.</p>
 <p>In the context of house price modelling, it is common to encounter multiple sales observations within a single area, yet precise coordinates for each sale are often unavailable. Obtaining precise geographic coordinates in real-world datasets is often challenging due to limitations in data collection, privacy concerns, or the aggregation of data into broader administrative units. This limitation renders point-level approaches, such as GWR, less effective. With multiple observations available for each area, models like mlvCAR offer a more practical and accurate solution, effectively capturing spatial dependencies at an area level without requiring precise point-level locations.</p>
 <p>The results underscore the importance of using models that explicitly account for spatial dependencies in fields like property valuation, where spatial heterogeneity plays a significant role. The superior performance of the CAR model, particularly in datasets with strong spatial structure, suggests that it may be a more reliable choice for applications where local spatial variations are critical. The findings align with previous studies indicating that CAR models are better suited for managing spatial autocorrelation and heterogeneity, especially when spatial dependencies are strong.</p>
+<p>Spatial maps of the estimated random effects <span class="math inline">\(\phi\)</span> from the CAR model offer further insight into the spatial structure of housing prices across Lombok Island. These effects represent residual spatial patterns after accounting for structural covariates like land size, building size, and number of rooms. Such interpretability supports the use of CAR models not only for improved prediction but also for spatial diagnostics. The visual comparison of <span class="math inline">\(\phi\)</span> values and aggregated log-transformed prices (as shown in <a href="#fig-pricenphi" class="quarto-xref">Figure&nbsp;7</a>) highlights spatial patterns that may warrant further investigation—such as clusters of residual over- or under-prediction in West and East Lombok respectively. These patterns underscore the added value of CAR-type models in revealing latent geographic effects.</p>
+<p>These findings echo the limitations of GWR when precise coordinates are lacking, affirming the relevance of area-level approaches. Moreover, while we use a binary adjacency matrix for consistency, we recognise that the choice of spatial weight <span class="math inline">\(\mathbf{W}\)</span> may influences model performance. Future studies should explore alternative specifications such as row-standardized or distance-decay matrices to assess their impact on robustness and interpretability.</p>
+<p>Additionally, while the spatial dependence parameter <span class="math inline">\(\rho\)</span> is estimated as part of the model fitting, its variability across simulations suggests that further sensitivity analyses—especially under different fixed <span class="math inline">\(\rho\)</span> values—could shed light on model stability in different spatial contexts.</p>
 <p>Additionally, the limitations of point-level models such as GWR in the absence of precise location data highlight a practical challenge in spatial modeling. When only area-level data is available, the use of models like mlvCAR becomes essential, as it allows for spatial analysis without the need for detailed coordinates, thus expanding the applicability of spatial models in real-world settings. These insights suggest potential for further exploration of the CAR and mlvCAR models in various domains, especially in urban planning, real estate, and other fields where spatial relationships impact outcomes. Future research could examine the use of CAR and mlvCAR models with different spatial resolutions or apply these models to other datasets with varying levels of spatial dependency to further validate their effectiveness.</p>
+<p>In summary, this study highlights the importance of explicitly modeling spatial dependence in house price analysis. CAR and mlvCAR models emerge as practical and theoretically sound options, especially when high-resolution spatial data are unavailable. Future research may extend these models to finer spatial scales, incorporate additional spatial diagnostics, or apply them in other domains where spatial heterogeneity significantly influences outcomes.</p>
 </section>
 <section id="supplementary-information" class="level1 unnumbered">
 <h1 class="unnumbered">Supplementary information</h1>
@@ -625,32 +678,16 @@ Table&nbsp;5: Point-level Model Comparison
 <li>Code availability</li>
 <li>Authors’ contributions</li>
 </ul>
-<p>::: {.appendices latex=true}</p>
 </section>
-<section id="secA1" class="level1">
-<h1>Simple Feature Data Slice</h1>
-<div class="cell">
-<div id="tbl-geoartfex" class="cell quarto-float anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-geoartfex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6: a slice of a simple feature collection with 6 polygon features and 1 attribute field, area(sqm), representing polygon sizes in square units. The dataset, using the WGS 84 CRS, spans longitudes 116.0355–116.5 and latitudes -8.500079–-8.000057. The geometry field defines each polygon’s spatial boundaries, representing artificial study regions for spatial modeling in this research
-</figcaption>
-<div aria-describedby="tbl-geoartfex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output-display">
-
-</div>
-</div>
-</figure>
-<a class="quarto-notebook-link" id="nblink-19" href="manuscript-preview.html#tbl-geoartfex">Source: Article Notebook</a></div>
-<a class="quarto-notebook-link" id="nblink-18" href="manuscript-preview.html">Source: Article Notebook</a></div>
-</section>
-<section id="secA2" class="level1">
-<h1>Bias values for Area-level Data</h1>
+<section id="appendix" class="level1 unnumbered">
+<h1 class="unnumbered">Appendix</h1>
+<section id="bias-values-for-area-level-data" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="bias-values-for-area-level-data">Bias values for Area-level Data</h2>
 <div class="cell">
 <div id="tbl-bias1" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bias1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7: Mean ± SD values for bias across different area-level datasets and parameters. This table presents the mean and standard deviation (SD) of bias values across area-level datasets (CAR, SAR + CAR, GWR) and spatial models (GLM, SAR, CAR), with <span class="math inline">\(nsim = 1000\)</span>. This is also act as numerical representation of fig.&nbsp;5 (top panel)
+Table&nbsp;6: Mean ± SD values for bias across different area-level datasets and parameters. This table presents the mean and standard deviation (SD) of bias values across area-level datasets (CAR, SAR + CAR, GWR) and spatial models (GLM, SAR, CAR), with <span class="math inline">\(nsim = 1000\)</span>. This is also act as numerical representation of fig.&nbsp;5 (top panel)
 </figcaption>
 <div aria-describedby="tbl-bias1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -658,13 +695,13 @@ Table&nbsp;7: Mean ± SD values for bias across different area-level datasets an
 </div>
 </div>
 </figure>
-<a class="quarto-notebook-link" id="nblink-21" href="manuscript-preview.html#tbl-bias1">Source: Article Notebook</a></div>
-<a class="quarto-notebook-link" id="nblink-20" href="manuscript-preview.html">Source: Article Notebook</a></div>
+<a class="quarto-notebook-link" id="nblink-17" href="manuscript-preview.html#tbl-bias1">Source: Article Notebook</a></div>
+<a class="quarto-notebook-link" id="nblink-16" href="manuscript-preview.html">Source: Article Notebook</a></div>
 <div class="cell">
 <div id="tbl-bias2" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-bias2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;8: Mean ± SD values for bias across different point-level datasets and parameters. This table presents the mean and standard deviation (SD) of bias values across point-level datasets (CAR, SAR + CAR, GWR) and spatial models (GLM, SAR, CAR), with <span class="math inline">\(nsim = 1000\)</span>. This is also act as numerical representation of fig.&nbsp;5 (bottom panel)
+Table&nbsp;7: Mean ± SD values for bias across different point-level datasets and parameters. This table presents the mean and standard deviation (SD) of bias values across point-level datasets (CAR, SAR + CAR, GWR) and spatial models (GLM, SAR, CAR), with <span class="math inline">\(nsim = 1000\)</span>. This is also act as numerical representation of fig.&nbsp;5 (bottom panel)
 </figcaption>
 <div aria-describedby="tbl-bias2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -672,34 +709,34 @@ Table&nbsp;8: Mean ± SD values for bias across different point-level datasets a
 </div>
 </div>
 </figure>
-<a class="quarto-notebook-link" id="nblink-23" href="manuscript-preview.html#tbl-bias2">Source: Article Notebook</a></div>
-<a class="quarto-notebook-link" id="nblink-22" href="manuscript-preview.html">Source: Article Notebook</a></div>
+<a class="quarto-notebook-link" id="nblink-19" href="manuscript-preview.html#tbl-bias2">Source: Article Notebook</a></div>
+<a class="quarto-notebook-link" id="nblink-18" href="manuscript-preview.html">Source: Article Notebook</a></div>
 </section>
-<section id="secA3" class="level1">
-<h1>Model Comparison for area-level data</h1>
+<section id="model-comparison-for-area-level-data" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="model-comparison-for-area-level-data">Model Comparison for area-level data</h2>
 <div class="cell">
-<div id="tbl-modelcomp2" class="cell quarto-float anchored">
+<div id="tbl-modelcomp1" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-modelcomp2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;9: This table compares the performance of GLM, SAR, and CAR models on area-level data. It reports parameter estimates (with 95% confidence intervals), spatial parameters (<span class="math inline">\(\rho\)</span>), variances (<span class="math inline">\(\nu^2\)</span>, <span class="math inline">\(\tau^2\)</span>), and model fit criteria (AIC, DIC, WAIC, LMPL, log-likelihood). The results highlight each model’s capability to capture spatial dependencies and variability
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-modelcomp1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8: This table compares the performance of GLM, SAR, and CAR models on area-level data. It reports parameter estimates (with 95% confidence intervals), spatial parameters (<span class="math inline">\(\rho\)</span>), variances (<span class="math inline">\(\nu^2\)</span>, <span class="math inline">\(\tau^2\)</span>), and model fit criteria (AIC, DIC, WAIC, LMPL, log-likelihood). The results highlight each model’s capability to capture spatial dependencies and variability
 </figcaption>
-<div aria-describedby="tbl-modelcomp2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-modelcomp1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 
 </div>
 </div>
 </figure>
-<a class="quarto-notebook-link" id="nblink-25" href="manuscript-preview.html#tbl-modelcomp2">Source: Article Notebook</a></div>
-<a class="quarto-notebook-link" id="nblink-24" href="manuscript-preview.html">Source: Article Notebook</a></div>
+<a class="quarto-notebook-link" id="nblink-21" href="manuscript-preview.html#tbl-modelcomp1">Source: Article Notebook</a></div>
+<a class="quarto-notebook-link" id="nblink-20" href="manuscript-preview.html">Source: Article Notebook</a></div>
 </section>
-<section id="secA4" class="level1">
-<h1>Example of beta-values in GWR model</h1>
+<section id="example-of-beta-values-in-gwr-model" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="example-of-beta-values-in-gwr-model">Example of beta-values in GWR model</h2>
 <div id="cell-fig-betaplot" class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-betaplot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-betaplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figures/betavalues_plot.png" class="lightbox" data-glightbox="description: .lightbox-desc-8" data-gallery="quarto-lightbox-gallery-8"><img src="figures/betavalues_plot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></a>
+<a href="figures/betavalues_plot.png" class="lightbox" data-glightbox="description: .lightbox-desc-10" data-gallery="quarto-lightbox-gallery-10"><img src="figures/betavalues_plot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-betaplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8: Spatial variation of <span class="math inline">\(\beta\)</span> values generated using a custom beta function. The color gradient represents the magnitude of <span class="math inline">\(\beta\)</span> values across the artificial study region, highlighting localised patterns and heterogeneity. The visualisation demonstrates the spatially varying coefficient structure modeled in the study
@@ -707,7 +744,8 @@ Figure&nbsp;8: Spatial variation of <span class="math inline">\(\beta\)</span> v
 </figure>
 </div>
 </div>
-<a class="quarto-notebook-link" id="nblink-26" href="manuscript-preview.html#cell-fig-betaplot">Source: Article Notebook</a></div>
+<a class="quarto-notebook-link" id="nblink-22" href="manuscript-preview.html#cell-fig-betaplot">Source: Article Notebook</a></div>
+</section>
 </section>
 <section id="references" class="level1">
 <h1>References</h1>
@@ -716,10 +754,12 @@ Figure&nbsp;8: Spatial variation of <span class="math inline">\(\beta\)</span> v
 <span class="glightbox-desc lightbox-desc-2">Figure&nbsp;2: Illustration of neighbourhood structure. The figure depicts a simplified spatial configuration where each numbered area represents a distinct spatial unit, demonstrating how neighbouring relationships can be defined for spatial modelling purposes.</span>
 <span class="glightbox-desc lightbox-desc-3">Figure&nbsp;3: Neighbourhood structure of the artificial region. This figure illustrates the spatial connectivity between polygons in the artificial study region, where each line represents a defined neighbour relationship based on spatial adjacency</span>
 <span class="glightbox-desc lightbox-desc-4">Figure&nbsp;4: Artificial study region with observation points. The points represent data locations within each polygon, simulating real-world spatial observations for the purpose of model analysis and validation.</span>
-<span class="glightbox-desc lightbox-desc-5">Figure&nbsp;5: Bias values by method and dataset type for area-level data. This figure compares the bias estimates of different methods (CAR, GLM, SAR) across datasets generated under CAR, GWR, and SAR+CAR frameworks. Each method’s performance is visualised for four coefficients (<span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span>, <span class="math inline">\(\beta_3\)</span>, <span class="math inline">\(\beta_4\)</span>), highlighting variations in bias and the effectiveness of each model in addressing spatial dependencies.</span>
-<span class="glightbox-desc lightbox-desc-6">Figure&nbsp;6: Bias values by method and dataset type for point-level data. This figure compares the bias estimates of different methods (GLMM, GWR, and mlvCAR) across datasets generated under CAR, GWR, and SAR+CAR frameworks. Each method’s performance is visualised for four coefficients (<span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span>, <span class="math inline">\(\beta_3\)</span>, <span class="math inline">\(\beta_4\)</span>), highlighting variations in bias and the effectiveness of each model in addressing spatial dependencies.</span>
-<span class="glightbox-desc lightbox-desc-7">Figure&nbsp;7: Lombok neighbour structure at the sub-district (Kecamatan) level. This figure illustrates the spatial neighbour structure of sub-districts on Lombok Island. The red lines represent the connections between neighbouring sub-districts based on adjacency relationships, overlaid on a base map.</span>
-<span class="glightbox-desc lightbox-desc-8">Figure&nbsp;8: Spatial variation of <span class="math inline">\(\beta\)</span> values generated using a custom beta function. The color gradient represents the magnitude of <span class="math inline">\(\beta\)</span> values across the artificial study region, highlighting localised patterns and heterogeneity. The visualisation demonstrates the spatially varying coefficient structure modeled in the study</span>
+<span class="glightbox-desc lightbox-desc-5">Figure&nbsp;5&nbsp;(a): Bias values by method and dataset type for area-level data</span>
+<span class="glightbox-desc lightbox-desc-6">Figure&nbsp;5&nbsp;(b): Bias values by method and dataset type for point-level data</span>
+<span class="glightbox-desc lightbox-desc-7">Figure&nbsp;6: Lombok neighbour structure at the sub-district (Kecamatan) level. This figure illustrates the spatial neighbour structure of sub-districts on Lombok Island. The red lines represent the connections between neighbouring sub-districts based on adjacency relationships, overlaid on a base map.</span>
+<span class="glightbox-desc lightbox-desc-8">Figure&nbsp;7&nbsp;(a): phi values</span>
+<span class="glightbox-desc lightbox-desc-9">Figure&nbsp;7&nbsp;(b): Aggregate price data (log scale)</span>
+<span class="glightbox-desc lightbox-desc-10">Figure&nbsp;8: Spatial variation of <span class="math inline">\(\beta\)</span> values generated using a custom beta function. The color gradient represents the magnitude of <span class="math inline">\(\beta\)</span> values across the artificial study region, highlighting localised patterns and heterogeneity. The visualisation demonstrates the spatially varying coefficient structure modeled in the study</span>
 </div>
 
 </section>
@@ -1279,7 +1319,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

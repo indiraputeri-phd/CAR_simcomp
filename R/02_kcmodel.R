@@ -379,5 +379,66 @@ summary_stats <- apply(posterior_samples, 2, function(x) {
 
 summary_stats
 
-
 resid_car <- model_car$fitted.values - ppd_kc
+
+# Plot--------------------------
+library(tidyr)
+library(ggplot2)
+load("data/ppd_kc.RData")
+load("data/lop_kc.RData")
+lop_kc <- lop_kc %>% rename(SubDistrict = WADMKC,
+                            District    = WADMKK) %>% 
+  mutate(ID = 1:nrow(lop_kc))
+
+# extracting phi values from mlvcar model
+model.mlvcar <- readRDS("data/model_mlvcar.rds")
+phi <- model.mlvcar$samples$phi %>% 
+  colMeans()
+lop_kc$phi <- phi
+
+#price data from ppd_kc dataset
+price_kc <- ppd_kc %>% 
+  select(SubDistrict, prices)
+
+lop_kc <- lop_kc %>% 
+  left_join(price_kc, by = "SubDistrict") %>% 
+  mutate(logprice = log(prices))
+
+lop_kc$phi <- phi
+
+phi_plot <- ggplot(lop_kc) +
+  geom_sf(aes(fill = phi)) +
+  scale_fill_distiller(palette = "RdBu") +
+  theme_minimal() +
+  theme(
+    strip.text = element_text(size = 8),
+    axis.text = element_blank(),
+    legend.title = element_text(size = 8),
+    legend.text = element_text(size = 8),
+    legend.position = "right"
+  )  
+
+phi_plot
+ggsave("figures/phi_map.png", plot = phi_plot, width = 8, 
+       height = 6, dpi = 300)
+
+logprice_plot <- ggplot(lop_kc) +
+  geom_sf(aes(fill = logprice)) +
+  scale_fill_distiller(palette = "RdBu") +
+  theme_minimal() +
+  theme(
+    strip.text = element_text(size = 8),
+    axis.text = element_blank(),
+    legend.title = element_text(size = 8),
+    legend.text = element_text(size = 8),
+    legend.position = "right"
+  )  
+
+logprice_plot
+ggsave("figures/logprice_map.png", plot = logprice_plot, width = 8, 
+       height = 6, dpi = 300) 
+  
+  
+  
+  
+  
