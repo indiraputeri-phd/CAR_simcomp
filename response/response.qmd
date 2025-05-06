@@ -1,11 +1,30 @@
 ---
-title: "Response to Journal's 2nd Reviewer Comments"
+title: "Response to Journal's Reviewer Comments"
 subtitle: "Conditionally Autoregressive Models for House Price Data: Insights From a Comparative Simulation Study"
-author: 
-  - name: Indira Puteri Kinasih
-    orcid: 0009-0009-6959-6723
-    email: indiraputeri@uinmataram.ac.id
 ---
+
+**Reviewer 1**
+
+**This manuscript compares different methods (Conditionally Autoregressive, Geographically Weighted Regression, and Simultaneous Autoregressive) for modeling property prices. The problem definition looks reasonable, but the manuscript presents only the application part; nothing is contributed toward the theory. Therefore, I will suggest transferring this manuscript to an application-related journal. To my understanding, this manuscript does not fall in the scope of this journal. Further, the manuscript is not standard format of the journal.**
+
+We acknowledge that our work is primarily application-driven, focusing on the use of Conditionally Autoregressive (CAR), Geographically Weighted Regression (GWR), and Simultaneous Autoregressive (SAR) models in the context of property price modeling. However, we respectfully submit that the manuscript makes a meaningful methodological contribution, particularly in bridging the gap between spatial theory and applied practice—an area of growing relevance, especially in spatial analysis for developing regions.
+
+While we do not introduce new theoretical constructs, our work extends the methodological discourse in the following ways:
+
+ - **Shifting the Dominant Modeling Paradigm**: Previous studies on house price modeling have predominantly employed Geographically Weighted Regression (GWR), which requires precise geolocation data for model fitting. However, such data are often incomplete, unavailable, or unreliable in many regions. Our study explores the potential of the Conditionally Autoregressive (CAR) model—more commonly applied in health and ecological studies—as a viable alternative for house price modeling. This cross-domain adaptation is underexplored and opens new methodological pathways for spatial econometrics.
+
+ - **Unified Comparative Framework**: We develop and apply a systematic framework to compare CAR, SAR, and GWR models using both simulated data and real-world property data. This comparative approach, particularly within the under-researched housing market context of a developing region, fills a critical gap in the literature.
+
+ - **Practical Implementation Insights**: The manuscript offers practical guidance for applied researchers on implementing, diagnosing, and interpreting each spatial model. These details are especially valuable for practitioners operating in data-scarce environments or policy-driven contexts.
+
+ - **Informing Model Selection**: By revealing the comparative strengths and limitations of each model in capturing spatial heterogeneity, our findings contribute to informed model selection in applied spatial econometrics—balancing methodological soundness with practical feasibility.
+
+ - **Policy and Planning Relevance**: The results of our study have implications for spatial planning and housing market analysis, offering a framework for integrating spatial models into decision-making processes where traditional approaches may be constrained by data availability.
+
+Given these points, we believe the manuscript fits within the journal’s broader mission to advance rigorous spatial analysis methods and encourage cross-disciplinary methodological applications. 
+
+
+**Reviewer 2**
 
 1.  **The choice of $W$ (whether binary adjacency or row-standardized) is critical. Have the authors explored alternative spatial weight matrices, and how do they impact model performance?**
 
@@ -19,21 +38,23 @@ author:
 
 3.  **The estimated value of $\rho$ (spatial dependence strength) varies widely (e.g., 0.48 for the multilevel CAR model). Have the authors examined how sensitive the model results are to changes in $\rho$?**
 
-    In our study, we recognize that the value of $\rho$ plays a crucial role in determining the extent of spatial autocorrelation captured by the model. While we did not conduct a dedicated sensitivity analysis across a range of fixed $\rho$ values, our simulation framework inherently explores variation in $\rho$ through repeated data generation processes, in which $\rho$ is estimated as part of the model fitting. The observed variability in $\rho$ reflects the underlying spatial structure in the data rather than instability in the model.
+    In our study, we recognize that the value of $\rho$ (the spatial dependence parameter) plays a crucial role in determining the extent to which spatial autocorrelation is captured by the model. While we did not conduct a dedicated sensitivity analysis by fixing $\rho$ at multiple values, our simulation framework implicitly accounts for variability in $\rho$ through repeated data generation and model fitting, where $\rho$ is treated as an estimable parameter. The observed variability—such as the estimate of 0.48 in the multilevel CAR model—reflects the differences in underlying spatial structure across datasets rather than instability or inconsistency in the model itself.
 
-    That said, we agree that a more systematic sensitivity analysis—such as fitting the model under different fixed values of $\rho$—could offer further insights into model robustness. We consider this a valuable direction for future work, especially in scenarios with varying levels of spatial autocorrelation or data sparsity.
+    In a Bayesian framework, the prior distribution assigned to $\rho$ also has an important influence, particularly in data-sparse contexts or when spatial signals are weak. In our implementation, we used a uniform or weakly informative prior (depending on the model setting), allowing the data to drive the estimation of $\rho$ while still preventing extreme or implausible values. In practical applications, however, researchers may wish to incorporate more informative priors based on prior knowledge of spatial processes or domain-specific expectations, which can enhance stability and interpretability in certain contexts.
 
-
+    That said, we fully agree that a more systematic sensitivity analysis—such as fixing $\rho$ at various plausible levels or experimenting with different prior distributions—could offer deeper insights into model robustness and the influence of spatial structure. We consider this an important direction for future research, particularly in settings with heterogeneous spatial patterns or limited sample sizes, where sensitivity to $\rho$ may significantly impact conclusions and policy relevance.
 
 4.  **The study discusses the spatial effects $\phi$ as a key advantage of the CAR model, but how can these effects be meaningfully interpreted for house price determinants? Would spatial effect maps or additional diagnostic tools enhance this understanding?**
 
-    Thank you for highlighting the importance of interpreting the spatial effects $\phi$ in the CAR model. We agree that while $\phi$ captures unobserved spatial heterogeneity, its interpretability in the context of house price determinants requires careful consideration. Rather than directly reflecting specific covariates, $\phi$ accounts for spatially structured residual variation—such as omitted neighborhood characteristics, local amenities, or spatial spillovers—that are not captured by observed variables.
-
-    To aid interpretation, we acknowledge that visualizing $\phi$ through spatial effect maps could be a powerful diagnostic tool. Such maps can reveal clusters of under- or over-prediction and provide insights into areas where additional covariates or local effects might be relevant. In the revised version of this study, we will include a Lombok sub-district-level map displaying the estimated $\phi$ values to better communicate the spatial structure captured by the model and to guide further interpretation and refinement.
+    We agree that while $\phi$ captures unobserved spatial heterogeneity, its interpretability in the context of house price determinants requires careful consideration. Rather than directly reflecting specific covariates, $\phi$ accounts for spatially structured residual variation—such as omitted neighborhood characteristics, local amenities, or spatial spillovers—that are not captured by observed variables.
+    
+    For a brief illustration, since the model uses log-transformed prices, $\phi$ has multiplicative interpretation on the original price scale. So if $\phi = 0.57$ for a given sub-district, then after accounting for covariates, properties in that area are estimated to be approximately $\exp(0.57) \approx 1.76$ or 76% more expensive than average. Similarly, a sub-district with $\phi = -0.2$, this suggests that properties in that area are approximately 18% less expensive than average, since $\exp(-0.2) \approx 0.82$. Note that the 95% credible interval of $\phi$ can be interpreted similarly by exponentiating the lower and upper bounds, yielding a multiplicative uncertainty range for the price deviation.
+    
+    To facilitate interpretation, we provide a map that visualizes the estimated spatial effects ($\phi$), thereby highlighting the spatial patterns identified by the model.
 
 5.  **Among the various spatial regression models, Geographically Weighted Regression (GWR) is particularly prominent in property price research (page 2). Before reaching this conclusion, did you compare GWR to other spatial regression models?**
 
-    Thank you for this thoughtful question. In our manuscript, we highlight Geographically Weighted Regression (GWR) as a prominent method in the literature, particularly due to its frequent application in house price studies. This observation is based on a review of previous works rather than a performance-based comparison. While GWR is indeed widely used for its ability to model spatial heterogeneity at the local level, our study goes further by systematically comparing GWR with CAR and SAR models through simulation and real data applications. This comparative analysis aims to evaluate their relative strengths and limitations more objectively.
+    In our manuscript, we highlight Geographically Weighted Regression (GWR) as a prominent method in the literature, particularly due to its frequent application in house price studies. This observation is based on a review of previous works rather than a performance-based comparison, for instance @wang2020geographically, @lu2011geographically, @stewart2018localized, and @cellmer2020spatial. While GWR is indeed widely used for its ability to model spatial heterogeneity at the local level, our study goes further by systematically comparing GWR with CAR and SAR models through simulation and real data applications. This comparative analysis aims to evaluate their relative strengths and limitations more objectively.
     
 6.  **The scope of properties analysed includes residential houses and commercial real estate (page 16). How do the authors reconcile this with the abstract, which mentions only house price data?**
 
@@ -45,9 +66,9 @@ author:
 
 8.  **The authors have applied point-level data using three different models (GLMM, GWR, and multilevel CAR) (page 17). How was this approach implemented, given that there is no explanation of how each observation was georeferenced?**
 
-    Thank you for this important observation. We clarify that GLMM and multilevel CAR models do not require explicit geographic coordinates for each individual observation. Instead, they rely on an area-level identifier (ID) that links each observation to a corresponding spatial unit (e.g., sub-district).
+    Thank you for this important observation. We clarify that GLMM and multilevel CAR models do not require explicit geographic coordinates for each individual observation. Instead, they rely on an area-level identifier (ID) that links each observation to a corresponding spatial unit (e.g., sub-district). This is a similar approach to random effects or multilevel modelling.
 
-    In contrast, GWR requires spatial coordinates for each observation. To meet this requirement, we generated random points around the centroid of each sub-district, using `st_sample()`, where the number of points corresponds to the number of observations in that area. Each point was placed within a 0.5 km radius from the centroid, ensuring a reasonable spatial spread while maintaining the area-specific context. This approach enabled us to simulate realistic spatial positions for property transactions in the absence of precise geolocation data.
+    In contrast, GWR requires spatial coordinates for each observation. To meet this requirement, we generated random points around the centroid of each sub-district, using `st_sample()`, where the number of points corresponds to the number of observations in that area. Each point was placed within a 0.5 km radius from the centroid, ensuring a reasonable spatial spread while maintaining the area-specific context. This approach enabled us to simulate realistic spatial positions for property transactions in the absence of precise geolocation data. Note that, the same bandwith was used in the fitting of the GWR model. By enforcing the area-level grouping, this ensures a fair comparison to the previous method.
 
 9.  **Why is Table 5 not referred to in the text?**
     
@@ -67,4 +88,4 @@ author:
 
     We also acknowledge that in richer datasets—common in urban contexts where more granular, high-frequency, and multidimensional data are available—machine learning approaches may offer competitive or even superior predictive performance. However, our focus here is to assess interpretable spatial models in contexts where data limitations remain a challenge. 
 
-    
+# References

@@ -246,6 +246,11 @@
 <meta name="citation_reference" content="citation_title=Bayesian analysis of conditional autoregressive models;,citation_author=Victor De Oliveira;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;,citation_volume=64;,citation_journal_title=Annals of the Institute of Statistical Mathematics;,citation_publisher=Springer;">
 <meta name="citation_reference" content="citation_title=Mice: Multivariate imputation by chained equations in r;,citation_author=Stef Van Buuren;,citation_author=Karin Groothuis-Oudshoorn;,citation_publication_date=2011;,citation_cover_date=2011;,citation_year=2011;,citation_volume=45;,citation_journal_title=Journal of statistical software;">
 <meta name="citation_reference" content="citation_title=Sample size for the evaluation of presence-absence models;,citation_author=A. Jimenez Valverde;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_doi=10.1016/j.ecolind.2020.106289;,citation_volume=114;,citation_journal_title=Ecological Indicators;">
+<meta name="citation_reference" content="citation_title=A poisson-lognormal conditional-autoregressive model for multivariate spatial analysis of pedestrian crash counts across neighborhoods.;,citation_author=Yiyi Wang;,citation_author=K. Kockelman;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_doi=10.1016/j.aap.2013.07.030;,citation_volume=60;,citation_journal_title=Accident; analysis and prevention;">
+<meta name="citation_reference" content="citation_title=Application of local conditional autoregressive models for development of zonal crash prediction models and identification of crash risk boundaries;,citation_author=Emad Soroori;,citation_author=Abolfazl Mohammadzadeh Moghaddam;,citation_author=M. Salehi;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_doi=10.1080/23249935.2018.1564801;,citation_volume=15;,citation_journal_title=Transportmetrica A: Transport Science;">
+<meta name="citation_reference" content="citation_title=Bayesian spatial joint modeling of traffic crashes on an urban road network.;,citation_author=Q. Zeng;,citation_author=Helai Huang;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_doi=10.1016/j.aap.2014.02.018;,citation_volume=67;,citation_journal_title=Accident; analysis and prevention;">
+<meta name="citation_reference" content="citation_title=Effects of spatial autocorrelation and imperfect detection on species distribution models;,citation_author=J. Guelat;,citation_author=M. Kéry;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_doi=10.1111/2041-210X.12983;,citation_volume=9;,citation_journal_title=Methods in Ecology and Evolution;">
+<meta name="citation_reference" content="citation_title=Multilevel and related models for longitudinal data;,citation_author=Anders Skrondal;,citation_author=Sophia Rabe-Hesketh;,citation_publication_date=2008;,citation_cover_date=2008;,citation_year=2008;,citation_inbook_title=Handbook of multilevel analysis;">
 </head>
 
   <body class="quarto-notebook">
@@ -427,7 +432,7 @@ repos='https://nowosad.github.io/drat/', type='source')`</code></pre>
 </section>
 <section id="related-works" class="level1">
 <h1>Related works</h1>
-<p>Recent studies have leveraged GWR to investigate the spatial heterogeneity of housing market determinants. For example, <span class="citation" data-cites="wang2020geographically">Wang and Chen (<a href="#ref-wang2020geographically" role="doc-biblioref">2020</a>)</span> applied GWR to examine the impact of local built-environment factors on home prices across different phases of the housing market cycle. Their findings highlighted significant spatial variations, underscoring the critical role of local context in influencing home prices. Similarly, <span class="citation" data-cites="lu2011geographically">Lu, Charlton, and Fotheringham (<a href="#ref-lu2011geographically" role="doc-biblioref">2011</a>)</span> employed GWR with a non-Euclidean distance metric to analyze London house price data. By incorporating this alternative metric, they better captured the spatially varying relationships between house prices and their determinants, emphasizing the importance of considering different distance metrics in spatial analyses. In their 2018 study, <span class="citation" data-cites="stewart2018localized">Stewart Fotheringham and Park (<a href="#ref-stewart2018localized" role="doc-biblioref">2018</a>)</span> explored spatial and temporal variations in the determinants of apartment prices in Seoul, South Korea, over a decade. Utilizing a hedonic price model with a spatio-temporal lag, calibrated through GWR, they revealed consistent spatial variations and strong spatial lag effects on house prices over time. Additionally, <span class="citation" data-cites="cellmer2020spatial">Cellmer, Cichulska, and Bełej (<a href="#ref-cellmer2020spatial" role="doc-biblioref">2020</a>)</span> applied GWR to assess the spatial variations in determinants of the housing market in Poland. The study identified spatial patterns of autocorrelation in average housing prices and market activity, illustrating the value of GWR in examining localized effects of socio-demographic and environmental factors on the housing market. Collectively, these studies demonstrate the efficacy of GWR and its extensions in capturing the nuanced spatial and temporal variations in housing market data, providing valuable insights for urban planning and policy-making.</p>
+<p>Recent studies have leveraged GWR to investigate the spatial heterogeneity of housing market determinants. For example, <span class="citation" data-cites="wang2020geographically">C.-H. Wang and Chen (<a href="#ref-wang2020geographically" role="doc-biblioref">2020</a>)</span> applied GWR to examine the impact of local built-environment factors on home prices across different phases of the housing market cycle. Their findings highlighted significant spatial variations, underscoring the critical role of local context in influencing home prices. Similarly, <span class="citation" data-cites="lu2011geographically">Lu, Charlton, and Fotheringham (<a href="#ref-lu2011geographically" role="doc-biblioref">2011</a>)</span> employed GWR with a non-Euclidean distance metric to analyze London house price data. By incorporating this alternative metric, they better captured the spatially varying relationships between house prices and their determinants, emphasizing the importance of considering different distance metrics in spatial analyses. In their 2018 study, <span class="citation" data-cites="stewart2018localized">Stewart Fotheringham and Park (<a href="#ref-stewart2018localized" role="doc-biblioref">2018</a>)</span> explored spatial and temporal variations in the determinants of apartment prices in Seoul, South Korea, over a decade. Utilizing a hedonic price model with a spatio-temporal lag, calibrated through GWR, they revealed consistent spatial variations and strong spatial lag effects on house prices over time. Additionally, <span class="citation" data-cites="cellmer2020spatial">Cellmer, Cichulska, and Bełej (<a href="#ref-cellmer2020spatial" role="doc-biblioref">2020</a>)</span> applied GWR to assess the spatial variations in determinants of the housing market in Poland. The study identified spatial patterns of autocorrelation in average housing prices and market activity, illustrating the value of GWR in examining localized effects of socio-demographic and environmental factors on the housing market. Collectively, these studies demonstrate the efficacy of GWR and its extensions in capturing the nuanced spatial and temporal variations in housing market data, providing valuable insights for urban planning and policy-making.</p>
 <p>In parallel, numerous studies have demonstrated the versatility and applicability of SAR models across various fields. For instance, <span class="citation" data-cites="fix2021simultaneous">Fix, Cooley, and Thibaud (<a href="#ref-fix2021simultaneous" role="doc-biblioref">2021</a>)</span> explored the use of SAR models for analyzing spatial extremes, highlighting their ability to capture spatial dependence structures in extreme values. <span class="citation" data-cites="sarlas2015localized">Sarlas and Axhausen (<a href="#ref-sarlas2015localized" role="doc-biblioref">2015</a>)</span> showcased the effectiveness of SAR models in transportation research by predicting localized speed variations, illustrating their utility in improving traffic flow predictions. <span class="citation" data-cites="begueria2009comparison">Beguería and Pueyo (<a href="#ref-begueria2009comparison" role="doc-biblioref">2009</a>)</span> emphasized the advantages of SAR models in addressing spatial autocorrelation by comparing them with generalized least squares models, providing more accurate predictions in ecological and biogeographical studies.</p>
 <p>In the realm of real estate, SAR models have been particularly valuable. <span class="citation" data-cites="trojanek2018spatial">Trojanek and Gluszak (<a href="#ref-trojanek2018spatial" role="doc-biblioref">2018</a>)</span> used SAR models to analyze the spatial and temporal effects of subway availability on property prices in Warsaw. Their study revealed significant price premiums for properties located near subway stations, underscoring the importance of transportation infrastructure on real estate values. <span class="citation" data-cites="bottero2017buildings">Bottero et al. (<a href="#ref-bottero2017buildings" role="doc-biblioref">2017</a>)</span> applied SAR models to investigate the relationship between buildings’ energy performance and real estate market value. Their findings illustrated the model’s utility in linking environmental attributes to economic outcomes in the property market. Furthermore, <span class="citation" data-cites="cellmer2019application">Cellmer, Kobylińska, and Bełej (<a href="#ref-cellmer2019application" role="doc-biblioref">2019</a>)</span> demonstrated the practical relevance of SAR models in urban planning and property valuation by employing hierarchical SAR models to develop detailed land value maps in urban areas, underscoring the model’s effectiveness in capturing the complexities of urban land valuation.</p>
 <p>Despite their limited use in property price modelling, CAR models offer a promising approach for addressing spatial autocorrelation and generating reliable estimates, making them well-suited for future studies in house price analysis. <span class="citation" data-cites="lee2013carbayes">Lee (<a href="#ref-lee2013carbayes" role="doc-biblioref">2013</a>)</span> introduced the R package CARBayes, which supports Bayesian spatial modelling using conditional autoregressive priors. By including house price data as a case study, Lee demonstrated the flexibility of CAR models in capturing localised spatial dependencies relevant to real estate valuation. <span class="citation" data-cites="wall2004close">Wall (<a href="#ref-wall2004close" role="doc-biblioref">2004</a>)</span> provided a comparative analysis of the spatial structures in CAR and SAR models, highlighting CAR’s strength in handling localised spatial interactions through an adjacency-based framework. While their work focused on educational and environmental applications, the insights are directly applicable to real estate modelling. Similarly, <span class="citation" data-cites="ver2018spatial">Ver Hoef et al. (<a href="#ref-ver2018spatial" role="doc-biblioref">2018</a>)</span> examined CAR models in ecological studies, emphasizing their robustness in managing spatial heterogeneity and clarifying their structural differences from SAR models. By addressing the limitations of SAR’s global spatial framework and excelling in the detection of localised patterns, CAR models emerge as a robust and adaptable methodology for accurately modelling spatial dynamics in property prices, advancing the precision of real estate valuation techniques.</p>
@@ -442,7 +447,7 @@ repos='https://nowosad.github.io/drat/', type='source')`</code></pre>
 <div id="fig-artfreg" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-artfreg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="figures/artfcountry_plot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-glightbox="description: .lightbox-desc-1"><img src="figures/artfcountry_plot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a>
+<a href="figures/artfcountry_plot.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="figures/artfcountry_plot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-artfreg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Artificial study region used for simulation analysis, consisting of 216 non-overlapping polygonal areas. Each area represents a distinct spatial unit for modelling and analysis, providing a controlled environment to evaluate spatial models’ performance
@@ -458,7 +463,7 @@ Figure&nbsp;1: Artificial study region used for simulation analysis, consisting 
 <div id="fig-neighsimple" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-neighsimple-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="figures/sartf_plot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2"><img src="figures/sartf_plot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a>
+<a href="figures/sartf_plot.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="figures/sartf_plot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-neighsimple-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Illustration of neighbourhood structure. The figure depicts a simplified spatial configuration where each numbered area represents a distinct spatial unit, demonstrating how neighbouring relationships can be defined for spatial modelling purposes.
@@ -469,18 +474,17 @@ Figure&nbsp;2: Illustration of neighbourhood structure. The figure depicts a sim
 </div></div>
 <p>From the <a href="#fig-neighsimple" class="quarto-xref">Figure&nbsp;2</a> we can derive an adjacency matrix which represents the neighborhood structure of five spatial units labeled <span class="math inline">\(A\)</span> to <span class="math inline">\(E\)</span>. Each entry 1 indicates a direct adjacency (areas share a common border), while 0 denotes no direct connection. For example, Area <span class="math inline">\(A\)</span> is adjacent to all other areas (<span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>, <span class="math inline">\(D\)</span>, and <span class="math inline">\(E\)</span>), whereas Area <span class="math inline">\(B\)</span> is only adjacent to <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span>. This neighbourhood configuration captures a clear spatial interaction pattern among the areas, which forms the basis for constructing a spatial weight matrix, commonly denoted as the <span class="math inline">\(\mathbf{W}\)</span> matrix</p>
 <p><span class="math display">\[
+\mathbf{W} =
 \begin{array}{cccccc}
-    &amp; A &amp; B &amp; C &amp; D &amp; E \\
+   &amp; A &amp; B &amp; C &amp; D &amp; E \\
 A &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1\\
 B &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\
 C &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0\\
 D &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 1\\
 E &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\
 \end{array}
-\]</span></p>
-<p>Later on, in the modelling stage, we will also need to construct a diagonal matrix <span class="math inline">\(\boldsymbol{D}\)</span>. It is an <span class="math inline">\(N \times N\)</span> matrix where each diagonal element <span class="math inline">\(d_{ii}\)</span> denotes the number of neighbours of region. while all non-diagonal elements are zero. This matrix is essential in spatial econometric models because it captures the local neighbourhood structure of each region. In the context of Geographically Weighted Regression (GWR), Spatial Autoregressive (SAR), and Conditional Autoregressive (CAR) models, <span class="math inline">\(\boldsymbol{D}\)</span> plays a pivotal role in defining spatial relationships and dependencies among different regions.</p>
-<p>For instance, in SAR and CAR models, the diagonal matrix <span class="math inline">\(\boldsymbol{D}\)</span> aids in incorporating spatial lag and error components by appropriately weighting the influence of neighbouring regions (<span class="citation" data-cites="wall2004close">Wall (<a href="#ref-wall2004close" role="doc-biblioref">2004</a>)</span>, <span class="citation" data-cites="ver2018spatial">Ver Hoef et al. (<a href="#ref-ver2018spatial" role="doc-biblioref">2018</a>)</span>). In GWR, this matrix assists in locally calibrating the model by reflecting the density and connectivity of regions (<span class="citation" data-cites="brunsdon1996geographically">Brunsdon, Fotheringham, and Charlton (<a href="#ref-brunsdon1996geographically" role="doc-biblioref">1996</a>)</span>, <span class="citation" data-cites="stewart2018localized">Stewart Fotheringham and Park (<a href="#ref-stewart2018localized" role="doc-biblioref">2018</a>)</span>). Here, <span class="math inline">\(\boldsymbol{D}\)</span> is represented as:</p>
-<p><span class="math display">\[
+\hspace{2.5cm}
+\mathbf{D} =
 \begin{array}{cccccc}
    &amp; A &amp; B &amp; C &amp; D &amp; E \\
 A &amp; 4 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
@@ -490,14 +494,15 @@ D &amp; 0 &amp; 0 &amp; 0 &amp; 3 &amp; 0\\
 E &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 2\\
 \end{array}
 \]</span></p>
-<p>This matrix format indicates that region <span class="math inline">\(A\)</span> has 4 neighbour, regions <span class="math inline">\(C\)</span> and <span class="math inline">\(D\)</span> each have 3 neighbours, and region <span class="math inline">\(B\)</span> and <span class="math inline">\(E\)</span> has 2 neighbour.</p>
+<p>Later on, in the modelling stage, we will also need to construct a diagonal matrix <span class="math inline">\(\boldsymbol{D}\)</span>. It is an <span class="math inline">\(N \times N\)</span> matrix where each diagonal element <span class="math inline">\(d_{ii}\)</span> denotes the number of neighbours of region. while all non-diagonal elements are zero. This matrix is essential in spatial econometric models because it captures the local neighbourhood structure of each region. In the context of Geographically Weighted Regression (GWR), Spatial Autoregressive (SAR), and Conditional Autoregressive (CAR) models, <span class="math inline">\(\boldsymbol{D}\)</span> plays a pivotal role in defining spatial relationships and dependencies among different regions.</p>
+<p>For instance, in SAR and CAR models, the diagonal matrix <span class="math inline">\(\boldsymbol{D}\)</span> aids in incorporating spatial lag and error components by appropriately weighting the influence of neighbouring regions (<span class="citation" data-cites="wall2004close">Wall (<a href="#ref-wall2004close" role="doc-biblioref">2004</a>)</span>, <span class="citation" data-cites="ver2018spatial">Ver Hoef et al. (<a href="#ref-ver2018spatial" role="doc-biblioref">2018</a>)</span>). In GWR, this matrix assists in locally calibrating the model by reflecting the density and connectivity of regions (<span class="citation" data-cites="brunsdon1996geographically">Brunsdon, Fotheringham, and Charlton (<a href="#ref-brunsdon1996geographically" role="doc-biblioref">1996</a>)</span>, <span class="citation" data-cites="stewart2018localized">Stewart Fotheringham and Park (<a href="#ref-stewart2018localized" role="doc-biblioref">2018</a>)</span>). In this case, <span class="math inline">\(\mathbf{D}\)</span> indicates that region <span class="math inline">\(A\)</span> has 4 neighbours, regions <span class="math inline">\(C\)</span> and <span class="math inline">\(D\)</span> each have 3 neighbours, and region <span class="math inline">\(B\)</span> and <span class="math inline">\(E\)</span> has 2 neighbours.</p>
 <div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="cell-fig-neighartfreg" class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"figures/nb_artfcountry.png"</span>, <span class="at">auto_pdf =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-neighartfreg" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-neighartfreg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="figures/nb_artfcountry.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3"><img src="figures/nb_artfcountry.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></a>
+<a href="figures/nb_artfcountry.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3"><img src="figures/nb_artfcountry.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-neighartfreg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;3: Neighbourhood structure of the artificial region. This figure illustrates the spatial connectivity between polygons in the artificial study region, where each line represents a defined neighbour relationship based on spatial adjacency
@@ -549,22 +554,22 @@ y(s) = \rho \sum_{s'} w(s,s') y(s') + \sum_{k=1}^p \beta_k x_k(s) + \varepsilon(
 <p><span id="eq-car"><span class="math display">\[
 y(s) = \sum_{k=1}^p \beta_k x_k(s) + \varepsilon(s) + \phi(s)
 \tag{6}\]</span></span></p>
-<p>Here, <span class="math inline">\(\boldsymbol{\varepsilon} \sim N(0, \nu^2)\)</span> while <span class="math inline">\(\boldsymbol{\phi}\)</span> is a specific component in CAR model that has a role as spatial effect. It is also common to mention <span class="math inline">\(\boldsymbol{\phi}\)</span> as a CAR priors. It is a type of Gaussian Markov random field (<span class="citation" data-cites="rue2005gaussian">Rue and Held (<a href="#ref-rue2005gaussian" role="doc-biblioref">2005</a>)</span>), capture spatial autocorrelation by ensuring that values at nearby locations are more similar than those further apart (<span class="citation" data-cites="lee2013carbayes">Lee (<a href="#ref-lee2013carbayes" role="doc-biblioref">2013</a>)</span>). This can be expressed in a general term</p>
+<p>Here, <span class="math inline">\(\boldsymbol{\varepsilon} \sim N(0, \sigma_{\varepsilon}^2)\)</span> while <span class="math inline">\(\boldsymbol{\phi}\)</span> is a specific component in CAR model that has a role as spatial effect. It is also common to mention <span class="math inline">\(\boldsymbol{\phi}\)</span> as a CAR priors. It is a type of Gaussian Markov random field (<span class="citation" data-cites="rue2005gaussian">Rue and Held (<a href="#ref-rue2005gaussian" role="doc-biblioref">2005</a>)</span>), capture spatial autocorrelation by ensuring that values at nearby locations are more similar than those further apart (<span class="citation" data-cites="lee2013carbayes">Lee (<a href="#ref-lee2013carbayes" role="doc-biblioref">2013</a>)</span>). This can be expressed in a general term</p>
 <p><span id="eq-phidist"><span class="math display">\[
-\boldsymbol{\phi}\sim N(0,\tau^2\boldsymbol{Q}^{-1})
+\boldsymbol{\phi}\sim N(0,\sigma_{\phi}^2\boldsymbol{Q}^{-1})
 \tag{7}\]</span></span></p>
 <p>where <span class="math inline">\(\boldsymbol{Q}\)</span> is a precision matrix that may be singular (intrinsic model). <span class="math inline">\(\boldsymbol{Q}\)</span> controls the spatial autocorrelation structure of the random effects, and is based on a non-negative symmetric <span class="math inline">\(n \times n\)</span> neighbourhood or weight matrix <span class="math inline">\(\boldsymbol{W}\)</span>.</p>
 <p>Together with the spatial weights matrix <span class="math inline">\(\boldsymbol{W}\)</span>, the prior information are crucial components of CAR models. The choice of <span class="math inline">\(\boldsymbol{W}\)</span> determines the spatial structure of the model, while the priors for the variance parameters and the spatial random effects influence the model’s ability to capture spatial dependencies. Commonly used priors for the variance parameters include inverse-gamma distributions, which provide flexibility and can be tuned to reflect prior beliefs about the scale of variability in the data. The prevailing approach typically involves a binary representation using geographical adjacency, where <span class="math inline">\(w_{ki} = 1\)</span> if areal units <span class="math inline">\((S_k,S_i)\)</span> have a mutual boundary (denoted <span class="math inline">\(k\sim i\)</span>, and is zero otherwise). This specification forces <span class="math inline">\((\phi_k,\phi_i)\)</span> relating to geographically adjacent areas (that is <span class="math inline">\(w_{ki} = 1\)</span>) to be correlated. On the other hand, random effects associated with areas that are not adjacent are independent of each other, provided we know the values of the other random effects.</p>
 <p>A CAR prior was introduced by <span class="citation" data-cites="leroux2000estimation">Leroux, Lei, and Breslow (<a href="#ref-leroux2000estimation" role="doc-biblioref">2000</a>)</span> and <span class="citation" data-cites="stern1999inference">Stern and Cressie (<a href="#ref-stern1999inference" role="doc-biblioref">1999</a>)</span> to model diverse levels of spatial autocorrelation. In this type of prior, a single collection of random effects is utilised and its primary objective is to model spatial data, with a specific focus on dealing with spatial relationships and auto-correlation between data points. This model is especially proficient in the task of smoothing data and detecting spatial patterns within data set. The random effect <span class="math inline">\(\boldsymbol\phi_k\)</span> structured as follow:</p>
 <p><span id="eq-phicar"><span class="math display">\[
-\phi_k|\boldsymbol\phi_{-K}, \boldsymbol{W},\rho, \tau^2  \sim  N\left(\frac{\rho\sum_{i=1}^Kw_{ki}\phi_i}{A},\frac{\tau^2}{A}\right)
+\phi_k|\boldsymbol{\phi}_{-k}, \mathbf{W},\rho, \sigma_{\phi}^2  \sim  N\left(\frac{\rho\sum_{i=1}^Kw_{ki}\phi_i}{A},\frac{\sigma_{\phi}^2}{A}\right)
 \tag{8}\]</span></span></p>
 <p>where <span class="math inline">\(A = \rho\sum_{i=1}^Kw_{ki}+1-\rho\)</span>. Note that when <span class="math inline">\(\rho = 1\)</span>, the prior forms an intrinsic CAR prior <span class="citation" data-cites="besag1991bayesian">(<a href="#ref-besag1991bayesian" role="doc-biblioref">Besag, York, and Mollié 1991</a>)</span>, indicating full spatial dependency. Conversely, when <span class="math inline">\(\rho = 0\)</span>, <span class="math inline">\(A = 1\)</span> it means that there will be no <span class="math inline">\(W\)</span> matrix role in the model, and it will become a comman random effect. In other words, the model reduces to a generalised linear model.</p>
 <p>When handling <span class="math inline">\(i\)</span> observations within each area <span class="math inline">\(k\)</span>, <a href="#eq-ycar" class="quarto-xref">Equation&nbsp;9</a> closely resembles <a href="#eq-gwr" class="quarto-xref">Equation&nbsp;2</a> in the GWR model, with the exception of the <span class="math inline">\(\phi\)</span> component. It is usually called multilevel CAR models</p>
 <p><span id="eq-ycar"><span class="math display">\[
 y_i(s) = \sum_{k=1}^p \beta_k x_{ki}(s) + \varepsilon_i(s) + \phi(s)
 \tag{9}\]</span></span></p>
-<p>The Bayesian approach to CAR models entails defining prior distributions for all model parameters, such as the regression coefficients <span class="math inline">\(\beta\)</span>, variance parameters <span class="math inline">\(\nu^2\)</span> and <span class="math inline">\(\tau^2\)</span>, and spatial random effects <span class="math inline">\(\phi_k\)</span>. Subsequently, Bayesian inference techniques like Markov Chain Monte Carlo (MCMC) are employed to derive posterior distributions of these parameters. This method facilitates the integration of prior knowledge and offers a versatile framework for quantifying uncertainty.</p>
+<p>The Bayesian approach to CAR models entails defining prior distributions for all model parameters, such as the regression coefficients <span class="math inline">\(\beta\)</span>, variance parameters <span class="math inline">\(\sigma_{\varepsilon}^2\)</span> and <span class="math inline">\(\sigma_{\phi}^2\)</span>, and spatial random effects <span class="math inline">\(\phi_k\)</span>. Subsequently, Bayesian inference techniques like Markov Chain Monte Carlo (MCMC) are employed to derive posterior distributions of these parameters. This method facilitates the integration of prior knowledge and offers a versatile framework for quantifying uncertainty.</p>
 <p>In general, <a href="#tbl-summarymethod" class="quarto-xref">Table&nbsp;1</a> below summarises the key elements utilised in the GWR, SAR, and CAR models:</p>
 <div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div class="cell">
 
@@ -577,22 +582,21 @@ y_i(s) = \sum_{k=1}^p \beta_k x_{ki}(s) + \varepsilon_i(s) + \phi(s)
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Spatial Weights Matrix ($W$)"</span>, </span>
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Spatial Coordinates (coords)"</span>, </span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Covariate Coefficients ($</span><span class="sc">\\</span><span class="st">beta$)"</span>, </span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Error Term variance ($</span><span class="sc">\\</span><span class="st">sigma^2$)"</span>, </span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Spatial Autocorrelation ($</span><span class="sc">\\</span><span class="st">rho$)"</span>, </span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Spatial Structure component ($</span><span class="sc">\\</span><span class="st">phi$)"</span>, </span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Spatial structure variance ($</span><span class="sc">\\</span><span class="st">tau^2$)"</span>, </span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Additional scale ($</span><span class="sc">\\</span><span class="st">nu^2$)"</span>,</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Estimation method"</span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">GWR =</span> <span class="fu">c</span>(<span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">times$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">times$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">times$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">times$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">times$"</span>, <span class="st">"MLE"</span>),</span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">SAR =</span> <span class="fu">c</span>(<span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">times$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">times$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">times$"</span>, <span class="st">"MLE/GMM"</span>),</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">CAR =</span> <span class="fu">c</span>(<span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"MCMC"</span>)</span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Elements"</span>, <span class="st">"$GWR$"</span>, <span class="st">"$SAR$"</span>, <span class="st">"$CAR$"</span>),</span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">escape =</span> <span class="cn">FALSE</span>, <span class="co"># Needed to render LaTeX math symbols</span></span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">booktabs =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">longtable =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div><div id="tbl-summarymethod" class="cell quarto-float anchored">
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Spatial Autocorrelation ($</span><span class="sc">\\</span><span class="st">rho$)"</span>, </span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Spatial Structure component ($</span><span class="sc">\\</span><span class="st">phi$)"</span>, </span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Spatial structure variance ($</span><span class="sc">\\</span><span class="st">sigma_{</span><span class="sc">\\</span><span class="st">phi}^2$)"</span>, </span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Error Term variance ($</span><span class="sc">\\</span><span class="st">sigma_{</span><span class="sc">\\</span><span class="st">varepsilon}^2$)"</span>,</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Estimation method"</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">GWR =</span> <span class="fu">c</span>(<span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">times$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">times$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">times$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">times$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"MLE"</span>),</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">SAR =</span> <span class="fu">c</span>(<span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">times$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">times$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"MLE/GMM"</span>),</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">CAR =</span> <span class="fu">c</span>(<span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>,  <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"$</span><span class="sc">\\</span><span class="st">checkmark$"</span>, <span class="st">"MCMC"</span>)</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Elements"</span>, <span class="st">"$GWR$"</span>, <span class="st">"$SAR$"</span>, <span class="st">"$CAR$"</span>),</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">escape =</span> <span class="cn">FALSE</span>, <span class="co"># Needed to render LaTeX math symbols</span></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">booktabs =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">longtable =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div><div id="tbl-summarymethod" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-summarymethod-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Comparison of Model Elements Across GWR, SAR, and CAR
@@ -640,36 +644,30 @@ Table&nbsp;1: Comparison of Model Elements Across GWR, SAR, and CAR
 <td style="text-align: left;">$\checkmark$</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Error Term variance ($\sigma^2$)</td>
-<td style="text-align: left;">$\checkmark$</td>
-<td style="text-align: left;">$\checkmark$</td>
-<td style="text-align: left;">$\checkmark$</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Spatial Autocorrelation ($\rho$)</td>
 <td style="text-align: left;">$\times$</td>
 <td style="text-align: left;">$\checkmark$</td>
 <td style="text-align: left;">$\checkmark$</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Spatial Structure component ($\phi$)</td>
 <td style="text-align: left;">$\times$</td>
 <td style="text-align: left;">$\times$</td>
 <td style="text-align: left;">$\checkmark$</td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">Spatial structure variance ($\sigma_{\phi}^2$)</td>
+<td style="text-align: left;">$\times$</td>
+<td style="text-align: left;">$\times$</td>
+<td style="text-align: left;">$\checkmark$</td>
+</tr>
 <tr class="odd">
-<td style="text-align: left;">Spatial structure variance ($\tau^2$)</td>
-<td style="text-align: left;">$\times$</td>
-<td style="text-align: left;">$\times$</td>
+<td style="text-align: left;">Error Term variance ($\sigma_{\varepsilon}^2$)</td>
+<td style="text-align: left;">$\checkmark$</td>
+<td style="text-align: left;">$\checkmark$</td>
 <td style="text-align: left;">$\checkmark$</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Additional scale ($\nu^2$)</td>
-<td style="text-align: left;">$\times$</td>
-<td style="text-align: left;">$\times$</td>
-<td style="text-align: left;">$\checkmark$</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Estimation method</td>
 <td style="text-align: left;">MLE</td>
 <td style="text-align: left;">MLE/GMM</td>
@@ -699,7 +697,7 @@ Table&nbsp;1: Comparison of Model Elements Across GWR, SAR, and CAR
 <div id="fig-pointsonmap" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pointsonmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="figures/density_points_plot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4"><img src="figures/density_points_plot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a>
+<a href="figures/density_points_plot.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4"><img src="figures/density_points_plot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pointsonmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;4: Artificial study region with observation points. The points represent data locations within each polygon, simulating real-world spatial observations for the purpose of model analysis and validation.
@@ -820,7 +818,7 @@ Table&nbsp;2: Slice of generated dataset as covariates for simulations
 </figure>
 </div></div></div>
 </div></div>
-<p>By employing artificially generated covariates and an artificially constructed study region, we developed three distinct property price datasets, each based on a different spatial model: CAR, a combination of CAR and SAR, and GWR. The true parameter values for this purpose are <span class="math inline">\(\boldsymbol{\beta} = \begin{bmatrix} 1 &amp; 0.9 &amp; 0.7 &amp; 0.5 &amp; 0.3 \end{bmatrix}\)</span>, <span class="math inline">\(\nu^2 = 0.2\)</span>, <span class="math inline">\(\tau^2 = 0.6\)</span> and <span class="math inline">\(\rho = 0.6\)</span>. Whereas beta values for GWR dataset is generated using a beta function, which is a function of coordinate points. The matrix <span class="math inline">\(\mathbf{W}\)</span> was derived from the neighbourhood structure of an artificial study region using the functions <code>poly2nb()</code> and <code>nb2mat()</code>. Data generation for <span class="math inline">\(SAR + CAR\)</span> employs a slightly different strategy. In addition to being generated per area simultaneously using the joint distribution of <span class="math inline">\(\mathbf{Y}\)</span> as in <a href="#eq-jointysar" class="quarto-xref">Equation&nbsp;5</a>, information about the spatial effect <span class="math inline">\(\boldsymbol{\phi}\)</span> is also added at the end of the process. Therefore, we refer to it as <span class="math inline">\(SAR + CAR\)</span> data.</p>
+<p>By employing artificially generated covariates and an artificially constructed study region, we developed three distinct property price datasets, each based on a different spatial model: CAR, a combination of CAR and SAR, and GWR. The true parameter values for this purpose are <span class="math inline">\(\boldsymbol{\beta} = \begin{bmatrix} 1 &amp; 0.9 &amp; 0.7 &amp; 0.5 &amp; 0.3 \end{bmatrix}\)</span>, <span class="math inline">\(\sigma_{\phi}^2 = 0.2\)</span>, <span class="math inline">\(\sigma_{\phi}^2 = 0.6\)</span> and <span class="math inline">\(\rho = 0.6\)</span>. Whereas beta values for GWR dataset is generated using a beta function, which is a function of coordinate points. The matrix <span class="math inline">\(\mathbf{W}\)</span> was derived from the neighbourhood structure of an artificial study region using the functions <code>poly2nb()</code> and <code>nb2mat()</code>. Data generation for <span class="math inline">\(SAR + CAR\)</span> employs a slightly different strategy. In addition to being generated per area simultaneously using the joint distribution of <span class="math inline">\(\mathbf{Y}\)</span> as in <a href="#eq-jointysar" class="quarto-xref">Equation&nbsp;5</a>, information about the spatial effect <span class="math inline">\(\boldsymbol{\phi}\)</span> is also added at the end of the process. Therefore, we refer to it as <span class="math inline">\(SAR + CAR\)</span> data.</p>
 <p>Each data generation resulting two types of datasets: area-level and point-level. These datasets were then modelled using six linear regression approaches, comprising both classical and spatial regression models: GLM, SAR, and CAR for area-level data, and GWR, GLMM, and multilevel CAR for point-level data. Simulations were conducted <span class="math inline">\(sim = 1000\)</span> times. From each simulation, coefficients, parameters, and fitted values were extracted, allowing for the computation of bias and RMSE values for robustness and prediction power analysis.</p>
 </section>
 <section id="robustness-and-power-prediction-analysis" class="level2">
@@ -834,7 +832,7 @@ Table&nbsp;2: Slice of generated dataset as covariates for simulations
 <div id="fig-biasplot1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-biasplot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figures/bias1_plot.png" class="lightbox" data-gallery="fig-biasplot" data-glightbox="description: .lightbox-desc-5"><img src="figures/bias1_plot.png" class="img-fluid figure-img" data-ref-parent="fig-biasplot"></a>
+<a href="figures/bias1_plot.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="fig-biasplot"><img src="figures/bias1_plot.png" class="img-fluid figure-img" data-ref-parent="fig-biasplot"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-biasplot1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (a) Bias values by method and dataset type for area-level data
@@ -846,7 +844,7 @@ Table&nbsp;2: Slice of generated dataset as covariates for simulations
 <div id="fig-biasplot2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-biasplot2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figures/bias2_plot.png" class="lightbox" data-gallery="fig-biasplot" data-glightbox="description: .lightbox-desc-6"><img src="figures/bias2_plot.png" class="img-fluid figure-img" data-ref-parent="fig-biasplot"></a>
+<a href="figures/bias2_plot.png" class="lightbox" data-glightbox="description: .lightbox-desc-6" data-gallery="fig-biasplot"><img src="figures/bias2_plot.png" class="img-fluid figure-img" data-ref-parent="fig-biasplot"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-biasplot2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) Bias values by method and dataset type for point-level data
@@ -985,7 +983,7 @@ Point-level data
 <div id="fig-lombokmap" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-lombokmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="figures/nb_lop2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" data-glightbox="description: .lightbox-desc-7"><img src="figures/nb_lop2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></a>
+<a href="figures/nb_lop2.png" class="lightbox" data-glightbox="description: .lightbox-desc-7" data-gallery="quarto-lightbox-gallery-7"><img src="figures/nb_lop2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lombokmap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;6: Lombok neighbour structure at the sub-district (Kecamatan) level. This figure illustrates the spatial neighbour structure of sub-districts on Lombok Island. The red lines represent the connections between neighbouring sub-districts based on adjacency relationships, overlaid on a base map.
@@ -994,39 +992,57 @@ Figure&nbsp;6: Lombok neighbour structure at the sub-district (Kecamatan) level.
 </div>
 </div>
 </div></div>
-<p>Lombok includes five districts (kota/kabupaten), 53 sub-districts (kecamatan), and 608 villages (desa/kelurahan), which represent three successive levels of administrative division. In this study, the sub-district level is used as the spatial unit of analysis, as illustrated in <a href="#fig-lombokmap" class="quarto-xref">Figure&nbsp;6</a>. The key variables of interest include property price, land size, built-up area, number of bedrooms, and number of bathrooms.</p>
+<p>Lombok comprises five districts (kota/kabupaten), 53 sub-districts (kecamatan), and 608 villages (desa/kelurahan), representing three successive levels of administrative division. Mataram District, despite its small area compared to other districts in Lombok, is the most urbanized and economically active area on the island, characterized by dense residential clusters with relatively homogeneous housing specifications. In adjacent districts such as West Lombok and Central Lombok, housing developments have expanded, particularly to accommodate commuters working in Mataram. The coastal areas of West Lombok, including Batu Layar and Sekotong, exhibit villa-style housing commonly associated with tourism, resulting in generally higher property prices. A similar pattern is found in North Lombok, where mountainous terrain limits development, but tourism-driven demand has led to villa-style housing near popular destinations. East Lombok, by contrast, remains more isolated due to its distance from Mataram. Housing in this district tends to serve primarily the local population, with limited signs of external investment or tourism-driven development. Additionally, the southern part of Central Lombok (Pujut) has seen emerging residential and real estate activity following the construction of the international MotoGP circuit.</p>
+<p>In this study, the sub-district level is used as the spatial unit of analysis, as illustrated in <a href="#fig-lombokmap" class="quarto-xref">Figure&nbsp;6</a>. The key variables of interest include property price, land size, built-up area, number of bedrooms, and number of bathrooms.</p>
 <section id="data-collection" class="level2">
 <h2 class="anchored" data-anchor-id="data-collection">Data Collection</h2>
 <!-- The dataset employed in this study comprises property price data from Lombok, Indonesia. The scope of properties analysed includes residential houses and commercial real estate. In addition to data on property prices, the dataset also encompasses various property characteristics including land area, built-up area, and the count of bedrooms and bathrooms. -->
 <p>Data were collected from multiple online sources. Property prices and their associated characteristics were harvested using web-scraping techniques from three leading Indonesian property trading platforms, https://www.lamudi.co.id/, https://www.99.co/, and https://www.rumah123.com/. The accuracy of the web-scraped data was ensured by cross-referencing it with official datasets, performing checks for missing or inconsistent entries, and validating key variables through sample comparisons with manually collected data. From this process, the initial dataset comprised 1,188 entries, with 9 variables, including village, prices, land-size, built-up area, number of bedrooms, number of bathrooms, floors, property type/category, and furnishing status.</p>
-<p>Further, we conducted several preprocessing steps. First, we filtered the dataset by removing irrelevant variables, including floors, furnishing status, and category. It was then subsequently filtered to retain only properties with plausible characteristics: land area between 90 and 800 square meters, built-up size between 70 and 600 square meters, a maximum of 6 bedrooms, and a maximum 5 bathrooms. These thresholds were applied to ensure the data reflect realistic and context-appropriate housing characteristics in Lombok, based on common residential patterns and local housing norms. This step was essential to enhance the validity of the analysis by excluding outliers or potentially erroneous entries. Following this procedure, the dataset was refined to comprise a total of 576 observations. A summary of the key variables is presented in <a href="#tbl-datasumm" class="quarto-xref">Table&nbsp;4</a>.</p>
+<p>Further, we conducted several preprocessing steps. First, we filtered the dataset by removing irrelevant variables, including floors, furnishing status, and category. It was then subsequently filtered to retain only properties with plausible characteristics: land area between 90 and 800 square meters, built-up size between 70 and 600 square meters, a maximum of 6 bedrooms, and a maximum 5 bathrooms. These thresholds were applied to ensure the data reflect realistic and context-appropriate housing characteristics in Lombok, based on common residential patterns and local housing norms. This step was essential to enhance the validity of the analysis by excluding outliers or potentially erroneous entries. Following this procedure, the dataset was refined to comprise a total of 576 observations. A summary of the key variables is presented in <a href="#tbl-datasumm" class="quarto-xref">Table&nbsp;4</a>. Notably, the distribution of property prices is skewed and does not exhibit a bell-shaped curve, which motivates the inclusion of a log-transformed price variable in the analysis.</p>
 <div class="cell-container"><div class="cell-decorator"><pre>In [14]:</pre></div><div class="cell">
 
-<div class="cell-container"><div class="cell-decorator"><pre>In [15]:</pre></div><div><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the data frame</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">c</span>(<span class="st">"Prices (million IDR)"</span>, <span class="st">"Land-size (sqm)"</span>, <span class="st">"Built-up area (sqm)"</span>, </span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">"No. of bedroom"</span>, <span class="st">"No. of bathroom"</span>),</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Mean   =</span> <span class="fu">round</span>(<span class="fu">c</span>(<span class="dv">1983</span>, <span class="fl">299.6</span>, <span class="fl">184.8</span>, <span class="fl">3.24</span>, <span class="fl">2.55</span>), <span class="dv">2</span>),</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Median =</span> <span class="fu">round</span>(<span class="fu">c</span>(<span class="dv">1400</span>, <span class="fl">255.0</span>, <span class="fl">150.0</span>, <span class="fl">3.00</span>, <span class="fl">2.00</span>), <span class="dv">2</span>),</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Q1     =</span> <span class="fu">round</span>(<span class="fu">c</span>(<span class="dv">800</span>, <span class="fl">147.2</span>, <span class="fl">100.0</span>, <span class="fl">2.00</span>, <span class="fl">2.00</span>), <span class="dv">2</span>),</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Q3     =</span> <span class="fu">round</span>(<span class="fu">c</span>(<span class="dv">2500</span>, <span class="fl">407.2</span>, <span class="fl">210.0</span>, <span class="fl">4.00</span>, <span class="fl">3.00</span>), <span class="dv">2</span>),</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Min    =</span> <span class="fu">round</span>(<span class="fu">c</span>(<span class="dv">170</span>, <span class="fl">90.0</span>, <span class="fl">70.0</span>, <span class="fl">1.00</span>, <span class="fl">1.00</span>), <span class="dv">2</span>),</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Max    =</span> <span class="fu">round</span>(<span class="fu">c</span>(<span class="dv">22500</span>, <span class="fl">800.0</span>, <span class="fl">600.0</span>, <span class="fl">6.00</span>, <span class="fl">5.00</span>), <span class="dv">2</span>),</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">SD     =</span> <span class="fu">round</span>(<span class="fu">c</span>(<span class="fl">2056.81</span>, <span class="fl">179.39</span>, <span class="fl">109.20</span>, <span class="fl">1.19</span>, <span class="fl">1.05</span>), <span class="dv">2</span>),</span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">NA</span><span class="st">`</span>   <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">26</span>, <span class="dv">24</span>, <span class="dv">24</span>, <span class="dv">24</span>, <span class="dv">24</span>)</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the table with knitr::kable</span></span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(data, </span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>         <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Variable"</span>, <span class="st">"Mean"</span>, <span class="st">"Median"</span>, </span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"$Q_1$"</span>, <span class="st">"$Q_3$"</span>, <span class="st">"Min"</span>, <span class="st">"Max"</span>, <span class="st">"SD"</span>, <span class="st">"NA"</span>),</span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">escape =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">booktabs =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">longtable =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div><div id="tbl-datasumm" class="cell quarto-float anchored">
+<div class="cell-container"><div class="cell-decorator"><pre>In [15]:</pre></div><div><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"data/propdata.RData"</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"data/hp_dat_v1.RData"</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>propdata <span class="ot">&lt;-</span> propdata <span class="sc">%&gt;%</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>village, <span class="sc">-</span>floors, <span class="sc">-</span>furnished, <span class="sc">-</span>category) <span class="sc">%&gt;%</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(hp_dat_v1) <span class="sc">%&gt;%</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(land <span class="sc">&gt;=</span> <span class="dv">90</span> <span class="sc">&amp;</span> land <span class="sc">&lt;=</span> <span class="dv">800</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(building <span class="sc">&gt;=</span> <span class="dv">70</span> <span class="sc">&amp;</span> building <span class="sc">&lt;=</span> <span class="dv">600</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(beds <span class="sc">&lt;=</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(baths <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">&amp;</span> baths <span class="sc">&lt;=</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">prices =</span> prices <span class="sc">*</span> <span class="dv">1000</span>,</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">logprices =</span> <span class="fu">log</span>(prices)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> propdata <span class="sc">%&gt;%</span> </span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(prices, logprices, land, building, beds, baths)</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the data frame</span></span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">c</span>(<span class="st">"Prices (million IDR)"</span>, <span class="st">"logPrices"</span>, <span class="st">"Land-size (sqm)"</span>, <span class="st">"Built-up area (sqm)"</span>,</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>               <span class="st">"No. of bedroom"</span>, <span class="st">"No. of bathroom"</span>),</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">Mean   =</span> <span class="fu">round</span>(<span class="fu">colMeans</span>(dat, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>),</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">SD     =</span> <span class="fu">round</span>(<span class="fu">apply</span>(dat, <span class="dv">2</span>, sd, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>),</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">Median =</span> <span class="fu">round</span>(<span class="fu">apply</span>(dat, <span class="dv">2</span>, median, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>),</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">Q1     =</span> <span class="fu">round</span>(<span class="fu">apply</span>(dat, <span class="dv">2</span>, quantile, <span class="at">probs =</span> <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>),</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">Q3     =</span> <span class="fu">round</span>(<span class="fu">apply</span>(dat, <span class="dv">2</span>, quantile, <span class="at">probs =</span> <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>),</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">Min    =</span> <span class="fu">round</span>(<span class="fu">apply</span>(dat, <span class="dv">2</span>, min, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>),</span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">Max    =</span> <span class="fu">round</span>(<span class="fu">apply</span>(dat, <span class="dv">2</span>, max, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">2</span>)</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the table with knitr::kable</span></span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(data,</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Variable"</span>, <span class="st">"Mean"</span>, <span class="st">"SD"</span>, <span class="st">"Median"</span>, <span class="st">"$Q_1$"</span>, <span class="st">"$Q_3$"</span>, <span class="st">"Min"</span>, <span class="st">"Max"</span>),</span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">row.names =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">escape =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">booktabs =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">longtable =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">font_size =</span> <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div><div id="tbl-datasumm" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-datasumm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;4: Summary statistics of variables in the property price dataset
+Table&nbsp;4: Summary statistics of house prices dataset (<span class="math inline">\(N = 576\)</span>, <code>NA</code> = 4%), including variables such as prices and its logscale value, land area(sqm), building area(sqm), number of beds, and number of baths
 </figcaption>
 <div aria-describedby="tbl-datasumm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -1035,70 +1051,74 @@ Table&nbsp;4: Summary statistics of variables in the property price dataset
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Variable</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Mean</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">SD</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Median</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">$Q_1$</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">$Q_3$</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Min</th>
 <th style="text-align: right;" data-quarto-table-cell-role="th">Max</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">SD</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">NA</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Prices (million IDR)</td>
-<td style="text-align: right;">1983.00</td>
-<td style="text-align: right;">1400</td>
-<td style="text-align: right;">800.0</td>
-<td style="text-align: right;">2500.0</td>
-<td style="text-align: right;">170</td>
-<td style="text-align: right;">22500</td>
-<td style="text-align: right;">2056.81</td>
-<td style="text-align: right;">26</td>
+<td style="text-align: right;">1979.20</td>
+<td style="text-align: right;">2054.51</td>
+<td style="text-align: right;">1400.00</td>
+<td style="text-align: right;">800.00</td>
+<td style="text-align: right;">2500.00</td>
+<td style="text-align: right;">170.00</td>
+<td style="text-align: right;">22500.00</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">logPrices</td>
+<td style="text-align: right;">7.26</td>
+<td style="text-align: right;">0.80</td>
+<td style="text-align: right;">7.24</td>
+<td style="text-align: right;">6.68</td>
+<td style="text-align: right;">7.82</td>
+<td style="text-align: right;">5.14</td>
+<td style="text-align: right;">10.02</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Land-size (sqm)</td>
-<td style="text-align: right;">299.60</td>
-<td style="text-align: right;">255</td>
-<td style="text-align: right;">147.2</td>
-<td style="text-align: right;">407.2</td>
-<td style="text-align: right;">90</td>
-<td style="text-align: right;">800</td>
-<td style="text-align: right;">179.39</td>
-<td style="text-align: right;">24</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Built-up area (sqm)</td>
-<td style="text-align: right;">184.80</td>
-<td style="text-align: right;">150</td>
-<td style="text-align: right;">100.0</td>
-<td style="text-align: right;">210.0</td>
-<td style="text-align: right;">70</td>
-<td style="text-align: right;">600</td>
-<td style="text-align: right;">109.20</td>
-<td style="text-align: right;">24</td>
+<td style="text-align: right;">299.08</td>
+<td style="text-align: right;">179.33</td>
+<td style="text-align: right;">254.50</td>
+<td style="text-align: right;">147.00</td>
+<td style="text-align: right;">405.75</td>
+<td style="text-align: right;">90.00</td>
+<td style="text-align: right;">800.00</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">No. of bedroom</td>
-<td style="text-align: right;">3.24</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">2.0</td>
-<td style="text-align: right;">4.0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">1.19</td>
-<td style="text-align: right;">24</td>
+<td style="text-align: left;">Built-up area (sqm)</td>
+<td style="text-align: right;">184.46</td>
+<td style="text-align: right;">109.14</td>
+<td style="text-align: right;">150.00</td>
+<td style="text-align: right;">100.00</td>
+<td style="text-align: right;">210.00</td>
+<td style="text-align: right;">70.00</td>
+<td style="text-align: right;">600.00</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">No. of bedroom</td>
+<td style="text-align: right;">3.23</td>
+<td style="text-align: right;">1.19</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">4.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">6.00</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">No. of bathroom</td>
-<td style="text-align: right;">2.55</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">2.0</td>
-<td style="text-align: right;">3.0</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">5</td>
+<td style="text-align: right;">2.54</td>
 <td style="text-align: right;">1.05</td>
-<td style="text-align: right;">24</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">5.00</td>
 </tr>
 </tbody>
 </table>
@@ -1110,17 +1130,18 @@ Table&nbsp;4: Summary statistics of variables in the property price dataset
 </div></div></div>
 </div></div>
 <p>Next, we merged the cleaned dataset with spatial administrative data by matching sub-district and district names. This process resulted in a dataset containing 598 entries. Compared to the previous dataset, which consisted of 576 observations, this indicates that 22 sub-districts did not have any property data available—meaning that property sales in those areas were not recorded on the online property listing platform used as the data source.</p>
-<p>To address missing values, we employed the <code>mice</code> package (<span class="citation" data-cites="van2011mice">Van Buuren and Groothuis-Oudshoorn (<a href="#ref-van2011mice" role="doc-biblioref">2011</a>)</span>) to perform multiple imputation with parameters set to <span class="math inline">\(maxit = 10\)</span>, <span class="math inline">\(m = 10\)</span>, and a fixed random seed to ensure reproducibility. The imputed values were then reintegrated into the main dataset, replacing the original missing entries. This process resulted in a final dataset that was complete and ready for subsequent analysis using the selected spatial models.</p>
+<p>To address missing values, we used the <code>mice</code> package (<span class="citation" data-cites="van2011mice">Van Buuren and Groothuis-Oudshoorn (<a href="#ref-van2011mice" role="doc-biblioref">2011</a>)</span>), which performs multiple imputation by chained equations (MICE). This approach iteratively fills in missing data by modeling each variable with missing values as a function of other variables in the dataset. By generating multiple imputed datasets, it accounts for the uncertainty inherent in missing data. In our case, we specified 10 iterations and generated 10 imputed datasets. A fixed random seed was used to ensure the results were reproducible. The imputed datasets were then pooled to obtain final estimates for subsequent analyses. The imputed values were then reintegrated into the main dataset, replacing the original missing entries. This process resulted in a final dataset that was complete and ready for subsequent analysis using the selected spatial models.</p>
 <p>In addition to the point-level dataset, which contains individual property listings, the imputed dataset was also aggregated to the sub-district level by calculating the mean values of key variables. This aggregation produced an area-level dataset, allowing the analysis to be conducted at both the individual and administrative levels. These two levels of data granularity provide complementary perspectives for evaluating the performance of spatial models in capturing local property market dynamics.</p>
+<p>Moreover, as GWR requires spatial coordinates for each observation, we addressed this by generating random points around the centroid of each sub-district using the <code>st_sample()</code> function. The number of points generated matched the number of observations in each area, and each was positioned within a 0.5 km radius of the centroid to maintain a realistic spatial distribution while preserving the local context. This strategy allowed us to simulate plausible spatial locations for property transactions in the absence of precise geolocation data. Importantly, we applied the same bandwidth in the GWR model fitting to ensure consistency. By preserving the area-level grouping structure, this approach supports a fair comparison with the previous method.</p>
 </section>
 <section id="model-implementation-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="model-implementation-analysis">Model Implementation &amp; Analysis</h2>
-<p>The cleaned and completed Lombok dataset was then model. The tables below present the results of the data fitting, offering a comparative view of each model’s effectiveness and accuracy in capturing the dataset’s characteristics.</p>
+<p>The cleaned and completed Lombok dataset was then fitted to the model. Equation <a href="#eq-lopreg" class="quarto-xref">Equation&nbsp;10</a> presents the proposed model specification, which serves as the fixed formula applied consistently across all analyses</p>
 <p><span id="eq-lopreg"><span class="math display">\[
-prices \sim land_{std} + building_{std} + beds_{std} + baths_{std}
+\text{logprices} \sim \text{land}_{\text{std}} + \text{building}_{\text{std}} + \text{beds}_{\text{std}} + \text{baths}_{\text{std}}
 \tag{10}\]</span></span></p>
-<p>Standardization of the predictors ensures that the resulting coefficients are on a comparable scale, facilitating meaningful interpretation and comparison across different modeling approaches. The results presented in <a href="#tbl-modelcomp" class="quarto-xref">Table&nbsp;5</a> provide a comprehensive evaluation of each model’s performance in capturing both the structural and spatial characteristics of the property market in Lombok.</p>
-<p>We conducted model fitting on the area-level data, with detailed results provided in the Appendix (<a href="#tbl-modelcomp1" class="quarto-xref">Table&nbsp;8</a>). However, this method does not provide optimal parameter estimates because data aggregation can reduce variability and obscure spatial details essential for capturing local effects. To address this, we used point-level data to apply three different models: GLMM, GWR, and multilevel CAR.</p>
+<p>Standardization of the predictors ensures that the resulting coefficients are on a comparable scale, facilitating meaningful interpretation and comparison across different modeling approaches. We conducted model fitting on the area-level data, with detailed results provided in the Appendix (<a href="#tbl-modelcomp1" class="quarto-xref">Table&nbsp;8</a>). However, this method does not provide optimal parameter estimates because data aggregation can reduce variability and obscure spatial details essential for capturing local effects. To address this, we used point-level data to apply three different models: GLMM, GWR, and multilevel CAR.</p>
+<p>The results presented in <a href="#tbl-modelcomp" class="quarto-xref">Table&nbsp;5</a> provide a comprehensive evaluation of each model’s performance in capturing both the structural and spatial characteristics of the property market in Lombok.</p>
 <div class="cell-container"><div class="cell-decorator"><pre>In [16]:</pre></div><div class="cell">
 
 <div class="cell-container"><div class="cell-decorator"><pre>In [17]:</pre></div><div><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the dataset using tribble</span></span>
@@ -1132,8 +1153,8 @@ prices \sim land_{std} + building_{std} + beds_{std} + baths_{std}
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"No. of bedroom"</span>,              <span class="st">"-0.03 [-0.09, 0.01]"</span>,    <span class="st">"-0.15 [-0.17, -0.15]*"</span>,  <span class="st">"-0.03 [-0.09, 0.02]"</span>,</span>
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"No. of bathroom"</span>,             <span class="st">"0.19 [0.13, 0.25]*"</span>,     <span class="st">"0.24 [0.23, 0.26]*"</span>,     <span class="st">"0.19 [0.13, 0.25]*"</span>,</span>
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"$</span><span class="sc">\\</span><span class="st">rho$"</span>,                     <span class="st">"-"</span>,                      <span class="st">"-"</span>,                      <span class="st">"0.48 [0.07, 0.90]*"</span>,</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"$</span><span class="sc">\\</span><span class="st">nu^2$"</span>,                    <span class="st">"0.22 [0.19, 0.25]*"</span>,     <span class="st">"0.33 [0.29, 0.37]*"</span>,     <span class="st">"0.22 [0.20, 0.25]*"</span>,</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"$</span><span class="sc">\\</span><span class="st">tau^2$"</span>,                   <span class="st">"0.20 [0.11, 0.34]*"</span>,     <span class="st">"-"</span>,                      <span class="st">"0.31 [0.14, 0.58]*"</span>,</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"$</span><span class="sc">\\</span><span class="st">sigma_{</span><span class="sc">\\</span><span class="st">varepsilon}^2$"</span>,  <span class="st">"0.22 [0.19, 0.25]*"</span>,     <span class="st">"0.33 [0.29, 0.37]*"</span>,     <span class="st">"0.22 [0.20, 0.25]*"</span>,</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"$</span><span class="sc">\\</span><span class="st">sigma_{</span><span class="sc">\\</span><span class="st">phi}^2$"</span>,          <span class="st">"0.20 [0.11, 0.34]*"</span>,     <span class="st">"-"</span>,                      <span class="st">"0.31 [0.14, 0.58]*"</span>,</span>
 <span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AIC"</span>,                         <span class="st">"803.38"</span>,                 <span class="st">"-645.104"</span>,               <span class="st">"786.95"</span>,</span>
 <span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"DIC"</span>,                         <span class="st">"-"</span>,                      <span class="st">"-"</span>,                      <span class="st">"850.39"</span>,</span>
 <span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"WAIC"</span>,                        <span class="st">"838.3"</span>,                  <span class="st">"-"</span>,                      <span class="st">"851.14"</span>,</span>
@@ -1211,13 +1232,13 @@ Table&nbsp;5: Point-level Model Comparison
 <td colspan="4" style="border-bottom: 1px solid"><strong>Variances</strong></td>
 </tr>
 <tr class="even">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$\nu^2$</td>
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$\sigma_{\varepsilon}^2$</td>
 <td style="text-align: left;">0.22 [0.19, 0.25]*</td>
 <td style="text-align: left;">0.33 [0.29, 0.37]*</td>
 <td style="text-align: left;">0.22 [0.20, 0.25]*</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$\tau^2$</td>
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$\sigma_{\phi}^2$</td>
 <td style="text-align: left;">0.20 [0.11, 0.34]*</td>
 <td style="text-align: left;">-</td>
 <td style="text-align: left;">0.31 [0.14, 0.58]*</td>
@@ -1264,7 +1285,7 @@ Table&nbsp;5: Point-level Model Comparison
 </figure>
 </div></div></div>
 </div></div>
-<p>Here, <a href="#tbl-modelcomp" class="quarto-xref">Table&nbsp;5</a> compares parameter estimates and fit criteria for three models: GLMM, GWR, and multilevel CAR. Significant coefficients are marked with an asterisk (*). Key determinants like land-size and built-up area have positive, significant effects across models, while the number of bedrooms shows only minor, varying effects, indicating model-specific differences in capturing this variable’s influence. Only the multilevel CAR model includes the spatial parameter <span class="math inline">\(\rho\)</span>, with a significant estimate of 0.48, showing the model’s ability to account for spatial dependence. Variance components <span class="math inline">\(\nu^2\)</span> (residual) and <span class="math inline">\(\tau^2\)</span> (spatial) are also detailed, with both variance terms significant. Fit criteria (AIC, WAIC, and Log-likelihood) suggest mlvCAR and GWR may better capture local spatial variation, with mlvCAR balancing spatial structure and precision.</p>
+<p>Here, <a href="#tbl-modelcomp" class="quarto-xref">Table&nbsp;5</a> compares parameter estimates and fit criteria for three models: GLMM, GWR, and multilevel CAR. Significant coefficients are marked with an asterisk (*). Key determinants like land-size and built-up area have positive, significant effects across models, while the number of bedrooms shows only minor, varying effects, indicating model-specific differences in capturing this variable’s influence. Only the multilevel CAR model includes the spatial parameter <span class="math inline">\(\rho\)</span>, with a significant estimate of 0.48, showing the model’s ability to account for spatial dependence. Variance components <span class="math inline">\(\sigma_{\varepsilon}^2\)</span> (residual) and <span class="math inline">\(\sigma_{\phi}^2\)</span> are also detailed, with both terms are significant. Fit criteria (AIC, WAIC, and Log-likelihood) suggest mlvCAR and GWR may better capture local spatial variation, with mlvCAR balancing spatial structure and precision.</p>
 <div id="fig-pricenphi" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pricenphi-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1273,10 +1294,10 @@ Table&nbsp;5: Point-level Model Comparison
 <div id="fig-pricenphi1" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-pricenphi1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figures/phi_map.png" class="lightbox" data-gallery="fig-pricenphi" data-glightbox="description: .lightbox-desc-8"><img src="figures/phi_map.png" class="img-fluid figure-img" data-ref-parent="fig-pricenphi"></a>
+<a href="figures/phi_map.png" class="lightbox" data-glightbox="description: .lightbox-desc-8" data-gallery="fig-pricenphi"><img src="figures/phi_map.png" class="img-fluid figure-img" data-ref-parent="fig-pricenphi"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-pricenphi1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) phi values
+(a) <span class="math inline">\(\phi\)</span> values
 </figcaption>
 </figure>
 </div>
@@ -1285,7 +1306,7 @@ Table&nbsp;5: Point-level Model Comparison
 <div id="fig-pricenphi2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-pricenphi2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figures/logprice_map.png" class="lightbox" data-gallery="fig-pricenphi" data-glightbox="description: .lightbox-desc-9"><img src="figures/logprice_map.png" class="img-fluid figure-img" data-ref-parent="fig-pricenphi"></a>
+<a href="figures/logprice_map.png" class="lightbox" data-glightbox="description: .lightbox-desc-9" data-gallery="fig-pricenphi"><img src="figures/logprice_map.png" class="img-fluid figure-img" data-ref-parent="fig-pricenphi"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-pricenphi2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 (b) Aggregate price data (log scale)
@@ -1309,18 +1330,17 @@ Figure&nbsp;7: Heatmap of aggregated price data and phi values in each Lombok su
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># knitr::include_graphics("figures/phi_map.png", auto_pdf = TRUE)</span></span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># knitr::include_graphics("figures/logprice_map.png", auto_pdf = TRUE)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<p><a href="#fig-pricenphi1" class="quarto-xref">Figure&nbsp;7 (a)</a> and <a href="#fig-pricenphi2" class="quarto-xref">Figure&nbsp;7 (b)</a> respectively present spatial heatmaps illustrating the distribution of estimated spatial random effects (<span class="math inline">\(\phi\)</span>) from the CAR model and the average log-transformed house prices per sub-district accross Lombok island.</p>
-<p>Here, the <span class="math inline">\(\phi\)</span> values represent the spatially structured residuals not explained by the observed covariates in the CAR model. Specifically, it captures latent spatial influences such as neighbourhood desirability, access to infrastructure, or even local policy, that affect house prices beyond what structural features like land and building size can account for.</p>
-<p>Because the model uses log-transformed prices, <span class="math inline">\(\phi\)</span> has multiplicative interpretation on the original price scale. For instance, if <span class="math inline">\(\phi = 0.57\)</span> for a given sub-district, then after accounting for covariates, properties in that area are estimated to be approximately <span class="math inline">\(exp(0.57) \approx 1.76\)</span> or 76% more expensive than average. Similarly, a sub-district with <span class="math inline">\(\phi = -0.2\)</span>, this suggests that properties in that area are approximately 18% less expensive than average, since <span class="math inline">\(exp(-0.2) \approx 0.82\)</span>.</p>
+<p><a href="#fig-pricenphi1" class="quarto-xref">Figure&nbsp;7 (a)</a> and <a href="#fig-pricenphi2" class="quarto-xref">Figure&nbsp;7 (b)</a> respectively present spatial heatmaps illustrating the distribution of estimated spatial random effects (<span class="math inline">\(\phi\)</span>) from the CAR model and the average log-transformed house prices per sub-district accross Lombok island. It can be seen that both plots in <a href="#fig-pricenphi" class="quarto-xref">Figure&nbsp;7</a> exhibit similar spatial patterns, with high and low values clustering in comparable regions. Note that they do not have to be identical, as <span class="math inline">\(\phi\)</span> represents the spatially structured residual component after accounting for covariates, whereas the log-transformed prices reflect the observed aggregated market values. Nonetheless, their resemblance suggests that some of the spatial variability in house prices is being effectively captured by the spatial random effects.</p>
+<p>Because the model uses log-transformed prices, <span class="math inline">\(\phi\)</span> has multiplicative interpretation on the original price scale. For instance, if <span class="math inline">\(\phi = 0.57\)</span> for a given sub-district, then after accounting for covariates, properties in that area are estimated to be approximately <span class="math inline">\(\exp(0.57) \approx 1.76\)</span> or 76% more expensive than average. Similarly, a sub-district with <span class="math inline">\(\phi = -0.2\)</span>, this suggests that properties in that area are approximately 18% less expensive than average, since <span class="math inline">\(\exp(-0.2) \approx 0.82\)</span>. Note that the 95% credible interval of <span class="math inline">\(\phi\)</span> can be interpreted similarly by exponentiating the lower and upper bounds, yielding a multiplicative uncertainty range for the price deviation.</p>
 </section>
 </section>
 <section id="results-and-discussion" class="level1">
 <h1>Results and Discussion</h1>
 <p>The findings from simulation consistently indicate that both the CAR and mlvCAR model outperform the other models in capturing spatial dependencies. This is evidenced by lower RMSE values and reduced bias across various dataset scenarios, highlighting the CAR model’s robustness. In datasets with strong spatial structures, such as those generated under <span class="math inline">\(CAR\)</span> and <span class="math inline">\(SAR + CAR\)</span> conditions, the CAR model achieves substantially lower RMSE values compared to GLM and SAR, suggesting its effectiveness in handling localised spatial variations.</p>
 <p>In the context of house price modelling, it is common to encounter multiple sales observations within a single area, yet precise coordinates for each sale are often unavailable. Obtaining precise geographic coordinates in real-world datasets is often challenging due to limitations in data collection, privacy concerns, or the aggregation of data into broader administrative units. This limitation renders point-level approaches, such as GWR, less effective. With multiple observations available for each area, models like mlvCAR offer a more practical and accurate solution, effectively capturing spatial dependencies at an area level without requiring precise point-level locations.</p>
-<p>The results underscore the importance of using models that explicitly account for spatial dependencies in fields like property valuation, where spatial heterogeneity plays a significant role. The superior performance of the CAR model, particularly in datasets with strong spatial structure, suggests that it may be a more reliable choice for applications where local spatial variations are critical. The findings align with previous studies indicating that CAR models are better suited for managing spatial autocorrelation and heterogeneity, especially when spatial dependencies are strong.</p>
+<p>The results underscore the importance of using models that explicitly account for spatial dependencies in fields like property valuation, where spatial heterogeneity plays a significant role. The superior performance of the CAR model, particularly in datasets with strong spatial structure, suggests that it may be a more reliable choice for applications where local spatial variations are critical. The findings align with previous studies (<span class="citation" data-cites="Wang2013A">Y. Wang and Kockelman (<a href="#ref-Wang2013A" role="doc-biblioref">2013</a>)</span>, <span class="citation" data-cites="Soroori2019Application">Soroori, Moghaddam, and Salehi (<a href="#ref-Soroori2019Application" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="Zeng2014Bayesian">Zeng and Huang (<a href="#ref-Zeng2014Bayesian" role="doc-biblioref">2014</a>)</span>, <span class="citation" data-cites="Guelat2018Effects">Guelat and Kéry (<a href="#ref-Guelat2018Effects" role="doc-biblioref">2018</a>)</span>) indicating that CAR models are better suited for managing spatial autocorrelation and heterogeneity, especially when spatial dependencies are strong.</p>
 <p>Spatial maps of the estimated random effects <span class="math inline">\(\phi\)</span> from the CAR model offer further insight into the spatial structure of housing prices across Lombok Island. These effects represent residual spatial patterns after accounting for structural covariates like land size, building size, and number of rooms. Such interpretability supports the use of CAR models not only for improved prediction but also for spatial diagnostics. The visual comparison of <span class="math inline">\(\phi\)</span> values and aggregated log-transformed prices (as shown in <a href="#fig-pricenphi" class="quarto-xref">Figure&nbsp;7</a>) highlights spatial patterns that may warrant further investigation—such as clusters of residual over- or under-prediction in West and East Lombok respectively. These patterns underscore the added value of CAR-type models in revealing latent geographic effects.</p>
-<p>These findings echo the limitations of GWR when precise coordinates are lacking, affirming the relevance of area-level approaches. Moreover, while we use a binary adjacency matrix for consistency, we recognise that the choice of spatial weight <span class="math inline">\(\mathbf{W}\)</span> may influences model performance. Future studies should explore alternative specifications such as row-standardized or distance-decay matrices to assess their impact on robustness and interpretability.</p>
+<p>These findings also echo the limitations of GWR when precise coordinates are lacking, affirming the relevance of area-level approaches. Moreover, while we use a binary adjacency matrix for consistency, we recognise that the choice of spatial weight <span class="math inline">\(\mathbf{W}\)</span> may influences model performance. Future studies should explore alternative specifications such as row-standardized or distance-decay matrices to assess their impact on robustness and interpretability.</p>
 <p>Additionally, while the spatial dependence parameter <span class="math inline">\(\rho\)</span> is estimated as part of the model fitting, its variability across simulations suggests that further sensitivity analyses—especially under different fixed <span class="math inline">\(\rho\)</span> values—could shed light on model stability in different spatial contexts.</p>
 <p>Additionally, the limitations of point-level models such as GWR in the absence of precise location data highlight a practical challenge in spatial modeling. When only area-level data is available, the use of models like mlvCAR becomes essential, as it allows for spatial analysis without the need for detailed coordinates, thus expanding the applicability of spatial models in real-world settings. These insights suggest potential for further exploration of the CAR and mlvCAR models in various domains, especially in urban planning, real estate, and other fields where spatial relationships impact outcomes. Future research could examine the use of CAR and mlvCAR models with different spatial resolutions or apply these models to other datasets with varying levels of spatial dependency to further validate their effectiveness.</p>
 <p>In summary, this study highlights the importance of explicitly modeling spatial dependence in house price analysis. CAR and mlvCAR models emerge as practical and theoretically sound options, especially when high-resolution spatial data are unavailable. Future research may extend these models to finer spatial scales, incorporate additional spatial diagnostics, or apply them in other domains where spatial heterogeneity significantly influences outcomes.</p>
@@ -1348,6 +1368,7 @@ Figure&nbsp;7: Heatmap of aggregated price data and phi values in each Lombok su
 <li>Code availability</li>
 <li>Authors’ contributions</li>
 </ul>
+<div style="page-break-after: always;"></div>
 </section>
 <section id="appendix" class="level1 unnumbered">
 <h1 class="unnumbered">Appendix</h1>
@@ -1753,8 +1774,8 @@ Mean ± SD
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"No. of bedroom"</span>,              <span class="st">"-0.20 [-0.43, 0.02]"</span>,    <span class="st">"-0.23 [-0.45, -0.01]*"</span>,  <span class="st">"-0.21 [-0.44, 0.02]"</span>,</span>
 <span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"No. of bathroom"</span>,             <span class="st">"0.54 [0.33, 0.76]*"</span>,     <span class="st">"0.56 [0.36, 0.77]*"</span>,     <span class="st">"0.55 [0.34, 0.76]*"</span>,</span>
 <span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"$</span><span class="sc">\\</span><span class="st">rho$"</span>,                     <span class="st">"-"</span>,                      <span class="st">"0.009[-0.005, 0.023]"</span>,    <span class="st">"0.39 [0.01, 0.91]*"</span>,</span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"$</span><span class="sc">\\</span><span class="st">nu^2$"</span>,                    <span class="st">"0.31 [0.21, 0.45]*"</span>,     <span class="st">"0.27 [0.19, 0.41]*"</span>,     <span class="st">"0.28 [0.01, 0.44]*"</span>,</span>
-<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"$</span><span class="sc">\\</span><span class="st">tau^2$"</span>,                   <span class="st">"0.20 [0.11, 0.34]*"</span>,     <span class="st">"-"</span>,                      <span class="st">"0.04 [0.01, 0.91]*"</span>,</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"$</span><span class="sc">\\</span><span class="st">sigma_{</span><span class="sc">\\</span><span class="st">epsilon}^2$"</span>,     <span class="st">"0.31 [0.21, 0.45]*"</span>,     <span class="st">"0.27 [0.19, 0.41]*"</span>,     <span class="st">"0.28 [0.01, 0.44]*"</span>,</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"$</span><span class="sc">\\</span><span class="st">sigma_{</span><span class="sc">\\</span><span class="st">phi}^2$"</span>,         <span class="st">"0.20 [0.11, 0.34]*"</span>,     <span class="st">"-"</span>,                      <span class="st">"0.04 [0.01, 0.91]*"</span>,</span>
 <span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"AIC"</span>,                         <span class="st">"-"</span>,                       <span class="st">"-"</span>,                          <span class="st">"-"</span>,</span>
 <span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"DIC"</span>,                         <span class="st">"94.73"</span>,                  <span class="st">"94.73"</span>,                   <span class="st">"82.52"</span>,</span>
 <span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"WAIC"</span>,                        <span class="st">"95.64"</span>,                  <span class="st">"-"</span>,                      <span class="st">"87.43"</span>,</span>
@@ -1832,13 +1853,13 @@ Table&nbsp;8: This table compares the performance of GLM, SAR, and CAR models on
 <td colspan="4" style="border-bottom: 1px solid"><strong>Variances</strong></td>
 </tr>
 <tr class="even">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$\nu^2$</td>
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$\sigma_{\epsilon}^2$</td>
 <td style="text-align: left;">0.31 [0.21, 0.45]*</td>
 <td style="text-align: left;">0.27 [0.19, 0.41]*</td>
 <td style="text-align: left;">0.28 [0.01, 0.44]*</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$\tau^2$</td>
+<td style="text-align: left; padding-left: 2em;" data-indentlevel="1">$\sigma_{\phi}^2$</td>
 <td style="text-align: left;">0.20 [0.11, 0.34]*</td>
 <td style="text-align: left;">-</td>
 <td style="text-align: left;">0.04 [0.01, 0.91]*</td>
@@ -1894,7 +1915,7 @@ Table&nbsp;8: This table compares the performance of GLM, SAR, and CAR models on
 <div id="fig-betaplot" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-betaplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
-<a href="figures/betavalues_plot.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" data-glightbox="description: .lightbox-desc-10"><img src="figures/betavalues_plot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></a>
+<a href="figures/betavalues_plot.png" class="lightbox" data-glightbox="description: .lightbox-desc-10" data-gallery="quarto-lightbox-gallery-10"><img src="figures/betavalues_plot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-betaplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8: Spatial variation of <span class="math inline">\(\beta\)</span> values generated using a custom beta function. The color gradient represents the magnitude of <span class="math inline">\(\beta\)</span> values across the artificial study region, highlighting localised patterns and heterogeneity. The visualisation demonstrates the spatially varying coefficient structure modeled in the study
@@ -1915,7 +1936,7 @@ Figure&nbsp;8: Spatial variation of <span class="math inline">\(\beta\)</span> v
 <span class="glightbox-desc lightbox-desc-5">Figure&nbsp;5&nbsp;(a): Bias values by method and dataset type for area-level data</span>
 <span class="glightbox-desc lightbox-desc-6">Figure&nbsp;5&nbsp;(b): Bias values by method and dataset type for point-level data</span>
 <span class="glightbox-desc lightbox-desc-7">Figure&nbsp;6: Lombok neighbour structure at the sub-district (Kecamatan) level. This figure illustrates the spatial neighbour structure of sub-districts on Lombok Island. The red lines represent the connections between neighbouring sub-districts based on adjacency relationships, overlaid on a base map.</span>
-<span class="glightbox-desc lightbox-desc-8">Figure&nbsp;7&nbsp;(a): phi values</span>
+<span class="glightbox-desc lightbox-desc-8">Figure&nbsp;7&nbsp;(a): <span class="math inline">\(\phi\)</span> values</span>
 <span class="glightbox-desc lightbox-desc-9">Figure&nbsp;7&nbsp;(b): Aggregate price data (log scale)</span>
 <span class="glightbox-desc lightbox-desc-10">Figure&nbsp;8: Spatial variation of <span class="math inline">\(\beta\)</span> values generated using a custom beta function. The color gradient represents the magnitude of <span class="math inline">\(\beta\)</span> values across the artificial study region, highlighting localised patterns and heterogeneity. The visualisation demonstrates the spatially varying coefficient structure modeled in the study</span>
 </div>
@@ -1965,6 +1986,9 @@ Fix, Miranda J, Daniel S Cooley, and Emeric Thibaud. 2021. <span>“Simultaneous
 <div id="ref-golgher2016interpret" class="csl-entry" role="listitem">
 Golgher, André Braz, and Paul R Voss. 2016. <span>“How to Interpret the Coefficients of Spatial Models: Spillovers, Direct and Indirect Effects.”</span> <em>Spatial Demography</em> 4: 175–205.
 </div>
+<div id="ref-Guelat2018Effects" class="csl-entry" role="listitem">
+Guelat, J., and M. Kéry. 2018. <span>“Effects of Spatial Autocorrelation and Imperfect Detection on Species Distribution Models.”</span> <em>Methods in Ecology and Evolution</em> 9: 1614–25. <a href="https://doi.org/10.1111/2041-210X.12983">https://doi.org/10.1111/2041-210X.12983</a>.
+</div>
 <div id="ref-lee2013carbayes" class="csl-entry" role="listitem">
 Lee, Duncan. 2013. <span>“CARBayes: An r Package for Bayesian Spatial Modeling with Conditional Autoregressive Priors.”</span> <em>Journal of Statistical Software</em> 55 (13): 1–24. <a href="https://doi.org/10.18637/jss.v055.i13">https://doi.org/10.18637/jss.v055.i13</a>.
 </div>
@@ -1998,6 +2022,9 @@ Sisman, Suleyman, and Arif Cagdas Aydinoglu. 2022. <span>“A Modelling Approach
 <div id="ref-soltani2021housing" class="csl-entry" role="listitem">
 Soltani, Ali, Christopher James Pettit, Mohammad Heydari, and Fatemeh Aghaei. 2021. <span>“Housing Price Variations Using Spatio-Temporal Data Mining Techniques.”</span> <em>Journal of Housing and the Built Environment</em> 36 (3): 1–29. <a href="https://doi.org/10.1007/s10901-020-09811-y">https://doi.org/10.1007/s10901-020-09811-y</a>.
 </div>
+<div id="ref-Soroori2019Application" class="csl-entry" role="listitem">
+Soroori, Emad, Abolfazl Mohammadzadeh Moghaddam, and M. Salehi. 2019. <span>“Application of Local Conditional Autoregressive Models for Development of Zonal Crash Prediction Models and Identification of Crash Risk Boundaries.”</span> <em>Transportmetrica A: Transport Science</em> 15: 1102–23. <a href="https://doi.org/10.1080/23249935.2018.1564801">https://doi.org/10.1080/23249935.2018.1564801</a>.
+</div>
 <div id="ref-stern1999inference" class="csl-entry" role="listitem">
 Stern, Hal, and Noel A Cressie. 1999. <span>“Inference for Extremes in Disease Mapping.”</span> <em>John Wiley and Sons</em> 11: 63–84.
 </div>
@@ -2019,11 +2046,17 @@ Wall, Melanie M. 2004. <span>“A Close Look at the Spatial Structure Implied by
 <div id="ref-wang2020geographically" class="csl-entry" role="listitem">
 Wang, Chih-Hao, and Na Chen. 2020. <span>“A Geographically Weighted Regression Approach to Investigating Local Built-Environment Effects on Home Prices in the Housing Downturn, Recovery, and Subsequent Increases.”</span> <em>Journal of Housing and the Built Environment</em> 35: 1283–1302.
 </div>
+<div id="ref-Wang2013A" class="csl-entry" role="listitem">
+Wang, Yiyi, and K. Kockelman. 2013. <span>“A Poisson-Lognormal Conditional-Autoregressive Model for Multivariate Spatial Analysis of Pedestrian Crash Counts Across Neighborhoods.”</span> <em>Accident; Analysis and Prevention</em> 60: 71–84. <a href="https://doi.org/10.1016/j.aap.2013.07.030">https://doi.org/10.1016/j.aap.2013.07.030</a>.
+</div>
 <div id="ref-yang2019does" class="csl-entry" role="listitem">
 Yang, Linchuan, Jiangping Zhou, Oliver F Shyr, et al. 2019. <span>“Does Bus Accessibility Affect Property Prices?”</span> <em>Cities</em> 84 (January): 56–65. <a href="https://doi.org/10.1016/j.cities.2018.07.005">https://doi.org/10.1016/j.cities.2018.07.005</a>.
 </div>
 <div id="ref-yu2007modeling" class="csl-entry" role="listitem">
 Yu, Danlin. 2007. <span>“Modeling Owner-Occupied Single-Family House Values in the City of Milwaukee: A Geographically Weighted Regression Approach.”</span> <em>GIScience &amp; Remote Sensing</em> 44 (3): 267–82.
+</div>
+<div id="ref-Zeng2014Bayesian" class="csl-entry" role="listitem">
+Zeng, Q., and Helai Huang. 2014. <span>“Bayesian Spatial Joint Modeling of Traffic Crashes on an Urban Road Network.”</span> <em>Accident; Analysis and Prevention</em> 67: 105–12. <a href="https://doi.org/10.1016/j.aap.2014.02.018">https://doi.org/10.1016/j.aap.2014.02.018</a>.
 </div>
 </div>
 </section>
@@ -2436,7 +2469,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom"});
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

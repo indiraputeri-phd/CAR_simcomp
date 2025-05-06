@@ -346,31 +346,31 @@ insights.
 \section{Related works}\label{related-works}
 
 Recent studies have leveraged GWR to investigate the spatial
-heterogeneity of housing market determinants. For example, Wang and Chen
-(2020) applied GWR to examine the impact of local built-environment
-factors on home prices across different phases of the housing market
-cycle. Their findings highlighted significant spatial variations,
-underscoring the critical role of local context in influencing home
-prices. Similarly, Lu, Charlton, and Fotheringham (2011) employed GWR
-with a non-Euclidean distance metric to analyze London house price data.
-By incorporating this alternative metric, they better captured the
-spatially varying relationships between house prices and their
-determinants, emphasizing the importance of considering different
-distance metrics in spatial analyses. In their 2018 study, Stewart
-Fotheringham and Park (2018) explored spatial and temporal variations in
-the determinants of apartment prices in Seoul, South Korea, over a
-decade. Utilizing a hedonic price model with a spatio-temporal lag,
-calibrated through GWR, they revealed consistent spatial variations and
-strong spatial lag effects on house prices over time. Additionally,
-Cellmer, Cichulska, and Bełej (2020) applied GWR to assess the spatial
-variations in determinants of the housing market in Poland. The study
-identified spatial patterns of autocorrelation in average housing prices
-and market activity, illustrating the value of GWR in examining
-localized effects of socio-demographic and environmental factors on the
-housing market. Collectively, these studies demonstrate the efficacy of
-GWR and its extensions in capturing the nuanced spatial and temporal
-variations in housing market data, providing valuable insights for urban
-planning and policy-making.
+heterogeneity of housing market determinants. For example, C.-H. Wang
+and Chen (2020) applied GWR to examine the impact of local
+built-environment factors on home prices across different phases of the
+housing market cycle. Their findings highlighted significant spatial
+variations, underscoring the critical role of local context in
+influencing home prices. Similarly, Lu, Charlton, and Fotheringham
+(2011) employed GWR with a non-Euclidean distance metric to analyze
+London house price data. By incorporating this alternative metric, they
+better captured the spatially varying relationships between house prices
+and their determinants, emphasizing the importance of considering
+different distance metrics in spatial analyses. In their 2018 study,
+Stewart Fotheringham and Park (2018) explored spatial and temporal
+variations in the determinants of apartment prices in Seoul, South
+Korea, over a decade. Utilizing a hedonic price model with a
+spatio-temporal lag, calibrated through GWR, they revealed consistent
+spatial variations and strong spatial lag effects on house prices over
+time. Additionally, Cellmer, Cichulska, and Bełej (2020) applied GWR to
+assess the spatial variations in determinants of the housing market in
+Poland. The study identified spatial patterns of autocorrelation in
+average housing prices and market activity, illustrating the value of
+GWR in examining localized effects of socio-demographic and
+environmental factors on the housing market. Collectively, these studies
+demonstrate the efficacy of GWR and its extensions in capturing the
+nuanced spatial and temporal variations in housing market data,
+providing valuable insights for urban planning and policy-making.
 
 In parallel, numerous studies have demonstrated the versatility and
 applicability of SAR models across various fields. For instance, Fix,
@@ -457,10 +457,6 @@ a controlled environment to evaluate spatial models' performance}
 
 \end{figure}%
 
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
-
 Another specific ingredient in spatial modelling is the existence of
 \(W\) matrix, also known as the spatial weights matrix. It encodes the
 spatial relationships between areas in a study region. The weight matrix
@@ -487,10 +483,6 @@ purposes.}
 
 \end{figure}%
 
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
-
 From the Figure~\ref{fig-neighsimple} we can derive an adjacency matrix
 which represents the neighborhood structure of five spatial units
 labeled \(A\) to \(E\). Each entry 1 indicates a direct adjacency (areas
@@ -502,13 +494,24 @@ among the areas, which forms the basis for constructing a spatial weight
 matrix, commonly denoted as the \(\mathbf{W}\) matrix
 
 \[
+\mathbf{W} =
 \begin{array}{cccccc}
-    & A & B & C & D & E \\
+   & A & B & C & D & E \\
 A & 0 & 1 & 1 & 1 & 1\\ 
 B & 1 & 0 & 1 & 0 & 0\\ 
 C & 1 & 1 & 0 & 1 & 0\\
 D & 1 & 0 & 1 & 0 & 1\\
 E & 1 & 0 & 0 & 1 & 0\\
+\end{array}
+\hspace{2.5cm}
+\mathbf{D} =
+\begin{array}{cccccc}
+   & A & B & C & D & E \\
+A & 4 & 0 & 0 & 0 & 0\\ 
+B & 0 & 2 & 0 & 0 & 0\\ 
+C & 0 & 0 & 3 & 0 & 0\\
+D & 0 & 0 & 0 & 3 & 0\\
+E & 0 & 0 & 0 & 0 & 2\\
 \end{array}
 \]
 
@@ -528,30 +531,16 @@ components by appropriately weighting the influence of neighbouring
 regions (Wall (2004), Ver Hoef et al. (2018)). In GWR, this matrix
 assists in locally calibrating the model by reflecting the density and
 connectivity of regions (Brunsdon, Fotheringham, and Charlton (1996),
-Stewart Fotheringham and Park (2018)). Here, \(\boldsymbol{D}\) is
-represented as:
-
-\[
-\begin{array}{cccccc}
-   & A & B & C & D & E \\
-A & 4 & 0 & 0 & 0 & 0\\ 
-B & 0 & 2 & 0 & 0 & 0\\ 
-C & 0 & 0 & 3 & 0 & 0\\
-D & 0 & 0 & 0 & 3 & 0\\
-E & 0 & 0 & 0 & 0 & 2\\
-\end{array}
-\]
-
-This matrix format indicates that region \(A\) has 4 neighbour, regions
-\(C\) and \(D\) each have 3 neighbours, and region \(B\) and \(E\) has 2
-neighbour.
+Stewart Fotheringham and Park (2018)). In this case, \(\mathbf{D}\)
+indicates that region \(A\) has 4 neighbours, regions \(C\) and \(D\)
+each have 3 neighbours, and region \(B\) and \(E\) has 2 neighbours.
 
 \phantomsection\label{cell-fig-neighartfreg}
 \begin{figure}[H]
 
 \centering{
 
-\includegraphics[width=0.7\textwidth,height=\textheight]{figures/nb_artfcountry.png}
+\includegraphics[width=0.6\textwidth,height=\textheight]{figures/nb_artfcountry.png}
 
 }
 
@@ -561,10 +550,6 @@ between polygons in the artificial study region, where each line
 represents a defined neighbour relationship based on spatial adjacency}
 
 \end{figure}%
-
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
 
 In relation to our artificial study region,
 Figure~\ref{fig-neighartfreg} illustrates the connections between areas,
@@ -705,16 +690,16 @@ expressed as:
 y(s) = \sum_{k=1}^p \beta_k x_k(s) + \varepsilon(s) + \phi(s) 
 }\end{equation}
 
-Here, \(\boldsymbol{\varepsilon} \sim N(0, \nu^2)\) while
-\(\boldsymbol{\phi}\) is a specific component in CAR model that has a
-role as spatial effect. It is also common to mention
+Here, \(\boldsymbol{\varepsilon} \sim N(0, \sigma_{\varepsilon}^2)\)
+while \(\boldsymbol{\phi}\) is a specific component in CAR model that
+has a role as spatial effect. It is also common to mention
 \(\boldsymbol{\phi}\) as a CAR priors. It is a type of Gaussian Markov
 random field (Rue and Held (2005)), capture spatial autocorrelation by
 ensuring that values at nearby locations are more similar than those
 further apart (Lee (2013)). This can be expressed in a general term
 
 \begin{equation}\phantomsection\label{eq-phidist}{
-\boldsymbol{\phi}\sim N(0,\tau^2\boldsymbol{Q}^{-1}) 
+\boldsymbol{\phi}\sim N(0,\sigma_{\phi}^2\boldsymbol{Q}^{-1}) 
 }\end{equation}
 
 where \(\boldsymbol{Q}\) is a precision matrix that may be singular
@@ -750,7 +735,7 @@ smoothing data and detecting spatial patterns within data set. The
 random effect \(\boldsymbol\phi_k\) structured as follow:
 
 \begin{equation}\phantomsection\label{eq-phicar}{
-\phi_k|\boldsymbol\phi_{-K}, \boldsymbol{W},\rho, \tau^2  \sim  N\left(\frac{\rho\sum_{i=1}^Kw_{ki}\phi_i}{A},\frac{\tau^2}{A}\right)
+\phi_k|\boldsymbol{\phi}_{-k}, \mathbf{W},\rho, \sigma_{\phi}^2  \sim  N\left(\frac{\rho\sum_{i=1}^Kw_{ki}\phi_i}{A},\frac{\sigma_{\phi}^2}{A}\right)
 }\end{equation}
 
 where \(A = \rho\sum_{i=1}^Kw_{ki}+1-\rho\). Note that when
@@ -771,11 +756,12 @@ y_i(s) = \sum_{k=1}^p \beta_k x_{ki}(s) + \varepsilon_i(s) + \phi(s)
 
 The Bayesian approach to CAR models entails defining prior distributions
 for all model parameters, such as the regression coefficients \(\beta\),
-variance parameters \(\nu^2\) and \(\tau^2\), and spatial random effects
-\(\phi_k\). Subsequently, Bayesian inference techniques like Markov
-Chain Monte Carlo (MCMC) are employed to derive posterior distributions
-of these parameters. This method facilitates the integration of prior
-knowledge and offers a versatile framework for quantifying uncertainty.
+variance parameters \(\sigma_{\varepsilon}^2\) and \(\sigma_{\phi}^2\),
+and spatial random effects \(\phi_k\). Subsequently, Bayesian inference
+techniques like Markov Chain Monte Carlo (MCMC) are employed to derive
+posterior distributions of these parameters. This method facilitates the
+integration of prior knowledge and offers a versatile framework for
+quantifying uncertainty.
 
 In general, Table~\ref{tbl-summarymethod} below summarises the key
 elements utilised in the GWR, SAR, and CAR models:
@@ -798,22 +784,16 @@ Spatial Weights Matrix ($W$) & $\times$ & $\checkmark$ & $\checkmark$\\
 Spatial Coordinates (coords) & $\checkmark$ & $\checkmark$ & $\checkmark$\\
 Covariate Coefficients ($\beta$) & $\checkmark$ & $\checkmark$ & $\checkmark$\\
 \addlinespace
-Error Term variance ($\sigma^2$) & $\checkmark$ & $\checkmark$ & $\checkmark$\\
 Spatial Autocorrelation ($\rho$) & $\times$ & $\checkmark$ & $\checkmark$\\
 Spatial Structure component ($\phi$) & $\times$ & $\times$ & $\checkmark$\\
-Spatial structure variance ($\tau^2$) & $\times$ & $\times$ & $\checkmark$\\
-Additional scale ($\nu^2$) & $\times$ & $\times$ & $\checkmark$\\
-\addlinespace
+Spatial structure variance ($\sigma_{\phi}^2$) & $\times$ & $\times$ & $\checkmark$\\
+Error Term variance ($\sigma_{\varepsilon}^2$) & $\checkmark$ & $\checkmark$ & $\checkmark$\\
 Estimation method & MLE & MLE/GMM & MCMC\\
 \bottomrule
 
 \end{longtable}
 
 \endgroup{}
-
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
 
 \section{Comparative Analysis of GLM, SAR, and
 CAR}\label{comparative-analysis-of-glm-sar-and-car}
@@ -871,10 +851,6 @@ analysis and validation.}
 
 \end{figure}%
 
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
-
 Following this, covariates were generated using \texttt{mvrnorm()} for
 each observation point, creating a dataset for further analysis.
 Table~\ref{tbl-covrstr} provides a brief slice of the covariates'
@@ -907,25 +883,22 @@ ID & land\_size & building\_size & \#bedrooms & \#bathrooms\\
 
 \endgroup{}
 
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
-
 By employing artificially generated covariates and an artificially
 constructed study region, we developed three distinct property price
 datasets, each based on a different spatial model: CAR, a combination of
 CAR and SAR, and GWR. The true parameter values for this purpose are
 \(\boldsymbol{\beta} = \begin{bmatrix} 1 & 0.9 & 0.7 & 0.5 & 0.3 \end{bmatrix}\),
-\(\nu^2 = 0.2\), \(\tau^2 = 0.6\) and \(\rho = 0.6\). Whereas beta
-values for GWR dataset is generated using a beta function, which is a
-function of coordinate points. The matrix \(\mathbf{W}\) was derived
-from the neighbourhood structure of an artificial study region using the
-functions \texttt{poly2nb()} and \texttt{nb2mat()}. Data generation for
-\(SAR + CAR\) employs a slightly different strategy. In addition to
-being generated per area simultaneously using the joint distribution of
-\(\mathbf{Y}\) as in Equation~\ref{eq-jointysar}, information about the
-spatial effect \(\boldsymbol{\phi}\) is also added at the end of the
-process. Therefore, we refer to it as \(SAR + CAR\) data.
+\(\sigma_{\phi}^2 = 0.2\), \(\sigma_{\phi}^2 = 0.6\) and \(\rho = 0.6\).
+Whereas beta values for GWR dataset is generated using a beta function,
+which is a function of coordinate points. The matrix \(\mathbf{W}\) was
+derived from the neighbourhood structure of an artificial study region
+using the functions \texttt{poly2nb()} and \texttt{nb2mat()}. Data
+generation for \(SAR + CAR\) employs a slightly different strategy. In
+addition to being generated per area simultaneously using the joint
+distribution of \(\mathbf{Y}\) as in Equation~\ref{eq-jointysar},
+information about the spatial effect \(\boldsymbol{\phi}\) is also added
+at the end of the process. Therefore, we refer to it as \(SAR + CAR\)
+data.
 
 Each data generation resulting two types of datasets: area-level and
 point-level. These datasets were then modelled using six linear
@@ -985,10 +958,6 @@ dependencies.}
 
 \end{figure}%
 
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
-
 For area-level data (Figure~\ref{fig-biasplot1}), CAR model consistently
 produces the lowest bias across all coefficients and data-generating
 scenarios. This confirms its ability to recover true parameter values
@@ -1043,10 +1012,6 @@ $GWR$ & 2.43 & 2.42 & 2.28 & 18.31 & 18.33 & 14.87\\*
 
 \endgroup{}
 
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
-
 Moreover, Table~\ref{tbl-rmse} provide insights into model accuracy at
 different spatial levels. For area-level data, the models GLM, SAR, and
 CAR are compared, with the CAR model consistently achieving the lowest
@@ -1084,17 +1049,31 @@ adjacency relationships, overlaid on a base map.}
 
 \end{figure}%
 
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
+Lombok comprises five districts (kota/kabupaten), 53 sub-districts
+(kecamatan), and 608 villages (desa/kelurahan), representing three
+successive levels of administrative division. Mataram District, despite
+its small area compared to other districts in Lombok, is the most
+urbanized and economically active area on the island, characterized by
+dense residential clusters with relatively homogeneous housing
+specifications. In adjacent districts such as West Lombok and Central
+Lombok, housing developments have expanded, particularly to accommodate
+commuters working in Mataram. The coastal areas of West Lombok,
+including Batu Layar and Sekotong, exhibit villa-style housing commonly
+associated with tourism, resulting in generally higher property prices.
+A similar pattern is found in North Lombok, where mountainous terrain
+limits development, but tourism-driven demand has led to villa-style
+housing near popular destinations. East Lombok, by contrast, remains
+more isolated due to its distance from Mataram. Housing in this district
+tends to serve primarily the local population, with limited signs of
+external investment or tourism-driven development. Additionally, the
+southern part of Central Lombok (Pujut) has seen emerging residential
+and real estate activity following the construction of the international
+MotoGP circuit.
 
-Lombok includes five districts (kota/kabupaten), 53 sub-districts
-(kecamatan), and 608 villages (desa/kelurahan), which represent three
-successive levels of administrative division. In this study, the
-sub-district level is used as the spatial unit of analysis, as
-illustrated in Figure~\ref{fig-lombokmap}. The key variables of interest
-include property price, land size, built-up area, number of bedrooms,
-and number of bathrooms.
+In this study, the sub-district level is used as the spatial unit of
+analysis, as illustrated in Figure~\ref{fig-lombokmap}. The key
+variables of interest include property price, land size, built-up area,
+number of bedrooms, and number of bathrooms.
 
 \subsection{Data Collection}\label{data-collection}
 
@@ -1123,34 +1102,37 @@ residential patterns and local housing norms. This step was essential to
 enhance the validity of the analysis by excluding outliers or
 potentially erroneous entries. Following this procedure, the dataset was
 refined to comprise a total of 576 observations. A summary of the key
-variables is presented in Table~\ref{tbl-datasumm}.
+variables is presented in Table~\ref{tbl-datasumm}. Notably, the
+distribution of property prices is skewed and does not exhibit a
+bell-shaped curve, which motivates the inclusion of a log-transformed
+price variable in the analysis.
 
 \begingroup\fontsize{9}{11}\selectfont
 
-\begin{longtable}[t]{lrrrrrrrr}
+\begin{longtable}[t]{lrrrrrrr}
 
-\caption{\label{tbl-datasumm}Summary statistics of variables in the
-property price dataset}
+\caption{\label{tbl-datasumm}Summary statistics of house prices dataset
+(\(N = 576\), \texttt{NA} = 4\%), including variables such as prices and
+its logscale value, land area(sqm), building area(sqm), number of beds,
+and number of baths}
 
 \tabularnewline
 
 \toprule
-Variable & Mean & Median & $Q_1$ & $Q_3$ & Min & Max & SD & NA\\
+Variable & Mean & SD & Median & $Q_1$ & $Q_3$ & Min & Max\\
 \midrule
-Prices (million IDR) & 1983.00 & 1400 & 800.0 & 2500.0 & 170 & 22500 & 2056.81 & 26\\
-Land-size (sqm) & 299.60 & 255 & 147.2 & 407.2 & 90 & 800 & 179.39 & 24\\
-Built-up area (sqm) & 184.80 & 150 & 100.0 & 210.0 & 70 & 600 & 109.20 & 24\\
-No. of bedroom & 3.24 & 3 & 2.0 & 4.0 & 1 & 6 & 1.19 & 24\\
-No. of bathroom & 2.55 & 2 & 2.0 & 3.0 & 1 & 5 & 1.05 & 24\\
+Prices (million IDR) & 1979.20 & 2054.51 & 1400.00 & 800.00 & 2500.00 & 170.00 & 22500.00\\
+logPrices & 7.26 & 0.80 & 7.24 & 6.68 & 7.82 & 5.14 & 10.02\\
+Land-size (sqm) & 299.08 & 179.33 & 254.50 & 147.00 & 405.75 & 90.00 & 800.00\\
+Built-up area (sqm) & 184.46 & 109.14 & 150.00 & 100.00 & 210.00 & 70.00 & 600.00\\
+No. of bedroom & 3.23 & 1.19 & 3.00 & 2.00 & 4.00 & 1.00 & 6.00\\
+\addlinespace
+No. of bathroom & 2.54 & 1.05 & 2.00 & 2.00 & 3.00 & 1.00 & 5.00\\
 \bottomrule
 
 \end{longtable}
 
 \endgroup{}
-
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
 
 Next, we merged the cleaned dataset with spatial administrative data by
 matching sub-district and district names. This process resulted in a
@@ -1160,13 +1142,19 @@ not have any property data available---meaning that property sales in
 those areas were not recorded on the online property listing platform
 used as the data source.
 
-To address missing values, we employed the \texttt{mice} package (Van
-Buuren and Groothuis-Oudshoorn (2011)) to perform multiple imputation
-with parameters set to \(maxit = 10\), \(m = 10\), and a fixed random
-seed to ensure reproducibility. The imputed values were then
-reintegrated into the main dataset, replacing the original missing
-entries. This process resulted in a final dataset that was complete and
-ready for subsequent analysis using the selected spatial models.
+To address missing values, we used the \texttt{mice} package (Van Buuren
+and Groothuis-Oudshoorn (2011)), which performs multiple imputation by
+chained equations (MICE). This approach iteratively fills in missing
+data by modeling each variable with missing values as a function of
+other variables in the dataset. By generating multiple imputed datasets,
+it accounts for the uncertainty inherent in missing data. In our case,
+we specified 10 iterations and generated 10 imputed datasets. A fixed
+random seed was used to ensure the results were reproducible. The
+imputed datasets were then pooled to obtain final estimates for
+subsequent analyses. The imputed values were then reintegrated into the
+main dataset, replacing the original missing entries. This process
+resulted in a final dataset that was complete and ready for subsequent
+analysis using the selected spatial models.
 
 In addition to the point-level dataset, which contains individual
 property listings, the imputed dataset was also aggregated to the
@@ -1177,31 +1165,44 @@ levels of data granularity provide complementary perspectives for
 evaluating the performance of spatial models in capturing local property
 market dynamics.
 
+Moreover, as GWR requires spatial coordinates for each observation, we
+addressed this by generating random points around the centroid of each
+sub-district using the \texttt{st\_sample()} function. The number of
+points generated matched the number of observations in each area, and
+each was positioned within a 0.5 km radius of the centroid to maintain a
+realistic spatial distribution while preserving the local context. This
+strategy allowed us to simulate plausible spatial locations for property
+transactions in the absence of precise geolocation data. Importantly, we
+applied the same bandwidth in the GWR model fitting to ensure
+consistency. By preserving the area-level grouping structure, this
+approach supports a fair comparison with the previous method.
+
 \subsection{Model Implementation \&
 Analysis}\label{model-implementation-analysis}
 
-The cleaned and completed Lombok dataset was then model. The tables
-below present the results of the data fitting, offering a comparative
-view of each model's effectiveness and accuracy in capturing the
-dataset's characteristics.
+The cleaned and completed Lombok dataset was then fitted to the model.
+Equation Equation~\ref{eq-lopreg} presents the proposed model
+specification, which serves as the fixed formula applied consistently
+across all analyses
 
 \begin{equation}\phantomsection\label{eq-lopreg}{
-prices \sim land_{std} + building_{std} + beds_{std} + baths_{std}
+\text{logprices} \sim \text{land}_{\text{std}} + \text{building}_{\text{std}} + \text{beds}_{\text{std}} + \text{baths}_{\text{std}}
 }\end{equation}
 
 Standardization of the predictors ensures that the resulting
 coefficients are on a comparable scale, facilitating meaningful
-interpretation and comparison across different modeling approaches. The
-results presented in Table~\ref{tbl-modelcomp} provide a comprehensive
-evaluation of each model's performance in capturing both the structural
-and spatial characteristics of the property market in Lombok.
-
-We conducted model fitting on the area-level data, with detailed results
+interpretation and comparison across different modeling approaches. We
+conducted model fitting on the area-level data, with detailed results
 provided in the Appendix (Table~\ref{tbl-modelcomp1}). However, this
 method does not provide optimal parameter estimates because data
 aggregation can reduce variability and obscure spatial details essential
 for capturing local effects. To address this, we used point-level data
 to apply three different models: GLMM, GWR, and multilevel CAR.
+
+The results presented in Table~\ref{tbl-modelcomp} provide a
+comprehensive evaluation of each model's performance in capturing both
+the structural and spatial characteristics of the property market in
+Lombok.
 
 \begin{table}
 
@@ -1227,8 +1228,8 @@ to apply three different models: GLMM, GWR, and multilevel CAR.
 \hspace{1em}$\rho$ & - & - & 0.48 [0.07, 0.90]*\\
 \addlinespace[0.3em]
 \multicolumn{4}{l}{\textbf{Variances}}\\
-\hspace{1em}$\nu^2$ & 0.22 [0.19, 0.25]* & 0.33 [0.29, 0.37]* & 0.22 [0.20, 0.25]*\\
-\hspace{1em}$\tau^2$ & 0.20 [0.11, 0.34]* & - & 0.31 [0.14, 0.58]*\\
+\hspace{1em}$\sigma_{\varepsilon}^2$ & 0.22 [0.19, 0.25]* & 0.33 [0.29, 0.37]* & 0.22 [0.20, 0.25]*\\
+\hspace{1em}$\sigma_{\phi}^2$ & 0.20 [0.11, 0.34]* & - & 0.31 [0.14, 0.58]*\\
 \addlinespace[0.3em]
 \multicolumn{4}{l}{\textbf{Model fit criterion}}\\
 \hspace{1em}AIC & 803.38 & -645.104 & 786.95\\
@@ -1244,10 +1245,6 @@ to apply three different models: GLMM, GWR, and multilevel CAR.
 
 \end{table}%
 
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
-
 Here, Table~\ref{tbl-modelcomp} compares parameter estimates and fit
 criteria for three models: GLMM, GWR, and multilevel CAR. Significant
 coefficients are marked with an asterisk (*). Key determinants like
@@ -1256,11 +1253,11 @@ models, while the number of bedrooms shows only minor, varying effects,
 indicating model-specific differences in capturing this variable's
 influence. Only the multilevel CAR model includes the spatial parameter
 \(\rho\), with a significant estimate of 0.48, showing the model's
-ability to account for spatial dependence. Variance components \(\nu^2\)
-(residual) and \(\tau^2\) (spatial) are also detailed, with both
-variance terms significant. Fit criteria (AIC, WAIC, and Log-likelihood)
-suggest mlvCAR and GWR may better capture local spatial variation, with
-mlvCAR balancing spatial structure and precision.
+ability to account for spatial dependence. Variance components
+\(\sigma_{\varepsilon}^2\) (residual) and \(\sigma_{\phi}^2\) are also
+detailed, with both terms are significant. Fit criteria (AIC, WAIC, and
+Log-likelihood) suggest mlvCAR and GWR may better capture local spatial
+variation, with mlvCAR balancing spatial structure and precision.
 
 \begin{figure}
 
@@ -1272,7 +1269,7 @@ mlvCAR balancing spatial structure and precision.
 
 }
 
-\subcaption{\label{fig-pricenphi1}phi values}
+\subcaption{\label{fig-pricenphi1}\(\phi\) values}
 
 \end{minipage}%
 %
@@ -1293,30 +1290,30 @@ values in each Lombok sub-district}
 
 \end{figure}%
 
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
-
 Figure~\ref{fig-pricenphi1} and Figure~\ref{fig-pricenphi2} respectively
 present spatial heatmaps illustrating the distribution of estimated
 spatial random effects (\(\phi\)) from the CAR model and the average
-log-transformed house prices per sub-district accross Lombok island.
-
-Here, the \(\phi\) values represent the spatially structured residuals
-not explained by the observed covariates in the CAR model. Specifically,
-it captures latent spatial influences such as neighbourhood
-desirability, access to infrastructure, or even local policy, that
-affect house prices beyond what structural features like land and
-building size can account for.
+log-transformed house prices per sub-district accross Lombok island. It
+can be seen that both plots in Figure~\ref{fig-pricenphi} exhibit
+similar spatial patterns, with high and low values clustering in
+comparable regions. Note that they do not have to be identical, as
+\(\phi\) represents the spatially structured residual component after
+accounting for covariates, whereas the log-transformed prices reflect
+the observed aggregated market values. Nonetheless, their resemblance
+suggests that some of the spatial variability in house prices is being
+effectively captured by the spatial random effects.
 
 Because the model uses log-transformed prices, \(\phi\) has
 multiplicative interpretation on the original price scale. For instance,
 if \(\phi = 0.57\) for a given sub-district, then after accounting for
 covariates, properties in that area are estimated to be approximately
-\(exp(0.57) \approx 1.76\) or 76\% more expensive than average.
+\(\exp(0.57) \approx 1.76\) or 76\% more expensive than average.
 Similarly, a sub-district with \(\phi = -0.2\), this suggests that
 properties in that area are approximately 18\% less expensive than
-average, since \(exp(-0.2) \approx 0.82\).
+average, since \(\exp(-0.2) \approx 0.82\). Note that the 95\% credible
+interval of \(\phi\) can be interpreted similarly by exponentiating the
+lower and upper bounds, yielding a multiplicative uncertainty range for
+the price deviation.
 
 \section{Results and Discussion}\label{results-and-discussion}
 
@@ -1347,9 +1344,11 @@ where spatial heterogeneity plays a significant role. The superior
 performance of the CAR model, particularly in datasets with strong
 spatial structure, suggests that it may be a more reliable choice for
 applications where local spatial variations are critical. The findings
-align with previous studies indicating that CAR models are better suited
-for managing spatial autocorrelation and heterogeneity, especially when
-spatial dependencies are strong.
+align with previous studies (Y. Wang and Kockelman (2013), Soroori,
+Moghaddam, and Salehi (2019), Zeng and Huang (2014), Guelat and Kéry
+(2018)) indicating that CAR models are better suited for managing
+spatial autocorrelation and heterogeneity, especially when spatial
+dependencies are strong.
 
 Spatial maps of the estimated random effects \(\phi\) from the CAR model
 offer further insight into the spatial structure of housing prices
@@ -1364,8 +1363,8 @@ investigation---such as clusters of residual over- or under-prediction
 in West and East Lombok respectively. These patterns underscore the
 added value of CAR-type models in revealing latent geographic effects.
 
-These findings echo the limitations of GWR when precise coordinates are
-lacking, affirming the relevance of area-level approaches. Moreover,
+These findings also echo the limitations of GWR when precise coordinates
+are lacking, affirming the relevance of area-level approaches. Moreover,
 while we use a binary adjacency matrix for consistency, we recognise
 that the choice of spatial weight \(\mathbf{W}\) may influences model
 performance. Future studies should explore alternative specifications
@@ -1440,6 +1439,8 @@ results and/or discussion reported in this paper.
   Authors' contributions
 \end{itemize}
 
+\newpage
+
 \section*{Appendix}\label{appendix}
 \addcontentsline{toc}{section}{Appendix}
 
@@ -1494,10 +1495,6 @@ Dataset & GLM & SAR & CAR\\
 
 \end{table}%
 
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
-
 \begin{table}
 
 \caption{\label{tbl-bias2}Mean ± SD values for bias across different
@@ -1545,10 +1542,6 @@ Dataset & GLMM & GWR & mlvCAR\\
 
 \end{table}%
 
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
-
 \subsection*{Model Comparison for area-level
 data}\label{model-comparison-for-area-level-data}
 \addcontentsline{toc}{subsection}{Model Comparison for area-level data}
@@ -1582,8 +1575,8 @@ model's capability to capture spatial dependencies and variability}
 \hspace{1em}$\rho$ & - & 0.009[-0.005, 0.023] & 0.39 [0.01, 0.91]*\\
 \addlinespace[0.3em]
 \multicolumn{4}{l}{\textbf{Variances}}\\
-\hspace{1em}$\nu^2$ & 0.31 [0.21, 0.45]* & 0.27 [0.19, 0.41]* & 0.28 [0.01, 0.44]*\\
-\hspace{1em}$\tau^2$ & 0.20 [0.11, 0.34]* & - & 0.04 [0.01, 0.91]*\\
+\hspace{1em}$\sigma_{\epsilon}^2$ & 0.31 [0.21, 0.45]* & 0.27 [0.19, 0.41]* & 0.28 [0.01, 0.44]*\\
+\hspace{1em}$\sigma_{\phi}^2$ & 0.20 [0.11, 0.34]* & - & 0.04 [0.01, 0.91]*\\
 \addlinespace[0.3em]
 \multicolumn{4}{l}{\textbf{Model fit criterion}}\\
 \hspace{1em}AIC & - & - & -\\
@@ -1598,10 +1591,6 @@ model's capability to capture spatial dependencies and variability}
 }
 
 \end{table}%
-
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
 
 \subsection*{Example of beta-values in GWR
 model}\label{example-of-beta-values-in-gwr-model}
@@ -1624,10 +1613,6 @@ demonstrates the spatially varying coefficient structure modeled in the
 study}
 
 \end{figure}%
-
-\textsubscript{Source:
-\href{https://indiraputeri-phd.github.io/CAR_simcomp/manuscript.qmd.html}{Article
-Notebook}}
 
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
@@ -1714,6 +1699,12 @@ Golgher, André Braz, and Paul R Voss. 2016. {``How to Interpret the
 Coefficients of Spatial Models: Spillovers, Direct and Indirect
 Effects.''} \emph{Spatial Demography} 4: 175--205.
 
+\bibitem[\citeproctext]{ref-Guelat2018Effects}
+Guelat, J., and M. Kéry. 2018. {``Effects of Spatial Autocorrelation and
+Imperfect Detection on Species Distribution Models.''} \emph{Methods in
+Ecology and Evolution} 9: 1614--25.
+\url{https://doi.org/10.1111/2041-210X.12983}.
+
 \bibitem[\citeproctext]{ref-lee2013carbayes}
 Lee, Duncan. 2013. {``CARBayes: An r Package for Bayesian Spatial
 Modeling with Conditional Autoregressive Priors.''} \emph{Journal of
@@ -1783,6 +1774,13 @@ Mining Techniques.''} \emph{Journal of Housing and the Built
 Environment} 36 (3): 1--29.
 \url{https://doi.org/10.1007/s10901-020-09811-y}.
 
+\bibitem[\citeproctext]{ref-Soroori2019Application}
+Soroori, Emad, Abolfazl Mohammadzadeh Moghaddam, and M. Salehi. 2019.
+{``Application of Local Conditional Autoregressive Models for
+Development of Zonal Crash Prediction Models and Identification of Crash
+Risk Boundaries.''} \emph{Transportmetrica A: Transport Science} 15:
+1102--23. \url{https://doi.org/10.1080/23249935.2018.1564801}.
+
 \bibitem[\citeproctext]{ref-stern1999inference}
 Stern, Hal, and Noel A Cressie. 1999. {``Inference for Extremes in
 Disease Mapping.''} \emph{John Wiley and Sons} 11: 63--84.
@@ -1822,6 +1820,13 @@ Home Prices in the Housing Downturn, Recovery, and Subsequent
 Increases.''} \emph{Journal of Housing and the Built Environment} 35:
 1283--1302.
 
+\bibitem[\citeproctext]{ref-Wang2013A}
+Wang, Yiyi, and K. Kockelman. 2013. {``A Poisson-Lognormal
+Conditional-Autoregressive Model for Multivariate Spatial Analysis of
+Pedestrian Crash Counts Across Neighborhoods.''} \emph{Accident;
+Analysis and Prevention} 60: 71--84.
+\url{https://doi.org/10.1016/j.aap.2013.07.030}.
+
 \bibitem[\citeproctext]{ref-yang2019does}
 Yang, Linchuan, Jiangping Zhou, Oliver F Shyr, et al. 2019. {``Does Bus
 Accessibility Affect Property Prices?''} \emph{Cities} 84 (January):
@@ -1831,6 +1836,12 @@ Accessibility Affect Property Prices?''} \emph{Cities} 84 (January):
 Yu, Danlin. 2007. {``Modeling Owner-Occupied Single-Family House Values
 in the City of Milwaukee: A Geographically Weighted Regression
 Approach.''} \emph{GIScience \& Remote Sensing} 44 (3): 267--82.
+
+\bibitem[\citeproctext]{ref-Zeng2014Bayesian}
+Zeng, Q., and Helai Huang. 2014. {``Bayesian Spatial Joint Modeling of
+Traffic Crashes on an Urban Road Network.''} \emph{Accident; Analysis
+and Prevention} 67: 105--12.
+\url{https://doi.org/10.1016/j.aap.2014.02.018}.
 
 \end{CSLReferences}
 

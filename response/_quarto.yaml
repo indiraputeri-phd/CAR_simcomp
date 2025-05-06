@@ -9,9 +9,11 @@ format:
     number-sections: true
     keep-tex: false
     output-file: response_to_reviewers
-    include-in-header: header.tex  # Optional: if you want to customize LaTeX packages
+    include-in-header: header.tex  
     header-includes:
      - \usepackage{xcolor}
+bibliography:
+  - references.bib
 
 execute:
   echo: false

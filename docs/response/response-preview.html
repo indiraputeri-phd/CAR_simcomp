@@ -5,9 +5,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-    <meta name="author" content="Indira Puteri Kinasih">
 
-    <title>Response to Journal’s 2nd Reviewer Comments</title>
+    <title>Response to Journal’s Reviewer Comments</title>
     <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -20,7 +19,27 @@
         margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
         vertical-align: middle;
       }
-    </style>
+      /* CSS for citations */
+      div.csl-bib-body { }
+      div.csl-entry {
+        clear: both;
+        margin-bottom: 0em;
+      }
+      .hanging-indent div.csl-entry {
+        margin-left:2em;
+        text-indent:-2em;
+      }
+      div.csl-left-margin {
+        min-width:2em;
+        float:left;
+      }
+      div.csl-right-inline {
+        margin-left:2em;
+        padding-left:1em;
+      }
+      div.csl-indent {
+        margin-left: 2em;
+      }    </style>
 
     <style>
       body.hypothesis-enabled #quarto-embed-header {
@@ -124,8 +143,7 @@
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
       <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script> 
-      <meta name="citation_title" content="Response to Journal&amp;amp;#039;s 2nd Reviewer Comments">
-<meta name="citation_author" content="Indira Puteri Kinasih">
+      <meta name="citation_title" content="Response to Journal&amp;amp;#039;s Reviewer Comments">
 <meta name="citation_publication_date" content="2025">
 <meta name="citation_cover_date" content="2025">
 <meta name="citation_year" content="2025">
@@ -180,13 +198,18 @@
 <meta name="citation_reference" content="citation_title=Bayesian analysis of conditional autoregressive models;,citation_author=Victor De Oliveira;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;,citation_volume=64;,citation_journal_title=Annals of the Institute of Statistical Mathematics;,citation_publisher=Springer;">
 <meta name="citation_reference" content="citation_title=Mice: Multivariate imputation by chained equations in r;,citation_author=Stef Van Buuren;,citation_author=Karin Groothuis-Oudshoorn;,citation_publication_date=2011;,citation_cover_date=2011;,citation_year=2011;,citation_volume=45;,citation_journal_title=Journal of statistical software;">
 <meta name="citation_reference" content="citation_title=Sample size for the evaluation of presence-absence models;,citation_author=A. Jimenez Valverde;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_doi=10.1016/j.ecolind.2020.106289;,citation_volume=114;,citation_journal_title=Ecological Indicators;">
+<meta name="citation_reference" content="citation_title=A poisson-lognormal conditional-autoregressive model for multivariate spatial analysis of pedestrian crash counts across neighborhoods.;,citation_author=Yiyi Wang;,citation_author=K. Kockelman;,citation_publication_date=2013;,citation_cover_date=2013;,citation_year=2013;,citation_doi=10.1016/j.aap.2013.07.030;,citation_volume=60;,citation_journal_title=Accident; analysis and prevention;">
+<meta name="citation_reference" content="citation_title=Application of local conditional autoregressive models for development of zonal crash prediction models and identification of crash risk boundaries;,citation_author=Emad Soroori;,citation_author=Abolfazl Mohammadzadeh Moghaddam;,citation_author=M. Salehi;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_doi=10.1080/23249935.2018.1564801;,citation_volume=15;,citation_journal_title=Transportmetrica A: Transport Science;">
+<meta name="citation_reference" content="citation_title=Bayesian spatial joint modeling of traffic crashes on an urban road network.;,citation_author=Q. Zeng;,citation_author=Helai Huang;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_doi=10.1016/j.aap.2014.02.018;,citation_volume=67;,citation_journal_title=Accident; analysis and prevention;">
+<meta name="citation_reference" content="citation_title=Effects of spatial autocorrelation and imperfect detection on species distribution models;,citation_author=J. Guelat;,citation_author=M. Kéry;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_doi=10.1111/2041-210X.12983;,citation_volume=9;,citation_journal_title=Methods in Ecology and Evolution;">
+<meta name="citation_reference" content="citation_title=Multilevel and related models for longitudinal data;,citation_author=Anders Skrondal;,citation_author=Sophia Rabe-Hesketh;,citation_publication_date=2008;,citation_cover_date=2008;,citation_year=2008;,citation_inbook_title=Handbook of multilevel analysis;">
 </head>
 
   <body class="quarto-notebook">
     <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
       
       <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
-      <h6><i class="bi bi-journal-code"></i> Response to Journal’s 2nd Reviewer Comments</h6>
+      <h6><i class="bi bi-journal-code"></i> Response to Journal’s Reviewer Comments</h6>
 
             <a href="../response/response.qmd" class="btn btn-primary quarto-download-embed" download="response.qmd">Download Source</a>
           </div>
@@ -194,7 +217,7 @@
      <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Response to Journal’s 2nd Reviewer Comments</h1>
+      <h1 class="title">Response to Journal’s Reviewer Comments</h1>
             <p class="subtitle lead">Conditionally Autoregressive Models for House Price Data: Insights From a Comparative Simulation Study</p>
           </div>
 
@@ -204,12 +227,6 @@
         
         <div class="quarto-title-meta">
 
-                <div>
-            <div class="quarto-title-meta-heading">Author</div>
-            <div class="quarto-title-meta-contents">
-                        <p>Indira Puteri Kinasih <a href="mailto:indiraputeri@uinmataram.ac.id" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0009-0009-6959-6723" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
-                      </div>
-          </div>
                 
           
                 
@@ -225,33 +242,54 @@
     </div>  </div>
 </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#references" id="toc-references" class="nav-link active" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      
 
-     <ol type="1">
+       <p><strong>Reviewer 1</strong></p>
+<p><strong>This manuscript compares different methods (Conditionally Autoregressive, Geographically Weighted Regression, and Simultaneous Autoregressive) for modeling property prices. The problem definition looks reasonable, but the manuscript presents only the application part; nothing is contributed toward the theory. Therefore, I will suggest transferring this manuscript to an application-related journal. To my understanding, this manuscript does not fall in the scope of this journal. Further, the manuscript is not standard format of the journal.</strong></p>
+<p>We acknowledge that our work is primarily application-driven, focusing on the use of Conditionally Autoregressive (CAR), Geographically Weighted Regression (GWR), and Simultaneous Autoregressive (SAR) models in the context of property price modeling. However, we respectfully submit that the manuscript makes a meaningful methodological contribution, particularly in bridging the gap between spatial theory and applied practice—an area of growing relevance, especially in spatial analysis for developing regions.</p>
+<p>While we do not introduce new theoretical constructs, our work extends the methodological discourse in the following ways:</p>
+<ul>
+<li><p><strong>Shifting the Dominant Modeling Paradigm</strong>: Previous studies on house price modeling have predominantly employed Geographically Weighted Regression (GWR), which requires precise geolocation data for model fitting. However, such data are often incomplete, unavailable, or unreliable in many regions. Our study explores the potential of the Conditionally Autoregressive (CAR) model—more commonly applied in health and ecological studies—as a viable alternative for house price modeling. This cross-domain adaptation is underexplored and opens new methodological pathways for spatial econometrics.</p></li>
+<li><p><strong>Unified Comparative Framework</strong>: We develop and apply a systematic framework to compare CAR, SAR, and GWR models using both simulated data and real-world property data. This comparative approach, particularly within the under-researched housing market context of a developing region, fills a critical gap in the literature.</p></li>
+<li><p><strong>Practical Implementation Insights</strong>: The manuscript offers practical guidance for applied researchers on implementing, diagnosing, and interpreting each spatial model. These details are especially valuable for practitioners operating in data-scarce environments or policy-driven contexts.</p></li>
+<li><p><strong>Informing Model Selection</strong>: By revealing the comparative strengths and limitations of each model in capturing spatial heterogeneity, our findings contribute to informed model selection in applied spatial econometrics—balancing methodological soundness with practical feasibility.</p></li>
+<li><p><strong>Policy and Planning Relevance</strong>: The results of our study have implications for spatial planning and housing market analysis, offering a framework for integrating spatial models into decision-making processes where traditional approaches may be constrained by data availability.</p></li>
+</ul>
+<p>Given these points, we believe the manuscript fits within the journal’s broader mission to advance rigorous spatial analysis methods and encourage cross-disciplinary methodological applications.</p>
+<p><strong>Reviewer 2</strong></p>
+<ol type="1">
 <li><p><strong>The choice of <span class="math inline">\(W\)</span> (whether binary adjacency or row-standardized) is critical. Have the authors explored alternative spatial weight matrices, and how do they impact model performance?</strong></p>
 <p>Thank you for this insightful comment regarding the specification of the spatial weight matrix, <span class="math inline">\(W\)</span>. We fully acknowledge that the choice of <span class="math inline">\(W\)</span>—whether binary adjacency, row-standardized, or distance-based—can substantially influence the performance and interpretation of spatial models. In the present study, our primary objective was to evaluate and compare the performance of CAR, SAR, and GWR models using both simulated data and real-world data from Lombok. To maintain consistency across models and to isolate the structural differences in model behavior, we have, at this stage, limited our analysis to a binary adjacency matrix for <span class="math inline">\(W\)</span>. We agree that exploring alternative specifications of <span class="math inline">\(W\)</span> (e.g., row-standardized or distance-decay matrices) is a valuable direction for further research. We plan to extend our analysis in future work to assess how varying spatial weight structures affect the robustness and predictive accuracy of these spatial models.</p></li>
 <li><p><strong>While the CAR model shows lower bias and RMSE in the artificial study, does this advantage persist in real-world scenarios, particularly where data sparsity or boundary effects exist?</strong></p>
 <p>Thank you for your thoughtful question. We acknowledge that in small-area data, bias can indeed become a concern due to limited information at the unit level. However, in the case of the multilevel CAR (mlvCAR) model, each area contains multiple observations, allowing us to model area-specific effects—functionally resembling a random effects structure. This hierarchical structure helps mitigate the impact of sparsity within individual areas.</p>
 <p>Regarding sample size, prior studies suggest that having approximately 15–30 observations per area is generally sufficient for stable estimation in multilevel frameworks. Given our data structure aligns with this recommendation, we believe the mlvCAR model offers a robust approach, especially in real-world scenarios where heterogeneity and partial pooling across areas are important. We thus recommend the use of mlvCAR to address both the potential bias and boundary effects effectively.</p></li>
 <li><p><strong>The estimated value of <span class="math inline">\(\rho\)</span> (spatial dependence strength) varies widely (e.g., 0.48 for the multilevel CAR model). Have the authors examined how sensitive the model results are to changes in <span class="math inline">\(\rho\)</span>?</strong></p>
-<p>In our study, we recognize that the value of <span class="math inline">\(\rho\)</span> plays a crucial role in determining the extent of spatial autocorrelation captured by the model. While we did not conduct a dedicated sensitivity analysis across a range of fixed <span class="math inline">\(\rho\)</span> values, our simulation framework inherently explores variation in <span class="math inline">\(\rho\)</span> through repeated data generation processes, in which <span class="math inline">\(\rho\)</span> is estimated as part of the model fitting. The observed variability in <span class="math inline">\(\rho\)</span> reflects the underlying spatial structure in the data rather than instability in the model.</p>
-<p>That said, we agree that a more systematic sensitivity analysis—such as fitting the model under different fixed values of <span class="math inline">\(\rho\)</span>—could offer further insights into model robustness. We consider this a valuable direction for future work, especially in scenarios with varying levels of spatial autocorrelation or data sparsity.</p></li>
+<p>In our study, we recognize that the value of <span class="math inline">\(\rho\)</span> (the spatial dependence parameter) plays a crucial role in determining the extent to which spatial autocorrelation is captured by the model. While we did not conduct a dedicated sensitivity analysis by fixing <span class="math inline">\(\rho\)</span> at multiple values, our simulation framework implicitly accounts for variability in <span class="math inline">\(\rho\)</span> through repeated data generation and model fitting, where <span class="math inline">\(\rho\)</span> is treated as an estimable parameter. The observed variability—such as the estimate of 0.48 in the multilevel CAR model—reflects the differences in underlying spatial structure across datasets rather than instability or inconsistency in the model itself.</p>
+<p>In a Bayesian framework, the prior distribution assigned to <span class="math inline">\(\rho\)</span> also has an important influence, particularly in data-sparse contexts or when spatial signals are weak. In our implementation, we used a uniform or weakly informative prior (depending on the model setting), allowing the data to drive the estimation of <span class="math inline">\(\rho\)</span> while still preventing extreme or implausible values. In practical applications, however, researchers may wish to incorporate more informative priors based on prior knowledge of spatial processes or domain-specific expectations, which can enhance stability and interpretability in certain contexts.</p>
+<p>That said, we fully agree that a more systematic sensitivity analysis—such as fixing <span class="math inline">\(\rho\)</span> at various plausible levels or experimenting with different prior distributions—could offer deeper insights into model robustness and the influence of spatial structure. We consider this an important direction for future research, particularly in settings with heterogeneous spatial patterns or limited sample sizes, where sensitivity to <span class="math inline">\(\rho\)</span> may significantly impact conclusions and policy relevance.</p></li>
 <li><p><strong>The study discusses the spatial effects <span class="math inline">\(\phi\)</span> as a key advantage of the CAR model, but how can these effects be meaningfully interpreted for house price determinants? Would spatial effect maps or additional diagnostic tools enhance this understanding?</strong></p>
-<p>Thank you for highlighting the importance of interpreting the spatial effects <span class="math inline">\(\phi\)</span> in the CAR model. We agree that while <span class="math inline">\(\phi\)</span> captures unobserved spatial heterogeneity, its interpretability in the context of house price determinants requires careful consideration. Rather than directly reflecting specific covariates, <span class="math inline">\(\phi\)</span> accounts for spatially structured residual variation—such as omitted neighborhood characteristics, local amenities, or spatial spillovers—that are not captured by observed variables.</p>
-<p>To aid interpretation, we acknowledge that visualizing <span class="math inline">\(\phi\)</span> through spatial effect maps could be a powerful diagnostic tool. Such maps can reveal clusters of under- or over-prediction and provide insights into areas where additional covariates or local effects might be relevant. In the revised version of this study, we will include a Lombok sub-district-level map displaying the estimated <span class="math inline">\(\phi\)</span> values to better communicate the spatial structure captured by the model and to guide further interpretation and refinement.</p></li>
+<p>We agree that while <span class="math inline">\(\phi\)</span> captures unobserved spatial heterogeneity, its interpretability in the context of house price determinants requires careful consideration. Rather than directly reflecting specific covariates, <span class="math inline">\(\phi\)</span> accounts for spatially structured residual variation—such as omitted neighborhood characteristics, local amenities, or spatial spillovers—that are not captured by observed variables.</p>
+<p>For a brief illustration, since the model uses log-transformed prices, <span class="math inline">\(\phi\)</span> has multiplicative interpretation on the original price scale. So if <span class="math inline">\(\phi = 0.57\)</span> for a given sub-district, then after accounting for covariates, properties in that area are estimated to be approximately <span class="math inline">\(\exp(0.57) \approx 1.76\)</span> or 76% more expensive than average. Similarly, a sub-district with <span class="math inline">\(\phi = -0.2\)</span>, this suggests that properties in that area are approximately 18% less expensive than average, since <span class="math inline">\(\exp(-0.2) \approx 0.82\)</span>. Note that the 95% credible interval of <span class="math inline">\(\phi\)</span> can be interpreted similarly by exponentiating the lower and upper bounds, yielding a multiplicative uncertainty range for the price deviation.</p>
+<p>To facilitate interpretation, we provide a map that visualizes the estimated spatial effects (<span class="math inline">\(\phi\)</span>), thereby highlighting the spatial patterns identified by the model.</p></li>
 <li><p><strong>Among the various spatial regression models, Geographically Weighted Regression (GWR) is particularly prominent in property price research (page 2). Before reaching this conclusion, did you compare GWR to other spatial regression models?</strong></p>
-<p>Thank you for this thoughtful question. In our manuscript, we highlight Geographically Weighted Regression (GWR) as a prominent method in the literature, particularly due to its frequent application in house price studies. This observation is based on a review of previous works rather than a performance-based comparison. While GWR is indeed widely used for its ability to model spatial heterogeneity at the local level, our study goes further by systematically comparing GWR with CAR and SAR models through simulation and real data applications. This comparative analysis aims to evaluate their relative strengths and limitations more objectively.</p></li>
+<p>In our manuscript, we highlight Geographically Weighted Regression (GWR) as a prominent method in the literature, particularly due to its frequent application in house price studies. This observation is based on a review of previous works rather than a performance-based comparison, for instance <span class="citation" data-cites="wang2020geographically">Wang and Chen (<a href="#ref-wang2020geographically" role="doc-biblioref">2020</a>)</span>, <span class="citation" data-cites="lu2011geographically">Lu, Charlton, and Fotheringham (<a href="#ref-lu2011geographically" role="doc-biblioref">2011</a>)</span>, <span class="citation" data-cites="stewart2018localized">Stewart Fotheringham and Park (<a href="#ref-stewart2018localized" role="doc-biblioref">2018</a>)</span>, and <span class="citation" data-cites="cellmer2020spatial">Cellmer, Cichulska, and Bełej (<a href="#ref-cellmer2020spatial" role="doc-biblioref">2020</a>)</span>. While GWR is indeed widely used for its ability to model spatial heterogeneity at the local level, our study goes further by systematically comparing GWR with CAR and SAR models through simulation and real data applications. This comparative analysis aims to evaluate their relative strengths and limitations more objectively.</p></li>
 <li><p><strong>The scope of properties analysed includes residential houses and commercial real estate (page 16). How do the authors reconcile this with the abstract, which mentions only house price data?</strong></p>
 <p>We acknowledge that the description in the manuscript may not have been sufficiently clear. The original dataset obtained through web-scraping did include a broad range of property types—such as residential houses, villas, boarding houses, and vacant land. However, for the purposes of this study, we restricted our analysis to residential houses only. We will revise the manuscript accordingly to ensure that this scope is clearly stated in both the abstract and the data collection section.</p></li>
 <li><p><strong>After data cleaning, the final dataset included 598 entries representing multiple observations per sub-district (page 16). Why does the distribution of these data not appear on the map (Figure 6)?</strong></p>
 <p>For clarity, we note that the Lombok house price dataset used in this study does not contain precise geographic coordinates for each observation. As a result, it is not possible to accurately display the distribution of the data points on a map. While each observation is linked to a sub-district, the absence of point-level location data limits our ability to visualize them spatially within those areas. Therefore, for a more informative visualization, we are preparing a heatmap of house prices at the sub-district level, which will reflect the spatial variation in prices across Lombok using aggregated data.</p></li>
 <li><p><strong>The authors have applied point-level data using three different models (GLMM, GWR, and multilevel CAR) (page 17). How was this approach implemented, given that there is no explanation of how each observation was georeferenced?</strong></p>
-<p>Thank you for this important observation. We clarify that GLMM and multilevel CAR models do not require explicit geographic coordinates for each individual observation. Instead, they rely on an area-level identifier (ID) that links each observation to a corresponding spatial unit (e.g., sub-district).</p>
-<p>In contrast, GWR requires spatial coordinates for each observation. To meet this requirement, we generated random points around the centroid of each sub-district, using <code>st_sample()</code>, where the number of points corresponds to the number of observations in that area. Each point was placed within a 0.5 km radius from the centroid, ensuring a reasonable spatial spread while maintaining the area-specific context. This approach enabled us to simulate realistic spatial positions for property transactions in the absence of precise geolocation data.</p></li>
+<p>Thank you for this important observation. We clarify that GLMM and multilevel CAR models do not require explicit geographic coordinates for each individual observation. Instead, they rely on an area-level identifier (ID) that links each observation to a corresponding spatial unit (e.g., sub-district). This is a similar approach to random effects or multilevel modelling.</p>
+<p>In contrast, GWR requires spatial coordinates for each observation. To meet this requirement, we generated random points around the centroid of each sub-district, using <code>st_sample()</code>, where the number of points corresponds to the number of observations in that area. Each point was placed within a 0.5 km radius from the centroid, ensuring a reasonable spatial spread while maintaining the area-specific context. This approach enabled us to simulate realistic spatial positions for property transactions in the absence of precise geolocation data. Note that, the same bandwith was used in the fitting of the GWR model. By enforcing the area-level grouping, this ensures a fair comparison to the previous method.</p></li>
 <li><p><strong>Why is Table 5 not referred to in the text?</strong></p>
 <p>In the revised version of the manuscript, we have made sure to explicitly refer to Table 5 in the main text to improve clarity and consistency. We appreciate your careful reading and helpful suggestion.</p></li>
 <li><p><strong>The authors have argued that point-level models like GWR are limited when precise location data are unavailable (page 18). However, for the Lombok House Price Data, the authors have used point-level models. How do you reconcile this contradiction?</strong></p>
@@ -262,6 +300,23 @@
 <p>Thank you for this important point. Indeed, numerous studies have already explored property price modeling in large, high-density urban areas such as Jakarta, where spatial data availability and heterogeneity are typically greater. In contrast, there is relatively limited research focused on low-density or semi-rural contexts such as Lombok. Our study aims to address this gap by evaluating the applicability and performance of spatial models, particularly the CAR model, in a setting that has different data characteristics and spatial structures compared to major metropolitan areas.</p>
 <p>We also acknowledge that in richer datasets—common in urban contexts where more granular, high-frequency, and multidimensional data are available—machine learning approaches may offer competitive or even superior predictive performance. However, our focus here is to assess interpretable spatial models in contexts where data limitations remain a challenge.</p></li>
 </ol>
+<section id="references" class="level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-cellmer2020spatial" class="csl-entry" role="listitem">
+Cellmer, Radosław, Aneta Cichulska, and Mirosław Bełej. 2020. <span>“Spatial Analysis of Housing Prices and Market Activity with the Geographically Weighted Regression.”</span> <em>ISPRS International Journal of Geo-Information</em> 9 (6): 380. <a href="https://doi.org/10.3390/ijgi9060380">https://doi.org/10.3390/ijgi9060380</a>.
+</div>
+<div id="ref-lu2011geographically" class="csl-entry" role="listitem">
+Lu, Binbin, Martin Charlton, and A Stewart Fotheringham. 2011. <span>“Geographically Weighted Regression Using a Non-Euclidean Distance Metric with a Study on London House Price Data.”</span> <em>Procedia Environmental Sciences</em> 7: 92–97.
+</div>
+<div id="ref-stewart2018localized" class="csl-entry" role="listitem">
+Stewart Fotheringham, A, and Bumsub Park. 2018. <span>“Localized Spatiotemporal Effects in the Determinants of Property Prices: A Case Study of Seoul.”</span> <em>Applied Spatial Analysis and Policy</em> 11 (August): 581–98. <a href="https://doi.org/10.1007/s12061-017-9232-8">https://doi.org/10.1007/s12061-017-9232-8</a>.
+</div>
+<div id="ref-wang2020geographically" class="csl-entry" role="listitem">
+Wang, Chih-Hao, and Na Chen. 2020. <span>“A Geographically Weighted Regression Approach to Investigating Local Built-Environment Effects on Home Prices in the Housing Downturn, Recovery, and Subsequent Increases.”</span> <em>Journal of Housing and the Built Environment</em> 35: 1283–1302.
+</div>
+</div>
+</section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
